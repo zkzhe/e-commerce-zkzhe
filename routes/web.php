@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\MainUserController;
 use App\Http\Controllers\MainAdminController;
+use App\Http\Controllers\Admin\Category\CategoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -53,3 +54,10 @@ Route::get('/admin/profile/edit', [MainAdminController::class, 'AdminProfileEdit
 Route::post('/admin/profile/store', [MainAdminController::class, 'AdminProfileStore'])->name('admin.profile.store');
 Route::get('/admin/change/password', [MainAdminController::class, 'AdminChangePassword'])->name('admin.change.password');
 Route::post('/admin/password/update', [MainAdminController::class, 'AdminChangePasswordUpdate'])->name('admin.password.update');
+Route::post('/admin/password/update', [MainAdminController::class, 'AdminChangePasswordUpdate'])->name('admin.password.update');
+
+Route::get('/admin/categories', [CategoryController::class, 'AdminCategory'])->name('admin.categories');
+Route::post('/admin/store/category', [CategoryController::class, 'AdminStoreCategory'])->name('admin.store.category');
+Route::get('/admin/edit/category/{id}', [CategoryController::class, 'AdminEditCategory']);
+Route::post('/admin/update/category/{id}', [CategoryController::class, 'AdminUpdateCategory']);
+Route::get('/admin/delete/category/{id}', [CategoryController::class, 'AdminDeleteCategory']);

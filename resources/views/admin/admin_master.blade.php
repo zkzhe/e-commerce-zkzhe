@@ -39,7 +39,13 @@
 
   <!-- Starlight CSS -->
   <link rel="stylesheet" href="{{ asset('adminbackend/css/starlight.css')}}">
+
+  <!-- chart -->
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
+  <!-- Datatable css -->
+  <link href="{{ asset('adminbackend/lib/highlightjs/github.css')}}" rel="stylesheet">
+  <link href="{{ asset('adminbackend/lib/datatables/jquery.dataTables.css')}}" rel="stylesheet">
+  <link href="{{ asset('adminbackend/lib/select2/css/select2.min.css')}}" rel="stylesheet">
 </head>
 
 <body>
@@ -222,6 +228,40 @@
   <script src="{{ asset('adminbackend/lib/bootstrap/bootstrap.js')}}"></script>
   <script src="{{ asset('adminbackend/lib/jquery-ui/jquery-ui.js')}}"></script>
   <script src="{{ asset('adminbackend/lib/perfect-scrollbar/js/perfect-scrollbar.jquery.js')}}"></script>
+
+  <script src="{{ asset('adminbackend/lib/highlightjs/highlight.pack.js') }}"></script>
+  <script src="{{ asset('adminbackend/lib/datatables/jquery.dataTables.js') }}"></script>
+  <script src="{{ asset('adminbackend/lib/datatables-responsive/dataTables.responsive.js') }}"></script>
+  <script src="{{ asset('adminbackend/lib/select2/js/select2.min.js') }}"></script>
+
+
+  <script>
+    $(function() {
+      'use strict';
+
+      $('#datatable1').DataTable({
+        responsive: true,
+        language: {
+          searchPlaceholder: 'Search...',
+          sSearch: '',
+          lengthMenu: '_MENU_ items/page',
+        }
+      });
+
+      $('#datatable2').DataTable({
+        bLengthChange: false,
+        searching: false,
+        responsive: true
+      });
+
+      // Select2
+      $('.dataTables_length select').select2({
+        minimumResultsForSearch: Infinity
+      });
+
+    });
+  </script>
+
   <script src="{{ asset('adminbackend/lib/jquery.sparkline.bower/jquery.sparkline.min.js')}}"></script>
   <script src="{{ asset('adminbackend/lib/d3/d3.js')}}"></script>
   <script src="{{ asset('adminbackend/lib/rickshaw/rickshaw.min.js')}}"></script>
@@ -237,7 +277,7 @@
 
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
-
+  <script src="{{ asset('https://unpkg.com/sweetalert/dist/sweetalert.min.js')}}"></script>
 
   @if(Session::has('message'))
   <script>
@@ -261,6 +301,28 @@
     }
   </script>
   @endif
+
+  <script>
+    $(document).on("click", "#delete", function(e) {
+      e.preventDefault();
+      var link = $(this).attr("href");
+      swal({
+          title: "Are you Want to delete?",
+          text: "Once Delete, This will be Permanently Delete!",
+          icon: "warning",
+          buttons: true,
+          dangerMode: true,
+        })
+        .then((willDelete) => {
+          if (willDelete) {
+            window.location.href = link;
+          } else {
+            swal("Safe Data!");
+          }
+        });
+    });
+  </script>
+
 </body>
 
 </html>
