@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\MainUserController;
 use App\Http\Controllers\MainAdminController;
 use App\Http\Controllers\Admin\Category\CategoryController;
+use App\Http\Controllers\Admin\Category\BrandController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -61,3 +62,9 @@ Route::post('/admin/store/category', [CategoryController::class, 'AdminStoreCate
 Route::get('/admin/edit/category/{id}', [CategoryController::class, 'AdminEditCategory']);
 Route::post('/admin/update/category/{id}', [CategoryController::class, 'AdminUpdateCategory']);
 Route::get('/admin/delete/category/{id}', [CategoryController::class, 'AdminDeleteCategory']);
+
+Route::get('/admin/brands', [BrandController::class, 'Adminbrand'])->name('admin.brands');
+Route::post('/admin/store/brand', [BrandController::class, 'AdminStoreBrand'])->name('admin.store.brand');
+Route::get('/admin/edit/brand/{id}', [BrandController::class, 'AdminEditBrand']);
+Route::post('/admin/update/brand/{id}', [BrandController::class, 'AdminUpdateBrand']);
+Route::get('/admin/delete/brand/{id}', [BrandController::class, 'AdminDeleteBrand']);
