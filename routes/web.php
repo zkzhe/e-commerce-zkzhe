@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\MainUserController;
 use App\Http\Controllers\MainAdminController;
 use App\Http\Controllers\Admin\Category\CategoryController;
+use App\Http\Controllers\Admin\Category\SubCategoryController;
 use App\Http\Controllers\Admin\Category\BrandController;
 /*
 |--------------------------------------------------------------------------
@@ -68,3 +69,9 @@ Route::post('/admin/store/brand', [BrandController::class, 'AdminStoreBrand'])->
 Route::get('/admin/edit/brand/{id}', [BrandController::class, 'AdminEditBrand']);
 Route::post('/admin/update/brand/{id}', [BrandController::class, 'AdminUpdateBrand']);
 Route::get('/admin/delete/brand/{id}', [BrandController::class, 'AdminDeleteBrand']);
+
+Route::get('/admin/subcategories', [SubCategoryController::class, 'AdminSubcategories'])->name('admin.sub.categories');
+Route::post('/admin/store/subcategory', [SubCategoryController::class, 'AdminStoreSubcategory'])->name('admin.store.subcategories');
+Route::get('/admin/edit/subcategory/{id}', [SubCategoryController::class, 'AdminEditSubcategory']);
+Route::post('/admin/update/subcategory/{id}', [SubCategoryController::class, 'AdminUpdateSubcategory']);
+Route::get('/admin/delete/subcategory/{id}', [SubCategoryController::class, 'AdminDeleteSubcategory']);
