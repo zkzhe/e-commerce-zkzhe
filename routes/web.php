@@ -7,6 +7,8 @@ use App\Http\Controllers\MainAdminController;
 use App\Http\Controllers\Admin\Category\CategoryController;
 use App\Http\Controllers\Admin\Category\SubCategoryController;
 use App\Http\Controllers\Admin\Category\BrandController;
+use App\Http\Controllers\Admin\Category\CouponController;
+use App\Http\Controllers\FrontController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -75,3 +77,14 @@ Route::post('/admin/store/subcategory', [SubCategoryController::class, 'AdminSto
 Route::get('/admin/edit/subcategory/{id}', [SubCategoryController::class, 'AdminEditSubcategory']);
 Route::post('/admin/update/subcategory/{id}', [SubCategoryController::class, 'AdminUpdateSubcategory']);
 Route::get('/admin/delete/subcategory/{id}', [SubCategoryController::class, 'AdminDeleteSubcategory']);
+
+Route::get('/admin/coupon', [CouponController::class, 'AdminCoupon'])->name('admin.coupon');
+Route::post('/admin/store/coupon', [CouponController::class, 'AdminStoreCoupon'])->name('admin.store.coupon');
+Route::get('/admin/edit/coupon/{id}', [CouponController::class, 'AdminEditCoupon']);
+Route::post('/admin/update/coupon/{id}', [CouponController::class, 'AdminUpdateCoupon']);
+Route::get('/admin/delete/coupon/{id}', [CouponController::class, 'AdminDeleteCoupon']);
+
+Route::get('/admin/newslater', [CouponController::class, 'AdminNewslater'])->name('admin.newslater');
+
+Route::post('/store/newslater', [FrontController::class, 'StoreNewslater'])->name('store.newslater');
+Route::get('/delete/newslater/{id}', [FrontController::class, 'DeleteNewslater']);
