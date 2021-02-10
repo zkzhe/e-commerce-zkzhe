@@ -5,28 +5,29 @@
 
     <div class="card pd-20 pd-sm-40">
         <h6 class="card-body-title">New Product ADD</h6>
+        <a href="{{ route('all.product') }}" class="btn btn-success btn-sm pull-right"> All Product</a>
         <p class="mg-b-20 mg-sm-b-30">New Product ADD Form</p>
 
-        <form method="post" action="" enctype="multipart/form-data">
+        <form method="post" action="{{ route('store.product') }}" enctype="multipart/form-data">
             @csrf
             <div class="form-layout">
                 <div class="row mg-b-25">
                     <div class="col-lg-4">
                         <div class="form-group">
                             <label class="form-control-label">Product Name: <span class="tx-danger">*</span></label>
-                            <input class="form-control" type="text" name="product_name" value="John Paul" placeholder="Enter Product Name">
+                            <input class="form-control" type="text" name="product_name" placeholder="Enter Product Name">
                         </div>
                     </div><!-- col-4 -->
                     <div class="col-lg-4">
                         <div class="form-group">
                             <label class="form-control-label">Product Code: <span class="tx-danger">*</span></label>
-                            <input class="form-control" type="text" name="product_code" value="McDoe" placeholder="Enter Product Code">
+                            <input class="form-control" type="text" name="product_code" placeholder="Enter Product Code">
                         </div>
                     </div><!-- col-4 -->
                     <div class="col-lg-4">
                         <div class="form-group">
                             <label class="form-control-label">Quantity: <span class="tx-danger">*</span></label>
-                            <input class="form-control" type="text" name="product_quantity" value="" placeholder="Enter Quantity">
+                            <input class="form-control" type="text" name="product_quantity" placeholder="Enter Quantity">
                         </div>
                     </div><!-- col-4 -->
                     <div class="col-lg-4">
@@ -84,7 +85,7 @@
                     <div class="col-lg-12">
                         <div class="form-group">
                             <label class="form-control-label">Product Datails: <span class="tx-danger">*</span></label>
-                            <input class="form-control" id="summernote" name="product_datails">
+                            <textarea class="form-control" id="summernote" name="product_datails"></textarea>
                         </div>
                     </div><!-- col-4 -->
 
@@ -99,7 +100,7 @@
                         <div class="form-group">
                             <label class="form-control-label">Image One ( Main Thumbnali): <span class="tx-danger">*</span></label>
                             <label class="custom-file">
-                                <input type="file" id="file" class="custom-file-input" name="image_one" onchange="readURL1(this);">
+                                <input type="file" id="file" class="custom-file-input" name="image_one" onchange="readURL1(this);" require="">
                                 <span class="custom-file-control"></span>
                             </label>
                         </div>
@@ -110,7 +111,7 @@
                         <div class="form-group">
                             <label class="form-control-label">Image Two: <span class="tx-danger">*</span></label>
                             <label class="custom-file">
-                                <input type="file" id="file" class="custom-file-input" name="image_two" onchange="readURL2(this);">
+                                <input type="file" id="file" class="custom-file-input" name="image_two" onchange="readURL2(this);" require="">
                                 <span class="custom-file-control"></span>
                             </label>
                         </div>
@@ -121,7 +122,7 @@
                         <div class="form-group">
                             <label class="form-control-label">Image Three: <span class="tx-danger">*</span></label>
                             <label class="custom-file">
-                                <input type="file" id="file" class="custom-file-input" name="image_three" onchange="readURL3(this);">
+                                <input type="file" id="file" class="custom-file-input" name="image_three" onchange="readURL3(this);" require="">
                                 <span class="custom-file-control"></span>
                             </label>
                         </div>

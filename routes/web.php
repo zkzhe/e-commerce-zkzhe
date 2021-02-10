@@ -92,3 +92,4 @@ Route::get('/delete/newslater/{id}', [FrontController::class, 'DeleteNewslater']
 Route::get('/admin/product/all', [ProductController::class, 'index'])->name('all.product');
 Route::get('/admin/product/add', [ProductController::class, 'create'])->name('add.product');
 Route::get('/admin/get/subcategory/{subcategory_id}', [ProductController::class, 'GetSubcat']);
+Route::post('/admin/store/product', [ProductController::class, 'store'])->name('store.product');
