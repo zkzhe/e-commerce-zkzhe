@@ -39,7 +39,9 @@
 
   <!-- Starlight CSS -->
   <link rel="stylesheet" href="{{ asset('adminbackend/css/starlight.css')}}">
-
+  <link href="{{ asset('adminbackend/lib/summernote/summernote-bs4.css')}}" rel="stylesheet">
+  <!-- Tags Input CDN CSS -->
+  <!-- <link href="https://cdn.jsdelivr.net/bootstrap.tagsinput/0.8.0/bootstrap-tagsinput.css" rel="stylesheet" /> -->
   <!-- chart -->
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
   <!-- Datatable css -->
@@ -270,6 +272,27 @@
   <script src="{{ asset('adminbackend/lib/Flot/jquery.flot.pie.js')}}"></script>
   <script src="{{ asset('adminbackend/lib/Flot/jquery.flot.resize.js')}}"></script>
   <script src="{{ asset('adminbackend/lib/flot-spline/jquery.flot.spline.js')}}"></script>
+
+  <script src="{{ asset('adminbackend/lib/medium-editor/medium-editor.js')}}"></script>
+  <script src="{{ asset('adminbackend/lib/summernote/summernote-bs4.min.js')}}"></script>
+
+  <script src="../js/starlight.js"></script>
+  <script>
+    $(function() {
+      'use strict';
+
+      // Inline editor
+      var editor = new MediumEditor('.editable');
+
+      // Summernote editor
+      $('#summernote').summernote({
+        height: 150,
+        tooltip: false
+      })
+    });
+  </script>
+
+
 
   <script src="{{ asset('adminbackend/js/starlight.js')}}"></script>
   <script src="{{ asset('adminbackend/js/ResizeSensor.js')}}"></script>

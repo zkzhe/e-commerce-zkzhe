@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\Category\SubCategoryController;
 use App\Http\Controllers\Admin\Category\BrandController;
 use App\Http\Controllers\Admin\Category\CouponController;
 use App\Http\Controllers\FrontController;
+use App\Http\Controllers\Admin\ProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -85,6 +86,9 @@ Route::post('/admin/update/coupon/{id}', [CouponController::class, 'AdminUpdateC
 Route::get('/admin/delete/coupon/{id}', [CouponController::class, 'AdminDeleteCoupon']);
 
 Route::get('/admin/newslater', [CouponController::class, 'AdminNewslater'])->name('admin.newslater');
-
 Route::post('/store/newslater', [FrontController::class, 'StoreNewslater'])->name('store.newslater');
 Route::get('/delete/newslater/{id}', [FrontController::class, 'DeleteNewslater']);
+
+Route::get('/admin/product/all', [ProductController::class, 'index'])->name('all.product');
+Route::get('/admin/product/add', [ProductController::class, 'create'])->name('add.product');
+Route::get('/admin/get/subcategory/{subcategory_id}', [ProductController::class, 'GetSubcat']);
