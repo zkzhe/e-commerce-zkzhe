@@ -94,6 +94,8 @@ Route::get('/admin/product/add', [ProductController::class, 'create'])->name('ad
 Route::get('/admin/get/subcategory/{subcategory_id}', [ProductController::class, 'GetSubcat']);
 Route::post('/admin/store/product', [ProductController::class, 'store'])->name('store.product');
 Route::get('/admin/edit/product/{id}', [ProductController::class, 'EditProduct']);
+Route::post('/admin/update/product/withoutphoto/{id}', [ProductController::class, 'UpdateProductWithoutphoto']);
+Route::post('/admin/update/product/photo/{id}', [ProductController::class, 'UpdateProductPhoto']);
 Route::get('/admin/delete/product/{id}', [ProductController::class, 'DeleteProduct']);
 Route::get('/admin/view/product/{id}', [ProductController::class, 'ViewProduct']);
 Route::get('/admin/inactive/product/{id}', [ProductController::class, 'Inactive']);
