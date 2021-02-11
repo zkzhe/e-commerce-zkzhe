@@ -95,6 +95,6 @@ Route::get('/admin/get/subcategory/{subcategory_id}', [ProductController::class,
 Route::post('/admin/store/product', [ProductController::class, 'store'])->name('store.product');
 Route::get('/admin/edit/product/{id}', [ProductController::class, 'EditProduct']);
 Route::get('/admin/delete/product/{id}', [ProductController::class, 'DeleteProduct']);
-Route::get('/admin/show/product/{id}', [ProductController::class, 'ShowProduct']);
+Route::get('/admin/view/product/{id}', [ProductController::class, 'ViewProduct']);
 Route::get('/admin/inactive/product/{id}', [ProductController::class, 'Inactive']);
 Route::get('/admin/active/product/{id}', [ProductController::class, 'Active']);

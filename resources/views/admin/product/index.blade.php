@@ -46,7 +46,7 @@
                         <td>
                             <a href="{{ URL::to('admin/edit/product/'.$row->id) }}" class="btn btn-sm btn-info" title="Edit"><i class="fa fa-edit"></i></a>
                             <a href="{{ URL::to('admin/delete/product/'.$row->id) }}" class="btn btn-sm btn-danger" id="delete" title="Delete"><i class="fa fa-trash"></i></a>
-                            <a href="{{ URL::to('admin/show/product/'.$row->id) }}" class="btn btn-sm btn-warning" title="Show"><i class="fa fa-eye"></i></a>
+                            <a href="{{ URL::to('admin/view/product/'.$row->id) }}" class="btn btn-sm btn-warning" title="View"><i class="fa fa-eye"></i></a>
                             @if($row->status == 1)
                             <a href="{{ URL::to('admin/inactive/product/'.$row->id) }}" class="btn btn-sm btn-danger" id="delete" title="Inactive"><i class="fa fa-thumbs-down"></i></a>
                             @else

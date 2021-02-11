@@ -141,13 +141,16 @@ class ProductController extends Controller
         return redirect()->back()->with($notification);
     }
 
-    public function ShowProduct($id)
+    public function ViewProduct($id)
     {
-        DB::table('products')->where('id', $id)->update(['status' => 1]);
-        $notification = array(
-            'message' => 'Product Active Successfully',
-            'alert-type' => 'success'
-        );
-        return redirect()->back()->with($notification);
+        $product = DB::table('products')
+            ->join('categories', 'products.category_id', 'categories.id')
+            ->join('subcategories', 'products.subcategory_id', 'subcategories.id')
+            ->join('brands', 'products.brand_id', 'brands.id')
+            ->select('products.*', 'categories.category_name', 'brands.brand_name', 'subcategories.subcategory_name')
+            ->where('products.id', $id)
+            ->first();
+        //    return response()->json($product);
+        return view('admin.product.show', compact('product'));
     }
 }
