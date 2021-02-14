@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\Category\BrandController;
 use App\Http\Controllers\Admin\Category\CouponController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\PostController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -100,3 +101,13 @@ Route::get('/admin/delete/product/{id}', [ProductController::class, 'DeleteProdu
 Route::get('/admin/view/product/{id}', [ProductController::class, 'ViewProduct']);
 Route::get('/admin/inactive/product/{id}', [ProductController::class, 'Inactive']);
 Route::get('/admin/active/product/{id}', [ProductController::class, 'Active']);
+//Blog
+Route::get('/admin/blog/category/list', [PostController::class, 'BlogCategoryList'])->name('add.blog.categorylist');
+Route::post('/admin/store/blog', [PostController::class, 'BlogCategoryStore'])->name('admin.store.blog.category');
+Route::get('/admin/delete/blogcategory/{id}', [PostController::class, 'DeleteBlogCategory']);
+Route::get('/admin/edit/blogcategory/{id}', [PostController::class, 'EditBlogCategory']);
+Route::post('/admin/update/blog/category/{id}', [PostController::class, 'UpdateBlogCategory']);
+
+Route::get('/admin/add/post/', [PostController::class, 'Create'])->name('add.blogpost');
+Route::post('/admin/store/post', [PostController::class, 'Store'])->name('store.blogpost');
+Route::get('/admin/all/post/', [PostController::class, 'BlogCategoryList'])->name('all.blogpost');
