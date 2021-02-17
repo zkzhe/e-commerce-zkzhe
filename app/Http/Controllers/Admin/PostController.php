@@ -117,4 +117,70 @@ class PostController extends Controller
             return redirect()->back()->with($notification);
         }
     }
+
+    public function index()
+    {
+        $post = DB::table('posts')
+            ->join('post_category', 'posts.category_id', 'post_category.id')
+            ->select('posts.*', 'post_category.category_name_en')
+            ->get();
+        // return response()->json($post);
+        return view('admin.blog.index', compact('post'));
+    }
+
+    public function EditBlogpost($id)
+    {
+        $post = DB::table('posts')->where('id', $id)->first();
+        return view('admin.blog.edit', compact('post'));
+    }
+
+    public function UpdateBlogpost(Request $request, $id)
+    {
+        $old_image =  $request->old_image;
+
+        $data = array();
+        $data['post_title_en'] = $request->post_title_en;
+        $data['post_title_tw'] = $request->post_title_tw;
+        $data['category_id'] = $request->category_id;
+        $data['details_en'] = $request->details_en;
+        $data['details_tw'] = $request->details_tw;
+
+        $post_image = $request->file('post_image');
+
+        if ($post_image) {
+            @unlink(public_path($old_image));
+            $filename = date('YmdHi') . $post_image->getClientOriginalName();
+            Image::make($post_image)->resize(400, 200)->save('media/post/' . $filename);
+            $data['post_image'] = 'media/post/' . $filename;
+            DB::table('posts')->where('id', $id)->update($data);
+            $notification = array(
+                'message' => 'Post Updated Successfully',
+                'alert-type' => 'success'
+            );
+        } else {
+            $data['post_image'] = $old_image;
+            DB::table('posts')->where('id', $id)->update($data);
+            $notification = array(
+                'message' => 'Post Updated Successfully But Without Image',
+                'alert-type' => 'success'
+            );
+        }
+        return redirect()->route('all.blogpost')->with($notification);
+    }
+
+    public function DeleteBlogpost($id)
+    {
+        $post = DB::table('posts')->where('id', $id)->first();
+        $post_image = $post->post_image;
+
+        @unlink($post_image);
+
+        DB::table('posts')->where('id', $id)->delete();
+
+        $notification = array(
+            'message' => 'Post Deleted Successfully',
+            'alert-type' => 'success'
+        );
+        return redirect()->back()->with($notification);
+    }
 }

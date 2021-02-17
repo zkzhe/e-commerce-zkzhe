@@ -110,4 +110,7 @@ Route::post('/admin/update/blog/category/{id}', [PostController::class, 'UpdateB
 
 Route::get('/admin/add/post/', [PostController::class, 'Create'])->name('add.blogpost');
 Route::post('/admin/store/post', [PostController::class, 'Store'])->name('store.blogpost');
-Route::get('/admin/all/post/', [PostController::class, 'BlogCategoryList'])->name('all.blogpost');
+Route::get('/admin/all/post/', [PostController::class, 'index'])->name('all.blogpost');
+Route::get('/admin/edit/post/{id}', [PostController::class, 'EditBlogpost']);
+Route::post('/admin/update/post/{id}', [PostController::class, 'UpdateBlogpost']);
+Route::get('/admin/delete/post/{id}', [PostController::class, 'DeleteBlogpost']);
