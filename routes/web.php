@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\Category\CouponController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\WishlistController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -114,3 +115,6 @@ Route::get('/admin/all/post/', [PostController::class, 'index'])->name('all.blog
 Route::get('/admin/edit/post/{id}', [PostController::class, 'EditBlogpost']);
 Route::post('/admin/update/post/{id}', [PostController::class, 'UpdateBlogpost']);
 Route::get('/admin/delete/post/{id}', [PostController::class, 'DeleteBlogpost']);
+
+//Wishlist
+Route::get('/add/wishlist/{id}', [WishlistController::class, 'addWishlist']);

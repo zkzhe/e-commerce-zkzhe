@@ -194,7 +194,9 @@ $hot = DB::table('products')
                                                 <button class="product_cart_button">Add to Cart</button>
                                             </div>
                                         </div>
-                                        <div class="product_fav"><i class="fas fa-heart"></i></div>
+                                        <button class="addwishlist" data-id="{{ $row->id }}">
+                                            <div class="product_fav"><i class="fas fa-heart"></i></div>
+                                        </button>
                                         <ul class="product_marks">
                                             @if($row->discount_price == NULL)
                                             <li class="product_mark product_discount" style="background: blue;">New</li>
@@ -4357,4 +4359,48 @@ $mid = DB::table('products')
         </div>
     </div>
 </div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.addwishlist').on('click', function() {
+            var id = $(this).data('id');
+            if (id) {
+                $.ajax({
+                    url: "{{ url('/add/wishlist/') }}/" + id,
+                    type: "GET",
+                    datType: "json",
+                    success: function(data) {
+                        const Toast = Swal.mixin({
+                            toast: true,
+                            position: 'top-end',
+                            showConfirmButton: false,
+                            timer: 3000,
+                            timerProgressBar: true,
+                            didOpen: (toast) => {
+                                toast.addEventListener('mouseenter', Swal.stopTimer)
+                                toast.addEventListener('mouseleave', Swal.resumeTimer)
+                            }
+                        })
+                        if ($.isEmptyObject(data.error)) {
+                            Toast.fire({
+                                icon: 'success',
+                                title: data.success
+                            })
+                        } else {
+                            Toast.fire({
+                                icon: 'error',
+                                title: data.error
+                            });
+                        }
+
+                    },
+                });
+            } else {
+                alert('danger');
+            }
+        });
+    });
+</script>
 @endsection
