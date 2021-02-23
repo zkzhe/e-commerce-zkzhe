@@ -12,6 +12,7 @@ use App\Http\Controllers\FrontController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\WishlistController;
+use App\Http\Controllers\CartController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -118,3 +119,7 @@ Route::get('/admin/delete/post/{id}', [PostController::class, 'DeleteBlogpost'])
 
 //Wishlist
 Route::get('/add/wishlist/{id}', [WishlistController::class, 'addWishlist']);
+
+//Carts
+Route::get('/add/to/cart/{id}', [CartController::class, 'addCart']);
+Route::get('/check', [CartController::class, 'check']);
