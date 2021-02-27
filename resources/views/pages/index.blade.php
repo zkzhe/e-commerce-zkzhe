@@ -183,15 +183,15 @@ $hot = DB::table('products')
                                             <div class="product_price discount">${{ $row->discount_price }}<span>${{ $row->selling_price }}</span></div>
                                             @endif
                                             <div class="product_name">
-                                                <div><a href="product.html">{{ $row->product_name }}</a></div>
+                                                <div><a href="{{ url('product/details/'.$row->id.'/'.$row->product_name) }}">{{ $row->product_name }}</a></div>
                                             </div>
-                                            <div class="product_extras">
-                                                <div class="product_color">
-                                                    <input type="radio" checked name="product_color" style="background:#b19c83">
-                                                    <input type="radio" name="product_color" style="background:#000000">
-                                                    <input type="radio" name="product_color" style="background:#999999">
-                                                </div>
+                                            <!-- <div class="product_extras">
+
                                                 <button class="product_cart_button addcart" data-id="{{ $row->id }}">Add to Cart</button>
+                                            </div> -->
+                                            <div class="product_extras">
+
+                                                <button id="{{ $row->id }}" class="product_cart_button addcart" data-toggle="modal" data-target="#cartmodal" onclick="productview(this.id)">Add to Cart</button>
                                             </div>
                                         </div>
                                         <button class="addwishlist" data-id="{{ $row->id }}">
@@ -1509,6 +1509,71 @@ $product = DB::table('products')->where('category_id', $catId)->where('status', 
     </div>
 </div>
 
+<!-- Modal -->
+<div class="modal fade" id="cartmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLaravel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLaravel">Product Quick View</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="" class="text-center" id="pimage" style="height: 220px;">
+                            <div class="card-body">
+                                <h5 class="card-title text-center" id="pname"></h5>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <ul class="list-group">
+                            <li class="list-group-item">Product Code: <span id="pcode"><span></li>
+                            <li class="list-group-item">Category: <span id="pcat"><span></li>
+                            <li class="list-group-item">Subcategory: <span id="psub"><span></li>
+                            <li class="list-group-item">Brand: <span id="pbrand"><span></li>
+                            <li class="list-group-item">Stock: <span class="badge" style="background: green; color: white;">Available</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-4">
+                        <form method="post" action="{{ route('insert.into.cart') }}">
+                            @csrf
+
+                            <input type="hidden" name="product_id" id="product_id">
+
+                            <div class="form-grop">
+                                <label for="exampleInputcolor">Color</label>
+                                <select name="color" class="form-control" id="color">
+                                </select>
+                            </div>
+
+                            <div class="form-grop">
+                                <label for="exampleInputcolor">Size</label>
+                                <select name="size" class="form-control" id="size">
+                                </select>
+                            </div>
+
+                            <div class="form-grop">
+                                <label for="exampleInputcolor">Quantity</label>
+                                <input type="number" class="form-control" name="qty" value="1">
+                            </div>
+                            <br>
+                            <button type="submit" class="btn btn-primary">Add to Cart</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
 <script type="text/javascript">
@@ -1554,6 +1619,35 @@ $product = DB::table('products')->where('category_id', $catId)->where('status', 
 </script>
 
 <script type="text/javascript">
+    function productview(id) {
+        $.ajax({
+            url: "{{ url('/cart/product/view/') }}/" + id,
+            type: "GET",
+            dataType: "json",
+            success: function(data) {
+                $('#pcode').text(data.product.product_code);
+                $('#pcat').text(data.product.category_name);
+                $('#psub').text(data.product.subcategory_name);
+                $('#pbrand').text(data.product.brand_name);
+                $('#pname').text(data.product.product_name);
+                $('#pimage').attr('src', data.product.image_one);
+                $('#product_id').val(data.product.id);
+
+                var d = $('select[name = "color"]').empty();
+                $.each(data.product_color, function(key, value) {
+                    $('select[name = "color"]').append('<option value = "' + value + '">' + value + '</option>');
+                });
+
+                var d = $('select[name = "size"]').empty();
+                $.each(data.product_size, function(key, value) {
+                    $('select[name = "size"]').append('<option value = "' + value + '">' + value + '</option>');
+                });
+            }
+        })
+    }
+</script>
+
+<!-- <script type="text/javascript">
     $(document).ready(function() {
         $('.addcart').on('click', function() {
             var id = $(this).data('id');
@@ -1593,5 +1687,5 @@ $product = DB::table('products')->where('category_id', $catId)->where('status', 
             }
         });
     });
-</script>
+</script> -->
 @endsection

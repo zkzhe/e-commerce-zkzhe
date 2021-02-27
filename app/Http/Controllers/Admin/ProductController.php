@@ -46,7 +46,7 @@ class ProductController extends Controller
         $data['product_size'] = $request->product_size;
         $data['product_color'] = $request->product_color;
         $data['selling_price'] = $request->selling_price;
-        $data['product_datails'] = $request->product_datails;
+        $data['product_details'] = $request->product_details;
         $data['video_link'] = $request->video_link;
         $data['main_slider'] = $request->main_slider;
         $data['hot_deal'] = $request->hot_deal;
@@ -123,7 +123,7 @@ class ProductController extends Controller
         $data['product_size'] = $request->product_size;
         $data['product_color'] = $request->product_color;
         $data['selling_price'] = $request->selling_price;
-        $data['product_datails'] = $request->product_datails;
+        $data['product_details'] = $request->product_details;
         $data['video_link'] = $request->video_link;
         $data['main_slider'] = $request->main_slider;
         $data['hot_deal'] = $request->hot_deal;

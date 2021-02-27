@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\WishlistController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\ProductController as PublicProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -123,3 +124,10 @@ Route::get('/add/wishlist/{id}', [WishlistController::class, 'addWishlist']);
 //Carts
 Route::get('/add/to/cart/{id}', [CartController::class, 'addCart']);
 Route::get('/check', [CartController::class, 'check']);
+Route::get('/product/cart/', [CartController::class, 'showCart'])->name('show.cart');
+Route::get('/remove/cart/{rowId}', [CartController::class, 'removeCart']);
+Route::post('/update/cart/item/', [CartController::class, 'updateCart'])->name('update.cartitem');
+Route::get('/product/details/{id}/{product_name}', [PublicProductController::class, 'productView']);
+Route::post('/cart/product/add/{id}/', [PublicProductController::class, 'addCart']);
+Route::get('/cart/product/view/{id}/', [CartController::class, 'viewProduct']);
+Route::post('/insert/into/cart/', [CartController::class, 'insertCart'])->name('insert.into.cart');

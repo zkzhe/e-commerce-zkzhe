@@ -91,7 +91,7 @@
                     <div class="col-lg-12">
                         <div class="form-group">
                             <label class="form-control-label">Product Datails: <span class="tx-danger">*</span></label>
-                            <textarea class="form-control" id="summernote" name="product_datails"></textarea>
+                            <textarea class="form-control" id="summernote" name="product_details"></textarea>
                         </div>
                     </div><!-- col-4 -->
 

@@ -69,7 +69,7 @@
                 <div class="col-lg-12">
                     <div class="form-group">
                         <label class="form-control-label">Product Datails: <span class="tx-danger">*</span></label>
-                        <br><strong>{!! $product->product_datails !!}</strong>
+                        <br><strong>{!! $product->product_details !!}</strong>
                     </div>
                 </div><!-- col-4 -->
 
