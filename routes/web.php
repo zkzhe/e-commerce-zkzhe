@@ -133,3 +133,5 @@ Route::get('/cart/product/view/{id}/', [CartController::class, 'viewProduct']);
 Route::post('/insert/into/cart/', [CartController::class, 'insertCart'])->name('insert.into.cart');
 Route::get('/user/checkout/', [CartController::class, 'checkout'])->name('user.checkout');
 Route::get('/user/wishlist/', [CartController::class, 'wishlist'])->name('user.wishlist');
+Route::post('/user/apply/coupon/', [CartController::class, 'coupon'])->name('apply.coupon');
+Route::get('/coupon/remove', [CartController::class, 'couponRemove'])->name('coupon.remove');

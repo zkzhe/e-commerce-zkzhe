@@ -6,6 +6,7 @@ use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 class CartController extends Controller
 {
@@ -165,5 +166,43 @@ class CartController extends Controller
             ->where('wishlists.user_id', $userId)
             ->get();
         return view('pages.wishlist', compact('product'));
+    }
+
+    public function coupon(Request $request)
+    {
+        $coupon = $request->coupon;
+
+        $check = DB::table('coupons')
+            ->where('coupon', $coupon)
+            ->first();
+        if ($check) {
+            Session::put('coupon', [
+                'name' => $check->coupon,
+                'discount' => $check->discount,
+                'balance' => Cart::Subtotal() - $check->discount,
+            ]);
+            $notification = array(
+                'message' => 'Successfully Coupon Applied',
+                'alert-type' => 'success'
+            );
+            return redirect()->back()->with($notification);
+        } else {
+            $notification = array(
+                'message' => 'Invalid Coupon',
+                'alert-type' => 'success'
+            );
+            return redirect()->back()->with($notification);
+        }
+    }
+
+    public function couponRemove()
+    {
+        Session::forget('coupon');
+
+        $notification = array(
+            'message' => 'Coupon remove Successfully',
+            'alert-type' => 'success'
+        );
+        return redirect()->back()->with($notification);
     }
 }
