@@ -15,6 +15,7 @@ use App\Http\Controllers\WishlistController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProductController as PublicProductController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\PaymentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -142,3 +143,8 @@ Route::get('/blog/post/', [BlogController::class, 'blog'])->name('blog.post');
 Route::get('/language/english/', [BlogController::class, 'english'])->name('language.english');
 Route::get('/language/taiwan/', [BlogController::class, 'taiwan'])->name('language.taiwan');
 Route::get('/blog/single/{id}', [BlogController::class, 'blogSingle']);
+
+
+//Payment Step
+Route::get('/payment/step/', [CartController::class, 'PaymentPage'])->name('payment.step');
+Route::post('/user/payment/process/', [PaymentController::class, 'payment'])->name('payment.process');
