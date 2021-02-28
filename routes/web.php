@@ -14,6 +14,7 @@ use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\WishlistController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProductController as PublicProductController;
+use App\Http\Controllers\BlogController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -135,3 +136,9 @@ Route::get('/user/checkout/', [CartController::class, 'checkout'])->name('user.c
 Route::get('/user/wishlist/', [CartController::class, 'wishlist'])->name('user.wishlist');
 Route::post('/user/apply/coupon/', [CartController::class, 'coupon'])->name('apply.coupon');
 Route::get('/coupon/remove', [CartController::class, 'couponRemove'])->name('coupon.remove');
+
+//Blog
+Route::get('/blog/post/', [BlogController::class, 'blog'])->name('blog.post');
+Route::get('/language/english/', [BlogController::class, 'english'])->name('language.english');
+Route::get('/language/taiwan/', [BlogController::class, 'taiwan'])->name('language.taiwan');
+Route::get('/blog/single/{id}', [BlogController::class, 'blogSingle']);

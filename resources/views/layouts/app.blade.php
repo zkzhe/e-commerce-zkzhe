@@ -47,10 +47,20 @@
                                         <li>
                                             <a href="#">English<i class="fas fa-chevron-down"></i></a>
                                             <ul>
-                                                <li><a href="#">Italian</a></li>
-                                                <li><a href="#">Spanish</a></li>
-                                                <li><a href="#">Japanese</a></li>
+
+                                                @php
+                                                $language = Session()->get('lang');
+                                                @endphp
+
+                                                <li>
+                                                    @if( Session()->get('lang') == 'taiwan')
+                                                    <a href="{{ route('language.english') }}">English<i class="fas fa-chevron-down"></i></a>
+                                                    @else
+                                                    <a href="{{ route('language.taiwan') }}">Taiwan<i class="fas fa-chevron-down"></i></a>
+                                                    @endif
+                                                </li>
                                             </ul>
+
                                         </li>
                                         <li>
                                             <a href="#">$ US dollar<i class="fas fa-chevron-down"></i></a>
