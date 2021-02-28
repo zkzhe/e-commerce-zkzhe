@@ -144,7 +144,10 @@ Route::get('/language/english/', [BlogController::class, 'english'])->name('lang
 Route::get('/language/taiwan/', [BlogController::class, 'taiwan'])->name('language.taiwan');
 Route::get('/blog/single/{id}', [BlogController::class, 'blogSingle']);
 
-
 //Payment Step
 Route::get('/payment/step/', [CartController::class, 'PaymentPage'])->name('payment.step');
 Route::post('/user/payment/process/', [PaymentController::class, 'payment'])->name('payment.process');
+
+//Product details Page
+Route::get('/products/{id}', [PublicProductController::class, 'productsView']);
+Route::get('/allcategory/{id}', [PublicProductController::class, 'categoryView']);

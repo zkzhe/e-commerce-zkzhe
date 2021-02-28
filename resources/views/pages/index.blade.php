@@ -3,6 +3,7 @@
 @section('content')
 
 @include('layouts.menubar')
+@include('layouts.slider')
 
 @php
 $featured = DB::table('products')->where('status', 1)->orderBy('id', 'DESC')->limit(12)->get();
