@@ -141,4 +141,29 @@ class CartController extends Controller
             return redirect()->back()->with($notification);
         }
     }
+
+    public function checkout()
+    {
+        if (Auth::check()) {
+            $cart = Cart::content();
+            return view('pages.checkout', compact('cart'));
+        } else {
+            $notification = array(
+                'message' => 'At first Login Your Account',
+                'alert-type' => 'success'
+            );
+            return redirect()->route('login')->with($notification);
+        }
+    }
+
+    public function wishlist()
+    {
+        $userId = Auth::id();
+        $product = DB::table('wishlists')
+            ->join('products', 'wishlists.product_id', 'products.id')
+            ->select('products.*', 'wishlists.user_id')
+            ->where('wishlists.user_id', $userId)
+            ->get();
+        return view('pages.wishlist', compact('product'));
+    }
 }

@@ -131,3 +131,5 @@ Route::get('/product/details/{id}/{product_name}', [PublicProductController::cla
 Route::post('/cart/product/add/{id}/', [PublicProductController::class, 'addCart']);
 Route::get('/cart/product/view/{id}/', [CartController::class, 'viewProduct']);
 Route::post('/insert/into/cart/', [CartController::class, 'insertCart'])->name('insert.into.cart');
+Route::get('/user/checkout/', [CartController::class, 'checkout'])->name('user.checkout');
+Route::get('/user/wishlist/', [CartController::class, 'wishlist'])->name('user.wishlist');

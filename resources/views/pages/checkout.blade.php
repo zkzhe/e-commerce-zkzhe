@@ -12,7 +12,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="cart_container">
-                    <div class="cart_title">Shopping Cart</div>
+                    <div class="cart_title">Checkout</div>
                     <div class="cart_items">
                         <ul class="cart_list">
 
@@ -74,21 +74,34 @@
                     </div>
 
                     <!-- Order Total -->
-                    <div class="order_total">
-                        <div class="order_total_content text-md-right">
-                            <div class="order_total_title">Order Total:</div>
-                            <div class="order_total_amount">${{ Cart::total() }}</div>
-                        </div>
+                    <div class="order_total_content" style="padding: 15px;">
+                        <h5 style="margin-Left: 20px;"> Apply Coupon </h5>
+                        <form>
+                            <div class="form group col-lg-4">
+                                <input type="text" name="" class="form-control" require="" placeholder="Enter Your Coupon">
+                            </div><br>
+                            <button type="submit" class="btn btn-danger ml-2">Submit</button>
+                        </form>
                     </div>
 
-                    <div class="cart_buttons">
-                        <button type="button" class="button cart_button_clear">All Cancel</button>
-                        <a href="{{ route('user.checkout') }}" class="button cart_button_checkout">Checkout</a>
-                    </div>
+                    <ul class="list-group col-lg-4" style="float: right;">
+                        <li class="list-group-item">Subtotal : <span style="float: right;">525 </span></li>
+                        <li class="list-group-item">Coupon : <span style="float: right;">525 </span></li>
+                        <li class="list-group-item">Shiping Charge : <span style="float: right;">525 </span></li>
+                        <li class="list-group-item">Vat : <span style="float: right;">525 </span></li>
+                        <li class="list-group-item">Total : <span style="float: right;">525 </span></li>
+                    </ul>
                 </div>
+            </div>
+
+            <div class="cart_buttons">
+                <button type="button" class="button cart_button_clear">All Cancel</button>
+                <a href="{{ route('user.checkout') }}" class="button cart_button_checkout">Checkout</a>
             </div>
         </div>
     </div>
+</div>
+</div>
 </div>
 
 <script src="{{ asset('frontend/js/cart_custom.js') }}"></script>
