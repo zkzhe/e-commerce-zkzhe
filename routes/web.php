@@ -167,3 +167,7 @@ Route::get('/admin/payment/accept/{id}', [OrderController::class, 'paymentAccept
 Route::get('/admin/payment/cancel/{id}', [OrderController::class, 'paymentCancel']);
 Route::get('/admin/delevery/process/{id}', [OrderController::class, 'deleveryProcess']);
 Route::get('/admin/delevery/done/{id}', [OrderController::class, 'deleveryDone']);
+
+//SEO Setting
+Route::get('/admin/seo/', [OrderController::class, 'seo'])->name('admin.seo');
+Route::post('/admin/update/seo/', [OrderController::class, 'updateSeo'])->name('admin.update.seo');
