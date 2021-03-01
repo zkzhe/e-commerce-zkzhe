@@ -19,6 +19,9 @@
     <!-- chart -->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
     <link rel="stylesheet" href="sweetalert2.min.css">
+
+    <!-- test -->
+    <script src="https://js.stripe.com/v3/"></script>
 </head>
 
 <body>
