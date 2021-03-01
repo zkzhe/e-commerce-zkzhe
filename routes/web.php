@@ -11,11 +11,13 @@ use App\Http\Controllers\Admin\Category\CouponController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\WishlistController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProductController as PublicProductController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PaymentController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -152,3 +154,16 @@ Route::post('/user/stripe/charge/', [PaymentController::class, 'stripeCharge'])-
 //Product details Page
 Route::get('/products/{id}', [PublicProductController::class, 'productsView']);
 Route::get('/allcategory/{id}', [PublicProductController::class, 'categoryView']);
+
+//Admin Order
+Route::get('/admin/pading/order/', [OrderController::class, 'newOrder'])->name('admin.neworder');
+Route::get('/admin/accept/payment/', [OrderController::class, 'acceptPayment'])->name('admin.accept.payment');
+Route::get('/admin/cancel/order/', [OrderController::class, 'cancelOrder'])->name('admin.cancel.order');
+Route::get('/admin/process/payment/', [OrderController::class, 'processPayment'])->name('admin.process.payment');
+Route::get('/admin/success/payment/', [OrderController::class, 'successPayment'])->name('admin.success.payment');
+
+Route::get('/admin/view/order/{id}', [OrderController::class, 'viewOrder']);
+Route::get('/admin/payment/accept/{id}', [OrderController::class, 'paymentAccept']);
+Route::get('/admin/payment/cancel/{id}', [OrderController::class, 'paymentCancel']);
+Route::get('/admin/delevery/process/{id}', [OrderController::class, 'deleveryProcess']);
+Route::get('/admin/delevery/done/{id}', [OrderController::class, 'deleveryDone']);
