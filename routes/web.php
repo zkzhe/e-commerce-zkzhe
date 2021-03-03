@@ -17,6 +17,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProductController as PublicProductController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\Admin\ReportController;
 
 /*
 |--------------------------------------------------------------------------
@@ -174,3 +175,12 @@ Route::post('/admin/update/seo/', [OrderController::class, 'updateSeo'])->name('
 
 //Order Tracking
 Route::post('/order/tracking/', [FrontController::class, 'orderTracking'])->name('order.tracking');
+
+//Order Report
+Route::get('/admin/today/order/', [ReportController::class, 'todayOrder'])->name('today.order');
+Route::get('/admin/today/delivery/', [ReportController::class, 'todayDelivery'])->name('today.delivery');
+Route::get('/admin/this/month', [ReportController::class, 'thisMonth'])->name('this.month');
+Route::get('/admin/search/report', [ReportController::class, 'search'])->name('search.report');
+Route::post('/admin/search/by/year', [ReportController::class, 'searchByYear'])->name('search.by.year');
+Route::post('/admin/search/by/month', [ReportController::class, 'searchByMonth'])->name('search.by.month');
+Route::post('/admin/search/by/date', [ReportController::class, 'searchByDate'])->name('search.by.date');
