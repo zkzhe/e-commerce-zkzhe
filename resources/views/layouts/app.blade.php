@@ -1,8 +1,12 @@
+@php
+$setting = DB::table('sitesetting')->first();
+@endphp
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title>OneTech</title>
+    <title>{{ $setting->company_name }}</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="OneTech shop project">
@@ -39,10 +43,10 @@
                     <div class="row">
                         <div class="col d-flex flex-row">
                             <div class="top_bar_contact_item">
-                                <div class="top_bar_icon"><img src="{{ asset('frontend/images/phone.png') }}" alt=""></div>+38 068 005 3570
+                                <div class="top_bar_icon"><img src="{{ asset('frontend/images/phone.png') }}" alt=""></div>{{ $setting->phone_one }}
                             </div>
                             <div class="top_bar_contact_item">
-                                <div class="top_bar_icon"><img src="{{ asset('frontend/images/mail.png') }}" alt=""></div><a href="mailto:fastsales@gmail.com">fastsales@gmail.com</a>
+                                <div class="top_bar_icon"><img src="{{ asset('frontend/images/mail.png') }}" alt=""></div><a href="mailto:fastsales@gmail.com">{{ $setting->email }}</a>
                             </div>
                             <div class="top_bar_content ml-auto">
                                 <div class="top_bar_menu">
@@ -184,6 +188,9 @@
             @yield('content')
 
             <!-- Footer -->
+            @php
+            $setting = DB::table('sitesetting')->first();
+            @endphp
 
             <footer class="footer">
                 <div class="container">
@@ -192,21 +199,19 @@
                         <div class="col-lg-3 footer_col">
                             <div class="footer_column footer_contact">
                                 <div class="logo_container">
-                                    <div class="logo"><a href="#">OneTech</a></div>
+                                    <div class="logo"><a href="#">{{ $setting->company_name }}</a></div>
                                 </div>
                                 <div class="footer_title">Got Question? Call Us 24/7</div>
-                                <div class="footer_phone">+38 068 005 3570</div>
+                                <div class="footer_phone">{{ $setting->phone_two }}</div>
                                 <div class="footer_contact_text">
-                                    <p>17 Princess Road, London</p>
-                                    <p>Grester London NW18JR, UK</p>
+                                    <p>{{ $setting->company_address }}</p>
                                 </div>
                                 <div class="footer_social">
                                     <ul>
-                                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-google"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-vimeo-v"></i></a></li>
+                                        <li><a href="{{ $setting->facebook }}"><i class="fab fa-facebook-f"></i></a></li>
+                                        <li><a href="{{ $setting->twitter }}"><i class="fab fa-twitter"></i></a></li>
+                                        <li><a href="{{ $setting->youtube }}"><i class="fab fa-youtube"></i></a></li>
+                                        <li><a href="{{ $setting->instagram }}"><i class="fab fa-google"></i></a></li>
                                     </ul>
                                 </div>
                             </div>

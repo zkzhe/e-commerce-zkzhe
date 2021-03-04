@@ -19,6 +19,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\Admin\ReportController;
 use App\Http\Controllers\Admin\UserRoleController;
+use App\Http\Controllers\Admin\SettingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -193,3 +194,7 @@ Route::post('/admin/store/admin', [UserRoleController::class, 'userStore'])->nam
 Route::get('/edit/admin/{id}', [UserRoleController::class, 'userEdit']);
 Route::get('/delete/admin/{id}', [UserRoleController::class, 'userDelete']);
 Route::post('/admin/update/admin', [UserRoleController::class, 'userUpdate'])->name('update.admin');
+
+//Admin Site Setting Route
+Route::get('/admin/site/setting', [SettingController::class, 'siteSetting'])->name('admin.site.setting');
+Route::post('/admin/update/sitesetting', [SettingController::class, 'updateSiteSetting'])->name('update.sitesetting');
