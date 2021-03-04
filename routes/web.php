@@ -18,6 +18,7 @@ use App\Http\Controllers\ProductController as PublicProductController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\Admin\ReportController;
+use App\Http\Controllers\Admin\UserRoleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -184,3 +185,11 @@ Route::get('/admin/search/report', [ReportController::class, 'search'])->name('s
 Route::post('/admin/search/by/year', [ReportController::class, 'searchByYear'])->name('search.by.year');
 Route::post('/admin/search/by/month', [ReportController::class, 'searchByMonth'])->name('search.by.month');
 Route::post('/admin/search/by/date', [ReportController::class, 'searchByDate'])->name('search.by.date');
+
+//Admin Role
+Route::get('/admin/all/user', [UserRoleController::class, 'userRole'])->name('admin.all.user');
+Route::get('/admin/create/admin', [UserRoleController::class, 'userCreate'])->name('create.admin');
+Route::post('/admin/store/admin', [UserRoleController::class, 'userStore'])->name('store.admin');
+Route::get('/edit/admin/{id}', [UserRoleController::class, 'userEdit']);
+Route::get('/delete/admin/{id}', [UserRoleController::class, 'userDelete']);
+Route::post('/admin/update/admin', [UserRoleController::class, 'userUpdate'])->name('update.admin');
