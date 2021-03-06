@@ -83,4 +83,17 @@ class CouponController extends Controller
         $newslaters = DB::table('newslaters')->get();
         return view('admin.coupon.newslater', compact('newslaters'));
     }
+
+    public function deleteAll(Request $request)
+    {
+        $ids = $request->get('ids');
+
+        $dbs = DB::delete('delete from newslaters where id in (' . implode(',', $ids) . ')');
+
+        $notification = array(
+            'message' => 'All Data Deleted Successfully',
+            'alert-type' => 'success',
+        );
+        return Redirect()->back()->with($notification);
+    }
 }

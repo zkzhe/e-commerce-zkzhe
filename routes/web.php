@@ -106,6 +106,7 @@ Route::get('/admin/delete/coupon/{id}', [CouponController::class, 'AdminDeleteCo
 Route::get('/admin/newslater', [CouponController::class, 'AdminNewslater'])->name('admin.newslater');
 Route::post('/store/newslater', [FrontController::class, 'StoreNewslater'])->name('store.newslater');
 Route::get('/delete/newslater/{id}', [FrontController::class, 'DeleteNewslater']);
+Route::delete('/deleteall', [CouponController::class, 'deleteAll'])->name('deleteall');
 //product
 Route::get('/admin/product/all', [ProductController::class, 'index'])->name('all.product');
 Route::get('/admin/product/add', [ProductController::class, 'create'])->name('add.product');
