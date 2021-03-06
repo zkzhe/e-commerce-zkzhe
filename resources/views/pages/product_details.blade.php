@@ -90,6 +90,11 @@
                                 <div class="product_fav"><i class="fas fa-heart"></i></div>
                             </div>
 
+                            <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                            <br>
+                            <div class="addthis_inline_share_toolbox"></div>
+
+
                         </form>
                     </div>
                 </div>
@@ -131,7 +136,11 @@
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab"><br>{!! $product->product_details !!}</div>
                         <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab"><br>{{ $product->video_link }}</div>
-                        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab"><br>Product Review</div>
+                        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab"><br>
+
+                            <div class="fb-comments" data-href="{{ Request::url() }}" data-width="" data-numposts="5"></div>
+
+                        </div>
                     </div>
 
                 </div>
@@ -140,5 +149,10 @@
     </div>
 </div>
 
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v10.0" nonce="Njb7ZJiZ"></script>
+
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-6043333fe160822f"></script>
 
 @endsection
