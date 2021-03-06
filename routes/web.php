@@ -20,6 +20,7 @@ use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\Admin\ReportController;
 use App\Http\Controllers\Admin\UserRoleController;
 use App\Http\Controllers\Admin\SettingController;
+use App\Http\Controllers\Admin\ReturnController;
 
 /*
 |--------------------------------------------------------------------------
@@ -198,3 +199,10 @@ Route::post('/admin/update/admin', [UserRoleController::class, 'userUpdate'])->n
 //Admin Site Setting Route
 Route::get('/admin/site/setting', [SettingController::class, 'siteSetting'])->name('admin.site.setting');
 Route::post('/admin/update/sitesetting', [SettingController::class, 'updateSiteSetting'])->name('update.sitesetting');
+
+//Return Order
+Route::get('/success/orderlist/', [PaymentController::class, 'successList'])->name('success.orderlist');
+Route::get('/request/return/{id}/', [PaymentController::class, 'requestReturn']);
+Route::get('/admin/return/request/', [ReturnController::class, 'returnRequest'])->name('admin.return.request');
+Route::get('/admin/all/request/', [ReturnController::class, 'allReturn'])->name('admin.all.request');
+Route::get('/admin/approve/return/{id}/', [ReturnController::class, 'approveReturn']);
