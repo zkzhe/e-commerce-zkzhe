@@ -68,19 +68,21 @@ class ProductController extends Controller
 
     public function productsView($id)
     {
+        $subcatname = DB::table('subcategories')->where('id', $id)->get();
+
         $products = DB::table('products')->where('subcategory_id', $id)->paginate(5);
 
         $categorys = DB::table('categories')->get();
 
         $brands = DB::table('products')->where('subcategory_id', $id)->select('brand_id')->groupBy('brand_id')->get();
 
-        return view('pages.all_products', compact('products', 'categorys', 'brands'));
+        return view('pages.all_products', compact('products', 'categorys', 'brands', 'subcatname'));
     }
 
     public function categoryView($id)
     {
-
+        $catname = DB::table('categories')->where('id', $id)->get();
         $category_all =  DB::table('products')->where('category_id', $id)->paginate(10);
-        return view('pages.all_category', compact('category_all'));
+        return view('pages.all_category', compact('category_all', 'catname'));
     }
 }
