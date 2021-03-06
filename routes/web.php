@@ -22,6 +22,7 @@ use App\Http\Controllers\Admin\UserRoleController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\ReturnController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\SocialController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +34,10 @@ use App\Http\Controllers\ContactController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+//Socialite
+Route::get('/auth/google', [SocialController::class, 'redirectToGoogle']);
+Route::get('/callback/google', [SocialController::class, 'handleCallback']);
 
 Route::get('/', function () {
     return view('pages.index');
