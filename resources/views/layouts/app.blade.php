@@ -121,8 +121,9 @@ $setting = DB::table('sitesetting')->first();
                             <div class="header_search">
                                 <div class="header_search_content">
                                     <div class="header_search_form_container">
-                                        <form action="#" class="header_search_form clearfix">
-                                            <input type="search" required="required" class="header_search_input" placeholder="Search for products...">
+                                        <form method="post" action="{{ route('product.search') }}" class="header_search_form clearfix">
+                                            @csrf
+                                            <input type="search" required="required" class="header_search_input" placeholder="Search for products..." name="search">
                                             <div class="custom_dropdown">
                                                 <div class="custom_dropdown_list">
                                                     <span class="custom_dropdown_placeholder clc">All Categories</span>

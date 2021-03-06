@@ -21,6 +21,7 @@ use App\Http\Controllers\Admin\ReportController;
 use App\Http\Controllers\Admin\UserRoleController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\ReturnController;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -209,3 +210,11 @@ Route::get('/admin/approve/return/{id}/', [ReturnController::class, 'approveRetu
 
 //Order Stock
 Route::get('/admin/product/stock/', [UserRoleController::class, 'productStock'])->name('admin.product.stock');
+
+//Contact page
+Route::get('/contact/page/', [ContactController::class, 'contact'])->name('contact.page');
+Route::post('/contact/form/', [ContactController::class, 'contactForm'])->name('contact.form');
+Route::get('/admin/all/message/', [ContactController::class, 'allMessage'])->name('all.message');
+
+//Search
+Route::post('/product/search/', [CartController::class, 'search'])->name('product.search');
