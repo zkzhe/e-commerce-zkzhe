@@ -41,7 +41,7 @@ Route::get('/callback/google', [SocialController::class, 'handleCallback']);
 
 Route::get('/', function () {
     return view('pages.index');
-});
+})->name('/');
 
 Route::group(['prefix' => 'admin', 'middleware' => ['admin:admin']], function () {
     Route::get('/login', [AdminController::class, 'loginForm']);
@@ -64,74 +64,112 @@ Route::get('/admin/logout', [AdminController::class, 'destroy'])->name('admin.lo
 
 
 // User All Routes
-Route::get('/user/logout', [MainUserController::class, 'Logout'])->name('user.logout');
-Route::get('/user/profile', [MainUserController::class, 'UserProfile'])->name('user.profile');
-Route::get('/user/profile/edit', [MainUserController::class, 'UserProfileEdit'])->name('profile.edit');
-Route::post('/user/profile/store', [MainUserController::class, 'UserProfileStore'])->name('profile.store');
-Route::get('/user/password/view', [MainUserController::class, 'UserPasswordView'])->name('user.password.view');
-Route::post('/user/password/update', [MainUserController::class, 'UserPasswordUpdate'])->name('password.update');
+Route::prefix('user')->group(function () {
+    Route::get('logout', [MainUserController::class, 'Logout'])->name('user.logout');
+    Route::get('profile', [MainUserController::class, 'UserProfile'])->name('user.profile');
+    Route::get('profile/edit', [MainUserController::class, 'UserProfileEdit'])->name('profile.edit');
+    Route::post('profile/store', [MainUserController::class, 'UserProfileStore'])->name('profile.store');
+    Route::get('password/view', [MainUserController::class, 'UserPasswordView'])->name('user.password.view');
+    Route::post('password/update', [MainUserController::class, 'UserPasswordUpdate'])->name('password.update');
+});
 
 // Admin All Routes
-Route::get('/admin/profile', [MainAdminController::class, 'AdminProfile'])->name('admin.profile');
-Route::get('/admin/profile/edit', [MainAdminController::class, 'AdminProfileEdit'])->name('admin.profile.edit');
-Route::post('/admin/profile/store', [MainAdminController::class, 'AdminProfileStore'])->name('admin.profile.store');
-Route::get('/admin/change/password', [MainAdminController::class, 'AdminChangePassword'])->name('admin.change.password');
-Route::post('/admin/password/update', [MainAdminController::class, 'AdminChangePasswordUpdate'])->name('admin.password.update');
-Route::post('/admin/password/update', [MainAdminController::class, 'AdminChangePasswordUpdate'])->name('admin.password.update');
-//categories
-Route::get('/admin/categories', [CategoryController::class, 'AdminCategory'])->name('admin.categories');
-Route::post('/admin/store/category', [CategoryController::class, 'AdminStoreCategory'])->name('admin.store.category');
-Route::get('/admin/edit/category/{id}', [CategoryController::class, 'AdminEditCategory']);
-Route::post('/admin/update/category/{id}', [CategoryController::class, 'AdminUpdateCategory']);
-Route::get('/admin/delete/category/{id}', [CategoryController::class, 'AdminDeleteCategory']);
-//brands
-Route::get('/admin/brands', [BrandController::class, 'Adminbrand'])->name('admin.brands');
-Route::post('/admin/store/brand', [BrandController::class, 'AdminStoreBrand'])->name('admin.store.brand');
-Route::get('/admin/edit/brand/{id}', [BrandController::class, 'AdminEditBrand']);
-Route::post('/admin/update/brand/{id}', [BrandController::class, 'AdminUpdateBrand']);
-Route::get('/admin/delete/brand/{id}', [BrandController::class, 'AdminDeleteBrand']);
-//subcategories
-Route::get('/admin/subcategories', [SubCategoryController::class, 'AdminSubcategories'])->name('admin.sub.categories');
-Route::post('/admin/store/subcategory', [SubCategoryController::class, 'AdminStoreSubcategory'])->name('admin.store.subcategories');
-Route::get('/admin/edit/subcategory/{id}', [SubCategoryController::class, 'AdminEditSubcategory']);
-Route::post('/admin/update/subcategory/{id}', [SubCategoryController::class, 'AdminUpdateSubcategory']);
-Route::get('/admin/delete/subcategory/{id}', [SubCategoryController::class, 'AdminDeleteSubcategory']);
-//coupon
-Route::get('/admin/coupon', [CouponController::class, 'AdminCoupon'])->name('admin.coupon');
-Route::post('/admin/store/coupon', [CouponController::class, 'AdminStoreCoupon'])->name('admin.store.coupon');
-Route::get('/admin/edit/coupon/{id}', [CouponController::class, 'AdminEditCoupon']);
-Route::post('/admin/update/coupon/{id}', [CouponController::class, 'AdminUpdateCoupon']);
-Route::get('/admin/delete/coupon/{id}', [CouponController::class, 'AdminDeleteCoupon']);
+Route::prefix('admin')->group(function () {
+    Route::get('profile', [MainAdminController::class, 'AdminProfile'])->name('admin.profile');
+    Route::get('profile/edit', [MainAdminController::class, 'AdminProfileEdit'])->name('admin.profile.edit');
+    Route::post('profile/store', [MainAdminController::class, 'AdminProfileStore'])->name('admin.profile.store');
+    Route::get('change/password', [MainAdminController::class, 'AdminChangePassword'])->name('admin.change.password');
+    Route::post('password/update', [MainAdminController::class, 'AdminChangePasswordUpdate'])->name('admin.password.update');
+
+    //categories
+    Route::get('categories', [CategoryController::class, 'AdminCategory'])->name('admin.categories');
+    Route::post('store/category', [CategoryController::class, 'AdminStoreCategory'])->name('admin.store.category');
+    Route::get('edit/category/{id}', [CategoryController::class, 'AdminEditCategory']);
+    Route::post('update/category/{id}', [CategoryController::class, 'AdminUpdateCategory']);
+    Route::get('delete/category/{id}', [CategoryController::class, 'AdminDeleteCategory']);
+
+    //brands
+    Route::get('brands', [BrandController::class, 'Adminbrand'])->name('admin.brands');
+    Route::post('store/brand', [BrandController::class, 'AdminStoreBrand'])->name('admin.store.brand');
+    Route::get('edit/brand/{id}', [BrandController::class, 'AdminEditBrand']);
+    Route::post('update/brand/{id}', [BrandController::class, 'AdminUpdateBrand']);
+    Route::get('delete/brand/{id}', [BrandController::class, 'AdminDeleteBrand']);
+
+    //subcategories
+    Route::get('subcategories', [SubCategoryController::class, 'AdminSubcategories'])->name('admin.sub.categories');
+    Route::post('store/subcategory', [SubCategoryController::class, 'AdminStoreSubcategory'])->name('admin.store.subcategories');
+    Route::get('edit/subcategory/{id}', [SubCategoryController::class, 'AdminEditSubcategory']);
+    Route::post('update/subcategory/{id}', [SubCategoryController::class, 'AdminUpdateSubcategory']);
+    Route::get('delete/subcategory/{id}', [SubCategoryController::class, 'AdminDeleteSubcategory']);
+
+    //coupon
+    Route::get('coupon', [CouponController::class, 'AdminCoupon'])->name('admin.coupon');
+    Route::post('store/coupon', [CouponController::class, 'AdminStoreCoupon'])->name('admin.store.coupon');
+    Route::get('edit/coupon/{id}', [CouponController::class, 'AdminEditCoupon']);
+    Route::post('update/coupon/{id}', [CouponController::class, 'AdminUpdateCoupon']);
+    Route::get('delete/coupon/{id}', [CouponController::class, 'AdminDeleteCoupon']);
+
+    //product
+    Route::get('product/all', [ProductController::class, 'index'])->name('all.product');
+    Route::get('product/add', [ProductController::class, 'create'])->name('add.product');
+    Route::get('get/subcategory/{subcategory_id}', [ProductController::class, 'GetSubcat']);
+    Route::post('store/product', [ProductController::class, 'store'])->name('store.product');
+    Route::get('edit/product/{id}', [ProductController::class, 'EditProduct']);
+    Route::post('update/product/withoutphoto/{id}', [ProductController::class, 'UpdateProductWithoutphoto']);
+    Route::post('update/product/photo/{id}', [ProductController::class, 'UpdateProductPhoto']);
+    Route::get('delete/product/{id}', [ProductController::class, 'DeleteProduct']);
+    Route::get('view/product/{id}', [ProductController::class, 'ViewProduct']);
+    Route::get('inactive/product/{id}', [ProductController::class, 'Inactive']);
+    Route::get('active/product/{id}', [ProductController::class, 'Active']);
+
+    //Blog
+    Route::get('blog/category/list', [PostController::class, 'BlogCategoryList'])->name('add.blog.categorylist');
+    Route::post('store/blog', [PostController::class, 'BlogCategoryStore'])->name('admin.store.blog.category');
+    Route::get('delete/blogcategory/{id}', [PostController::class, 'DeleteBlogCategory']);
+    Route::get('edit/blogcategory/{id}', [PostController::class, 'EditBlogCategory']);
+    Route::post('update/blog/category/{id}', [PostController::class, 'UpdateBlogCategory']);
+
+    Route::get('add/post/', [PostController::class, 'Create'])->name('add.blogpost');
+    Route::post('store/post', [PostController::class, 'Store'])->name('store.blogpost');
+    Route::get('all/post/', [PostController::class, 'index'])->name('all.blogpost');
+    Route::get('edit/post/{id}', [PostController::class, 'EditBlogpost']);
+    Route::post('update/post/{id}', [PostController::class, 'UpdateBlogpost']);
+    Route::get('delete/post/{id}', [PostController::class, 'DeleteBlogpost']);
+
+    //Admin Order
+    Route::get('pading/order/', [OrderController::class, 'newOrder'])->name('admin.neworder');
+    Route::get('accept/payment/', [OrderController::class, 'acceptPayment'])->name('admin.accept.payment');
+    Route::get('cancel/order/', [OrderController::class, 'cancelOrder'])->name('admin.cancel.order');
+    Route::get('process/payment/', [OrderController::class, 'processPayment'])->name('admin.process.payment');
+    Route::get('success/payment/', [OrderController::class, 'successPayment'])->name('admin.success.payment');
+
+    Route::get('view/order/{id}', [OrderController::class, 'viewOrder']);
+    Route::get('payment/accept/{id}', [OrderController::class, 'paymentAccept']);
+    Route::get('payment/cancel/{id}', [OrderController::class, 'paymentCancel']);
+    Route::get('delevery/process/{id}', [OrderController::class, 'deleveryProcess']);
+    Route::get('delevery/done/{id}', [OrderController::class, 'deleveryDone']);
+
+    //SEO Setting
+    Route::get('seo', [OrderController::class, 'seo'])->name('admin.seo');
+    Route::post('update/seo', [OrderController::class, 'updateSeo'])->name('admin.update.seo');
+
+    //Order Report
+    Route::get('today/order/', [ReportController::class, 'todayOrder'])->name('today.order');
+    Route::get('today/delivery/', [ReportController::class, 'todayDelivery'])->name('today.delivery');
+    Route::get('this/month', [ReportController::class, 'thisMonth'])->name('this.month');
+    Route::get('search/report', [ReportController::class, 'search'])->name('search.report');
+    Route::post('search/by/year', [ReportController::class, 'searchByYear'])->name('search.by.year');
+    Route::post('search/by/month', [ReportController::class, 'searchByMonth'])->name('search.by.month');
+    Route::post('search/by/date', [ReportController::class, 'searchByDate'])->name('search.by.date');
+});
+
+
 //newslater
 Route::get('/admin/newslater', [CouponController::class, 'AdminNewslater'])->name('admin.newslater');
 Route::post('/store/newslater', [FrontController::class, 'StoreNewslater'])->name('store.newslater');
 Route::get('/delete/newslater/{id}', [FrontController::class, 'DeleteNewslater']);
 Route::delete('/deleteall', [CouponController::class, 'deleteAll'])->name('deleteall');
-//product
-Route::get('/admin/product/all', [ProductController::class, 'index'])->name('all.product');
-Route::get('/admin/product/add', [ProductController::class, 'create'])->name('add.product');
-Route::get('/admin/get/subcategory/{subcategory_id}', [ProductController::class, 'GetSubcat']);
-Route::post('/admin/store/product', [ProductController::class, 'store'])->name('store.product');
-Route::get('/admin/edit/product/{id}', [ProductController::class, 'EditProduct']);
-Route::post('/admin/update/product/withoutphoto/{id}', [ProductController::class, 'UpdateProductWithoutphoto']);
-Route::post('/admin/update/product/photo/{id}', [ProductController::class, 'UpdateProductPhoto']);
-Route::get('/admin/delete/product/{id}', [ProductController::class, 'DeleteProduct']);
-Route::get('/admin/view/product/{id}', [ProductController::class, 'ViewProduct']);
-Route::get('/admin/inactive/product/{id}', [ProductController::class, 'Inactive']);
-Route::get('/admin/active/product/{id}', [ProductController::class, 'Active']);
-//Blog
-Route::get('/admin/blog/category/list', [PostController::class, 'BlogCategoryList'])->name('add.blog.categorylist');
-Route::post('/admin/store/blog', [PostController::class, 'BlogCategoryStore'])->name('admin.store.blog.category');
-Route::get('/admin/delete/blogcategory/{id}', [PostController::class, 'DeleteBlogCategory']);
-Route::get('/admin/edit/blogcategory/{id}', [PostController::class, 'EditBlogCategory']);
-Route::post('/admin/update/blog/category/{id}', [PostController::class, 'UpdateBlogCategory']);
 
-Route::get('/admin/add/post/', [PostController::class, 'Create'])->name('add.blogpost');
-Route::post('/admin/store/post', [PostController::class, 'Store'])->name('store.blogpost');
-Route::get('/admin/all/post/', [PostController::class, 'index'])->name('all.blogpost');
-Route::get('/admin/edit/post/{id}', [PostController::class, 'EditBlogpost']);
-Route::post('/admin/update/post/{id}', [PostController::class, 'UpdateBlogpost']);
-Route::get('/admin/delete/post/{id}', [PostController::class, 'DeleteBlogpost']);
 
 //Wishlist
 Route::get('/add/wishlist/{id}', [WishlistController::class, 'addWishlist']);
@@ -162,39 +200,20 @@ Route::get('/payment/step/', [CartController::class, 'PaymentPage'])->name('paym
 Route::post('/user/payment/process/', [PaymentController::class, 'payment'])->name('payment.process');
 Route::post('/user/stripe/charge/', [PaymentController::class, 'stripeCharge'])->name('stripe.charge');
 Route::post('/user/oncash/charge/', [PaymentController::class, 'onCash'])->name('oncash.charge');
+Route::post('/user/oncash/ecpay/', [PaymentController::class, 'ecPayCharge'])->name('ecpay.charge');
 
 //Product details Page
 Route::get('/products/{id}', [PublicProductController::class, 'productsView']);
 Route::get('/allcategory/{id}', [PublicProductController::class, 'categoryView']);
 
-//Admin Order
-Route::get('/admin/pading/order/', [OrderController::class, 'newOrder'])->name('admin.neworder');
-Route::get('/admin/accept/payment/', [OrderController::class, 'acceptPayment'])->name('admin.accept.payment');
-Route::get('/admin/cancel/order/', [OrderController::class, 'cancelOrder'])->name('admin.cancel.order');
-Route::get('/admin/process/payment/', [OrderController::class, 'processPayment'])->name('admin.process.payment');
-Route::get('/admin/success/payment/', [OrderController::class, 'successPayment'])->name('admin.success.payment');
 
-Route::get('/admin/view/order/{id}', [OrderController::class, 'viewOrder']);
-Route::get('/admin/payment/accept/{id}', [OrderController::class, 'paymentAccept']);
-Route::get('/admin/payment/cancel/{id}', [OrderController::class, 'paymentCancel']);
-Route::get('/admin/delevery/process/{id}', [OrderController::class, 'deleveryProcess']);
-Route::get('/admin/delevery/done/{id}', [OrderController::class, 'deleveryDone']);
 
-//SEO Setting
-Route::get('/admin/seo/', [OrderController::class, 'seo'])->name('admin.seo');
-Route::post('/admin/update/seo/', [OrderController::class, 'updateSeo'])->name('admin.update.seo');
+
 
 //Order Tracking
 Route::post('/order/tracking/', [FrontController::class, 'orderTracking'])->name('order.tracking');
 
-//Order Report
-Route::get('/admin/today/order/', [ReportController::class, 'todayOrder'])->name('today.order');
-Route::get('/admin/today/delivery/', [ReportController::class, 'todayDelivery'])->name('today.delivery');
-Route::get('/admin/this/month', [ReportController::class, 'thisMonth'])->name('this.month');
-Route::get('/admin/search/report', [ReportController::class, 'search'])->name('search.report');
-Route::post('/admin/search/by/year', [ReportController::class, 'searchByYear'])->name('search.by.year');
-Route::post('/admin/search/by/month', [ReportController::class, 'searchByMonth'])->name('search.by.month');
-Route::post('/admin/search/by/date', [ReportController::class, 'searchByDate'])->name('search.by.date');
+
 
 //Admin Role
 Route::get('/admin/all/user', [UserRoleController::class, 'userRole'])->name('admin.all.user');

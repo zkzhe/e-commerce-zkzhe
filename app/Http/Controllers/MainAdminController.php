@@ -10,6 +10,11 @@ use Illuminate\Support\Facades\Hash;
 
 class MainAdminController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:admin');
+    }
+
     public function AdminProfile()
     {
         $adminData = Admin::find(1);

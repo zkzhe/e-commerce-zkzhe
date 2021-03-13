@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use Gloudemans\Shoppingcart\Facades\Cart;
+use App\Http\Controllers\Payment\ECPayController;
 
 class PaymentController extends Controller
 {
@@ -20,17 +21,25 @@ class PaymentController extends Controller
         $data['city'] = $request->city;
         $data['payment'] = $request->payment;
 
-        if ($request->payment == 'stripe') {
-
-            return view('pages.payment.stripe', compact('data'));
-        } elseif ($request->payment == 'paypal') {
-            # code...
-        } elseif ($request->payment == 'oncash') {
-
-            return view('pages.payment.oncash', compact('data'));
-        } else {
-            echo "Cash On Delivery";
+        switch ($request->payment) {
+            case 'stripe':
+                return view('pages.payment.stripe', compact('data'));
+                break;
+            case 'ecpay':
+                return view('pages.payment.ecpay', compact('data'));
+                break;
+            case 'oncash':
+                return view('pages.payment.oncash', compact('data'));
+                break;
+            default:
+                echo "Cash On Delivery";
         }
+    }
+
+    public function ecPayCharge(Request $request)
+    {
+        $this->onCash($request);
+        ECPayController::createOrderAllInOne($request);
     }
 
     public function stripeCharge(Request $request)
