@@ -1,4 +1,9 @@
 {
     "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css"
+    "/css/app.css": "/css/app.css",
+    "/resource/js/components/category/add.js": "/resource/js/components/category/add.js",
+    "/resource/js/components/category/edit.js": "/resource/js/components/category/edit.js",
+    "/resource/js/components/category/list.js": "/resource/js/components/category/list.js",
+    "/resource/js/components/welcome.js": "/resource/js/components/welcome.js",
+    "/vendors~resource/js/components/category/add~resource/js/components/category/edit~resource/js/compone~eaee17c6.js": "/vendors~resource/js/components/category/add~resource/js/components/category/edit~resource/js/compone~eaee17c6.js"
 }
