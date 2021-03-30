@@ -50,6 +50,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "add-category",
   data: function data() {
@@ -70,7 +80,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return _this.axios.post('/api/category', _this.category).then(function (response) {
+                return _this.axios.post("/api/category", _this.category).then(function (response) {
                   _this.$router.push({
                     name: "categoryList"
                   });
@@ -210,7 +220,11 @@ var staticRenderFns = [
       _c(
         "button",
         { staticClass: "btn btn-primary", attrs: { type: "submit" } },
-        [_vm._v("Save")]
+        [
+          _vm._v(
+            "\n                                Save\n                            "
+          )
+        ]
       )
     ])
   }

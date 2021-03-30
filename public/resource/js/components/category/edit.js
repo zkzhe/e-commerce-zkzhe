@@ -50,6 +50,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "update-category",
   data: function data() {
@@ -241,7 +251,11 @@ var staticRenderFns = [
       _c(
         "button",
         { staticClass: "btn btn-primary", attrs: { type: "submit" } },
-        [_vm._v("Update")]
+        [
+          _vm._v(
+            "\n                                Update\n                            "
+          )
+        ]
       )
     ])
   }

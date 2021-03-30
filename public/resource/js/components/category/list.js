@@ -62,6 +62,26 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "categories",
   data: function data() {
@@ -82,7 +102,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return _this.axios.get('/api/category').then(function (response) {
+                return _this.axios.get("/api/category").then(function (response) {
                   _this.categories = response.data;
                 })["catch"](function (error) {
                   console.log(error);
@@ -193,7 +213,11 @@ var render = function() {
                                   }
                                 }
                               },
-                              [_vm._v("Delete")]
+                              [
+                                _vm._v(
+                                  "\n                                        Delete\n                                    "
+                                )
+                              ]
                             )
                           ],
                           1
@@ -241,7 +265,9 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("tr", [
       _c("td", { attrs: { colspan: "4", align: "center" } }, [
-        _vm._v("No Categories Found.")
+        _vm._v(
+          "\n                                    No Categories Found.\n                                "
+        )
       ])
     ])
   }
