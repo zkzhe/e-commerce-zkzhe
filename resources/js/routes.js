@@ -2,6 +2,10 @@ const Welcome = () =>
     import(
         "./components/Welcome.vue" /* webpackChunkName: "resource/js/components/welcome" */
     );
+const login = () =>
+    import(
+        "./components/auth/login.vue" /* webpackChunkName: "resource/js/components/welcome" */
+    );
 const CategoryList = () =>
     import(
         "./components/category/List.vue" /* webpackChunkName: "resource/js/components/category/list" */
@@ -20,6 +24,11 @@ export const routes = [
         name: "home",
         path: "/",
         component: Welcome
+    },
+    {
+        name: "login",
+        path: "/login",
+        component: login
     },
     {
         name: "categoryList",

@@ -25,8 +25,10 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\SocialController;
 
 
-
-Route::get('{any}', function () {
+Route::any('/login', function () {
+    return view('app');
+});
+Route::any('/{any}', function () {
     return view('app');
 })->where('any', '.*');
 // /*
