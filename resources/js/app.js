@@ -1,48 +1,25 @@
 require("./bootstrap");
 
 //Kernel
-import vue from "vue";
+import Vue from "vue";
 
 //Routes
-import VueRouter from "vue-router";
-import { routes } from "./routes";
+import Routes from "./routes";
 
-//Axios
-import VueAxios from "vue-axios";
-import axios from "axios";
-
-//Boostrap-vue.js
-import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
-import "bootstrap/dist/css/bootstrap.css";
-import "bootstrap-vue/dist/bootstrap-vue.css";
-
-//MDB
-import "bootstrap-css-only/css/bootstrap.min.css";
-import "mdbvue/lib/css/mdb.min.css";
-import "@fortawesome/fontawesome-free/css/all.min.css";
-
-//Sweetalert2
-import VueSweetalert2 from "vue-sweetalert2";
-import "sweetalert2/dist/sweetalert2.min.css";
+//Plugin
+import Store from "./plugin/store";
+import "./plugin/axios";
+import "./plugin/bootstrapvue";
+import "./plugin/sweetalert2";
+import "./plugin/loading";
 
 //Main
-import App from "./components/App.vue";
+import App from "./pages/app.vue";
 
-//Call Vue.js And Use
-window.Vue = vue;
-Vue.use(VueRouter);
-Vue.use(VueAxios, axios);
-Vue.use(BootstrapVue);
-Vue.use(IconsPlugin);
-Vue.use(VueSweetalert2);
-
-const router = new VueRouter({
-    mode: "history",
-    routes: routes
-});
-
+window.Vue = Vue;
 const app = new Vue({
     el: "#app",
-    router: router,
+    store: Store,
+    router: Routes,
     render: h => h(App)
 });

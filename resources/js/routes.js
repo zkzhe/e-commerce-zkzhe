@@ -1,34 +1,48 @@
-const Welcome = () =>
-    import(
-        "./components/Welcome.vue" /* webpackChunkName: "resource/js/components/welcome" */
-    );
+import vue from "vue";
+
+//Vue-Router
+import VueRouter from "vue-router";
+
+vue.use(VueRouter);
+
+const home = () =>
+    import("./pages/home.vue" /* webpackChunkName: "resource/js/pages/home" */);
 const login = () =>
     import(
-        "./components/auth/login.vue" /* webpackChunkName: "resource/js/components/welcome" */
+        "./pages/auth/login.vue" /* webpackChunkName: "resource/js/pages/auth/login" */
+    );
+const register = () =>
+    import(
+        "./pages/auth/register.vue" /* webpackChunkName: "resource/js/pages/auth/register" */
     );
 const CategoryList = () =>
     import(
-        "./components/category/List.vue" /* webpackChunkName: "resource/js/components/category/list" */
+        "./pages/category/List.vue" /* webpackChunkName: "resource/js/pages/category/list" */
     );
 const CategoryCreate = () =>
     import(
-        "./components/category/Add.vue" /* webpackChunkName: "resource/js/components/category/add" */
+        "./pages/category/Add.vue" /* webpackChunkName: "resource/js/pages/category/add" */
     );
 const CategoryEdit = () =>
     import(
-        "./components/category/Edit.vue" /* webpackChunkName: "resource/js/components/category/edit" */
+        "./pages/category/Edit.vue" /* webpackChunkName: "resource/js/pages/category/edit" */
     );
 
-export const routes = [
+const routes = [
     {
         name: "home",
         path: "/",
-        component: Welcome
+        component: home
     },
     {
         name: "login",
-        path: "/login",
+        path: "/auth/login",
         component: login
+    },
+    {
+        name: "register",
+        path: "/auth/register",
+        component: register
     },
     {
         name: "categoryList",
@@ -46,3 +60,29 @@ export const routes = [
         component: CategoryCreate
     }
 ];
+
+const router = new VueRouter({
+    mode: "history",
+    routes: routes,
+    beforeEnter: (to, from, next) => {
+        // check if the route requires authentication and user is not logged in
+        if (
+            to.matched.some(route => route.meta.requiresAuth) &&
+            !store.state.isLoggedIn
+        ) {
+            // redirect to login page
+            next({ name: "/auth/login" });
+            return;
+        }
+
+        // if logged in redirect to dashboard
+        if (to.path === "/auth/login" && store.state.isLoggedIn) {
+            next({ name: "dashboard" });
+            return;
+        }
+
+        next();
+    }
+});
+
+export default router;

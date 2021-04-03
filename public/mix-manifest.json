@@ -1,9 +1,11 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
-    "/resource/js/components/category/add.js": "/resource/js/components/category/add.js",
-    "/resource/js/components/category/edit.js": "/resource/js/components/category/edit.js",
-    "/resource/js/components/category/list.js": "/resource/js/components/category/list.js",
-    "/resource/js/components/welcome.js": "/resource/js/components/welcome.js",
-    "/vendors~resource/js/components/category/add~resource/js/components/category/edit~resource/js/compone~eaee17c6.js": "/vendors~resource/js/components/category/add~resource/js/components/category/edit~resource/js/compone~eaee17c6.js"
+    "/resource/js/pages/auth/login.js": "/resource/js/pages/auth/login.js",
+    "/resource/js/pages/auth/register.js": "/resource/js/pages/auth/register.js",
+    "/resource/js/pages/category/add.js": "/resource/js/pages/category/add.js",
+    "/resource/js/pages/category/edit.js": "/resource/js/pages/category/edit.js",
+    "/resource/js/pages/category/list.js": "/resource/js/pages/category/list.js",
+    "/resource/js/pages/home.js": "/resource/js/pages/home.js",
+    "/vendors~resource/js/pages/category/add~resource/js/pages/category/edit~resource/js/pages/category/list.js": "/vendors~resource/js/pages/category/add~resource/js/pages/category/edit~resource/js/pages/category/list.js"
 }
