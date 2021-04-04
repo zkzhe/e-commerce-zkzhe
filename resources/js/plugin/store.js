@@ -13,7 +13,7 @@ export default new Vuex.Store({
     mutations: {
         LoginUser(state, data) {
             state.isLoggedIn = true;
-            let token = data.access_token;
+            let token = data.accessToken;
             state.token = token;
             localStorage.setItem("token", token);
         },
@@ -26,3 +26,5 @@ export default new Vuex.Store({
         }
     }
 });
+
+// this.$store.commit("LoginUser", response.data.info);

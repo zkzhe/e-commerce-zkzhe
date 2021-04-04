@@ -160,15 +160,15 @@ export default {
                 .post("/api/auth/login", {
                     name: this.name,
                     email: this.email,
-                    password: this.password,
+                    password: this.password
                 })
                 .then(response => {
                     this.isProgress = true;
-                    if (response.data.success == true) {
+                    if (response.data.code === "1") {
+                        this.$store.commit("LoginUser", response.data.info);
                         setTimeout(() => {
                             this.isProgress = false;
-                            this.$router.push({ name: "login" });
-                            this.$toaster.success("Sign up successfully...");
+                            this.$router.push({ name: "home" });
                         }, 2000);
                     }
                 })
