@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 require("./bootstrap");
 
 //Kernel
@@ -17,6 +18,7 @@ import "./plugin/loading";
 import App from "./pages/app.vue";
 
 window.Vue = Vue;
+// eslint-disable-next-line no-unused-vars
 const app = new Vue({
     el: "#app",
     store: Store,

@@ -133,8 +133,8 @@ __webpack_require__.r(__webpack_exports__);
     mdbInput: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbInput"],
     mdbBtn: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbBtn"],
     mdbIcon: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbIcon"],
-    mdbModal: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbModal"],
-    mdbModalBody: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbModalBody"],
+    // mdbModal,
+    // mdbModalBody,
     mdbModalFooter: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbModalFooter"]
   },
   data: function data() {

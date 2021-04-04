@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const mix = require("laravel-mix");
 
 /*
@@ -16,3 +17,17 @@ mix.js("resources/js/app.js", "public/js").postCss(
     "public/css",
     [require("postcss-import"), require("tailwindcss")]
 );
+
+// config eslint
+mix.webpackConfig({
+    module: {
+        rules: [
+            {
+                enforce: "pre",
+                exclude: /node_modules/,
+                loader: "eslint-loader",
+                test: /\.(js|vue)?$/
+            }
+        ]
+    }
+});

@@ -15,18 +15,18 @@ const register = () =>
     import(
         "./pages/auth/register.vue" /* webpackChunkName: "resource/js/pages/auth/register" */
     );
-const CategoryList = () =>
-    import(
-        "./pages/category/List.vue" /* webpackChunkName: "resource/js/pages/category/list" */
-    );
-const CategoryCreate = () =>
-    import(
-        "./pages/category/Add.vue" /* webpackChunkName: "resource/js/pages/category/add" */
-    );
-const CategoryEdit = () =>
-    import(
-        "./pages/category/Edit.vue" /* webpackChunkName: "resource/js/pages/category/edit" */
-    );
+// const CategoryList = () =>
+//     import(
+//         "./pages/category/List.vue" /* webpackChunkName: "resource/js/pages/category/list" */
+//     );
+// const CategoryCreate = () =>
+//     import(
+//         "./pages/category/Add.vue" /* webpackChunkName: "resource/js/pages/category/add" */
+//     );
+// const CategoryEdit = () =>
+//     import(
+//         "./pages/category/Edit.vue" /* webpackChunkName: "resource/js/pages/category/edit" */
+//     );
 
 const routes = [
     {
@@ -44,21 +44,21 @@ const routes = [
         path: "/auth/register",
         component: register
     },
-    {
-        name: "categoryList",
-        path: "/category",
-        component: CategoryList
-    },
-    {
-        name: "categoryEdit",
-        path: "/category/:id/edit",
-        component: CategoryEdit
-    },
-    {
-        name: "categoryAdd",
-        path: "/category/add",
-        component: CategoryCreate
-    }
+    // {
+    //     name: "categoryList",
+    //     path: "/category",
+    //     component: CategoryList
+    // },
+    // {
+    //     name: "categoryEdit",
+    //     path: "/category/:id/edit",
+    //     component: CategoryEdit
+    // },
+    // {
+    //     name: "categoryAdd",
+    //     path: "/category/add",
+    //     component: CategoryCreate
+    // }
 ];
 
 const router = new VueRouter({
@@ -68,7 +68,7 @@ const router = new VueRouter({
         // check if the route requires authentication and user is not logged in
         if (
             to.matched.some(route => route.meta.requiresAuth) &&
-            !store.state.isLoggedIn
+            !this.$store.state.isLoggedIn
         ) {
             // redirect to login page
             next({ name: "/auth/login" });
@@ -76,7 +76,7 @@ const router = new VueRouter({
         }
 
         // if logged in redirect to dashboard
-        if (to.path === "/auth/login" && store.state.isLoggedIn) {
+        if (to.path === "/auth/login" && this.$store.state.isLoggedIn) {
             next({ name: "dashboard" });
             return;
         }

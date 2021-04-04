@@ -118,8 +118,8 @@ import {
     mdbInput,
     mdbBtn,
     mdbIcon,
-    mdbModal,
-    mdbModalBody,
+    // mdbModal,
+    // mdbModalBody,
     mdbModalFooter
 } from "mdbvue";
 export default {
@@ -132,8 +132,8 @@ export default {
         mdbInput,
         mdbBtn,
         mdbIcon,
-        mdbModal,
-        mdbModalBody,
+        // mdbModal,
+        // mdbModalBody,
         mdbModalFooter
     },
     data() {
