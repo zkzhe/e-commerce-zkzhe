@@ -1,8 +1,25 @@
 import Vue from "vue";
 
 //Sweetalert2
+import sweetalert2 from "sweetalert2";
 import VueSweetalert2 from "vue-sweetalert2";
 import "sweetalert2/dist/sweetalert2.min.css";
 
 Vue.use(VueSweetalert2);
+
+const toast = sweetalert2.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000
+});
+
+window.toast = toast;
+
 // this.$swal('警告', '未選擇圖片', 'warning');
+
+// toast.fire({
+//     icon: "error",
+//     type: "success",
+//     title: "User Added successfully"
+// });
