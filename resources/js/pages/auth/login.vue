@@ -11,16 +11,36 @@
                                 </h3>
                             </div>
                             <mdb-input
+                                label="Your name"
+                                type="name"
+                                v-model="name"
+                            />
+                            <span
+                                class="text text-danger"
+                                v-if="error && errors.name"
+                                >{{ errors.name[0] }}</span
+                            >
+                            <mdb-input
                                 label="Your email"
                                 type="email"
                                 v-model="email"
                             />
+                            <span
+                                class="text text-danger"
+                                v-if="error && errors.email"
+                                >{{ errors.email[0] }}</span
+                            >
                             <mdb-input
                                 v-model="password"
                                 label="Your password"
                                 type="password"
                                 containerClass="mb-0"
                             />
+                            <span
+                                class="text text-danger"
+                                v-if="error && errors.password"
+                                >{{ errors.password[0] }}</span
+                            >
                             <p
                                 class="font-small blue-text d-flex justify-content-end pb-3"
                             >
@@ -35,6 +55,7 @@
                                     gradient="blue"
                                     rounded
                                     class="btn-block z-depth-1a"
+                                    @click="register()"
                                     >Sign in</mdb-btn
                                 >
                             </div>
@@ -124,9 +145,39 @@ export default {
     },
     data() {
         return {
+            name: "",
             email: "",
-            password: ""
+            password: "",
+            error: false,
+            errors: {},
+            success: false,
+            isProgress: false
         };
+    },
+    methods: {
+        register() {
+            this.axios
+                .post("/api/auth/login", {
+                    name: this.name,
+                    email: this.email,
+                    password: this.password,
+                })
+                .then(response => {
+                    this.isProgress = true;
+                    if (response.data.success == true) {
+                        setTimeout(() => {
+                            this.isProgress = false;
+                            this.$router.push({ name: "login" });
+                            this.$toaster.success("Sign up successfully...");
+                        }, 2000);
+                    }
+                })
+                .catch(error => {
+                    this.isProgress = false;
+                    this.error = true;
+                    this.errors = error.response.data.errors;
+                });
+        }
     }
 };
 </script>

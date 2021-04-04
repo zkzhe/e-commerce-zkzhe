@@ -10,3 +10,4 @@ Vue.use(Loading, {
     height: 100,
     zIndex: 1050
 });
+// this.$loading.show();

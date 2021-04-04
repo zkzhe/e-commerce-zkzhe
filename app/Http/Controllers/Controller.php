@@ -10,4 +10,9 @@ use Illuminate\Routing\Controller as BaseController;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
+    function respond($code, $msg)
+    {
+        return array_combine(array('code', 'msg'), array($code, $msg));
+    }
 }

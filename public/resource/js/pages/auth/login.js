@@ -108,6 +108,27 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "FormsPage",
@@ -125,9 +146,43 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
+      name: "",
       email: "",
-      password: ""
+      password: "",
+      error: false,
+      errors: {},
+      success: false,
+      isProgress: false
     };
+  },
+  methods: {
+    register: function register() {
+      var _this = this;
+
+      this.axios.post("/api/auth/login", {
+        name: this.name,
+        email: this.email,
+        password: this.password
+      }).then(function (response) {
+        _this.isProgress = true;
+
+        if (response.data.success == true) {
+          setTimeout(function () {
+            _this.isProgress = false;
+
+            _this.$router.push({
+              name: "login"
+            });
+
+            _this.$toaster.success("Sign up successfully...");
+          }, 2000);
+        }
+      })["catch"](function (error) {
+        _this.isProgress = false;
+        _this.error = true;
+        _this.errors = error.response.data.errors;
+      });
+    }
   }
 });
 
@@ -224,6 +279,23 @@ var render = function() {
                         ]),
                         _vm._v(" "),
                         _c("mdb-input", {
+                          attrs: { label: "Your name", type: "name" },
+                          model: {
+                            value: _vm.name,
+                            callback: function($$v) {
+                              _vm.name = $$v
+                            },
+                            expression: "name"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _vm.error && _vm.errors.name
+                          ? _c("span", { staticClass: "text text-danger" }, [
+                              _vm._v(_vm._s(_vm.errors.name[0]))
+                            ])
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _c("mdb-input", {
                           attrs: { label: "Your email", type: "email" },
                           model: {
                             value: _vm.email,
@@ -233,6 +305,12 @@ var render = function() {
                             expression: "email"
                           }
                         }),
+                        _vm._v(" "),
+                        _vm.error && _vm.errors.email
+                          ? _c("span", { staticClass: "text text-danger" }, [
+                              _vm._v(_vm._s(_vm.errors.email[0]))
+                            ])
+                          : _vm._e(),
                         _vm._v(" "),
                         _c("mdb-input", {
                           attrs: {
@@ -248,6 +326,12 @@ var render = function() {
                             expression: "password"
                           }
                         }),
+                        _vm._v(" "),
+                        _vm.error && _vm.errors.password
+                          ? _c("span", { staticClass: "text text-danger" }, [
+                              _vm._v(_vm._s(_vm.errors.password[0]))
+                            ])
+                          : _vm._e(),
                         _vm._v(" "),
                         _c(
                           "p",
@@ -286,6 +370,11 @@ var render = function() {
                                   type: "button",
                                   gradient: "blue",
                                   rounded: ""
+                                },
+                                on: {
+                                  click: function($event) {
+                                    return _vm.register()
+                                  }
                                 }
                               },
                               [_vm._v("Sign in")]
