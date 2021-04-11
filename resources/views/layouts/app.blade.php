@@ -202,7 +202,7 @@ $setting = DB::table('sitesetting')->first();
                                 <div class="logo_container">
                                     <div class="logo"><a href="#">{{ $setting->company_name }}</a></div>
                                 </div>
-                                <div class="footer_title">Got Question? Call Us 24/7</div>
+                                <div class="footer_title">有任何問題請聯絡我</div>
                                 <div class="footer_phone">{{ $setting->phone_two }}</div>
                                 <div class="footer_contact_text">
                                     <p>{{ $setting->company_address }}</p>
