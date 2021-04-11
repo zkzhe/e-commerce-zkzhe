@@ -36,7 +36,7 @@ $order = DB::table('orders')->where('user_id',Auth::id())->orderBy('id','DESC')-
                                 @elseif($row->return_order == 1)
                                 <span class="badge badge-info">待處理</span>
                                 @elseif($row->return_order == 2)
-                                <span class="badge badge-warning">Success</span>
+                                <span class="badge badge-warning">成功</span>
 
                                 @endif
                             </td>
@@ -66,7 +66,7 @@ $order = DB::table('orders')->where('user_id',Auth::id())->orderBy('id','DESC')-
                                 @elseif($row->return_order == 1)
                                 <span class="badge badge-info">待處理</span>
                                 @elseif($row->return_order == 2)
-                                <span class="badge badge-warning">Success</span>
+                                <span class="badge badge-warning">成功</span>
 
                                 @endif
 

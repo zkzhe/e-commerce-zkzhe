@@ -43,13 +43,13 @@
                                 @if($row->return_order == 1)
                                 <span class="badge badge-warning">待處理</span>
                                 @elseif($row->return_order == 2)
-                                <span class="badge badge-success">Success</span>
+                                <span class="badge badge-success">成功</span>
                                 @endif
 
                             </td>
 
                             <td>
-                                <span class="badge badge-success">Return Success</span>
+                                <span class="badge badge-success">退款成功</span>
 
                             </td>
 
