@@ -12,13 +12,13 @@ $order = DB::table('orders')->where('user_id',Auth::id())->orderBy('id','DESC')-
                 <table class="table table-response">
                     <thead>
                         <tr>
-                            <th scope="col">Payment Type </th>
-                            <th scope="col">Payment ID </th>
-                            <th scope="col">Amount </th>
-                            <th scope="col">Date </th>
-                            <th scope="col">Status </th>
-                            <th scope="col">Status Code </th>
-                            <th scope="col">Action </th>
+                            <th scope="col">付款方式 </th>
+                            <th scope="col">付款編號 </th>
+                            <th scope="col">價格 </th>
+                            <th scope="col">日期 </th>
+                            <th scope="col">狀態 </th>
+                            <th scope="col">訂單號 </th>
+                            <th scope="col">行動 </th>
 
                         </tr>
                     </thead>
@@ -31,20 +31,20 @@ $order = DB::table('orders')->where('user_id',Auth::id())->orderBy('id','DESC')-
                             <td scope="col">{{ $row->date }} </td>
                             <td scope="col">
                                 @if($row->status == 0)
-                                <span class="badge badge-warning">Pending</span>
+                                <span class="badge badge-warning">待處理</span>
                                 @elseif($row->status == 1)
-                                <span class="badge badge-info">Payment Accept</span>
+                                <span class="badge badge-info">付款接受</span>
                                 @elseif($row->status == 2)
-                                <span class="badge badge-warning">Progress</span>
+                                <span class="badge badge-warning">進行中</span>
                                 @elseif($row->status == 3)
-                                <span class="badge badge-success">Delevered</span>
+                                <span class="badge badge-success">運送中</span>
                                 @else
-                                <span class="badge badge-danger">Cancle</span>
+                                <span class="badge badge-danger">取消</span>
                                 @endif
                             </td>
                             <td scope="col">{{ $row->status_code }} </td>
                             <td scope="col">
-                                <a href="" class="btn btn-sm btn-info"> View</a>
+                                <a href="" class="btn btn-sm btn-info"> 查看</a>
                             </td>
                         </tr>
                         @endforeach

@@ -34,7 +34,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-info pd-x-20">Update</button>
+                        <button type="submit" class="btn btn-info pd-x-20">更新</button>
                     </div>
                 </form>
             </div><!-- table-wrapper -->

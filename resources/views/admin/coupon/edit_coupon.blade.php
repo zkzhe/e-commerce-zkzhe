@@ -25,7 +25,7 @@
                     @csrf
                     <div class="modal-body pd-20">
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Coupon Code</label>
+                            <label for="exampleInputEmail1">>優惠代碼</label>
                             <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$coupons->coupon}}" name="coupon">
                         </div>
                         <div class="form-group">
@@ -34,7 +34,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-info pd-x-20">Update</button>
+                        <button type="submit" class="btn btn-info pd-x-20">更新</button>
                     </div>
                 </form>
             </div><!-- table-wrapper -->

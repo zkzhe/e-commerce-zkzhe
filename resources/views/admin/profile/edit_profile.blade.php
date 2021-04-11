@@ -21,7 +21,7 @@
             <div class="mb-3">
                 <img id="showImage" src="{{ (!(empty($editData->profile_photo_path)))? url('upload/admin_images/'.$editData->profile_photo_path):url('upload/no_image.jpg') }}" style="width: 100px; height:100px">
             </div>
-            <button type="submit" class="btn btn-primary">Update</button>
+            <button type="submit" class="btn btn-primary">更新</button>
         </form>
 
     </div>

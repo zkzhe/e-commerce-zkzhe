@@ -18,7 +18,7 @@
                 <label for="exampleInputEmail1" class="form-label">Confirm Password</label>
                 <input type="password" id="password_confirmation" name="password_confirmation" class="form-control">
             </div>
-            <button type="submit" class="btn btn-primary">Update</button>
+            <button type="submit" class="btn btn-primary">更新</button>
         </form>
 
     </div>

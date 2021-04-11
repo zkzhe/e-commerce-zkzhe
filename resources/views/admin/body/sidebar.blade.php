@@ -8,26 +8,26 @@
             </span><!-- input-group-btn -->
         </div><!-- input-group -->
 
-        <label class="sidebar-label">Navigation</label>
+        <label class="sidebar-label">導航</label>
         <div class="sl-sideleft-menu">
             <a href="{{url('admin/dashboard')}}" class="sl-menu-link active">
                 <div class="sl-menu-item">
                     <i class="menu-item-icon icon ion-ios-home-outline tx-22"></i>
-                    <span class="menu-item-label">Dashboard</span>
+                    <span class="menu-item-label">儀表板</span>
                 </div><!-- menu-item -->
             </a><!-- sl-menu-link -->
             @if(Auth::user()->category == 1)
             <a href="#" class="sl-menu-link">
                 <div class="sl-menu-item">
                     <i class="menu-item-icon ion-ios-pie-outline tx-20"></i>
-                    <span class="menu-item-label">Category</span>
+                    <span class="menu-item-label">類別</span>
                     <i class="menu-item-arrow fa fa-angle-down"></i>
                 </div><!-- menu-item -->
             </a><!-- sl-menu-link -->
             <ul class="sl-menu-sub nav flex-column">
-                <li class="nav-item"><a href="{{ route('admin.categories') }}" class="nav-link">Category</a></li>
-                <li class="nav-item"><a href="{{ route('admin.sub.categories') }}" class="nav-link">Sub Category</a></li>
-                <li class="nav-item"><a href="{{ route('admin.brands') }}" class="nav-link">Brand</a></li>
+                <li class="nav-item"><a href="{{ route('admin.categories') }}" class="nav-link">類別</a></li>
+                <li class="nav-item"><a href="{{ route('admin.sub.categories') }}" class="nav-link">子類別</a></li>
+                <li class="nav-item"><a href="{{ route('admin.brands') }}" class="nav-link">品牌</a></li>
             </ul>
             @else
             @endif
@@ -36,12 +36,12 @@
             <a href="#" class="sl-menu-link">
                 <div class="sl-menu-item">
                     <i class="menu-item-icon icon ion-ios-gear-outline tx-24"></i>
-                    <span class="menu-item-label">Coupons</span>
+                    <span class="menu-item-label">優惠</span>
                     <i class="menu-item-arrow fa fa-angle-down"></i>
                 </div><!-- menu-item -->
             </a><!-- sl-menu-link -->
             <ul class="sl-menu-sub nav flex-column">
-                <li class="nav-item"><a href="{{ route('admin.coupon') }}" class="nav-link">Coupon</a></li>
+                <li class="nav-item"><a href="{{ route('admin.coupon') }}" class="nav-link">優惠卷</a></li>
             </ul>
             @else
             @endif
@@ -50,13 +50,13 @@
             <a href="#" class="sl-menu-link">
                 <div class="sl-menu-item">
                     <i class="menu-item-icon icon ion-ios-bookmarks-outline tx-20"></i>
-                    <span class="menu-item-label">Products</span>
+                    <span class="menu-item-label">產品</span>
                     <i class="menu-item-arrow fa fa-angle-down"></i>
                 </div><!-- menu-item -->
             </a><!-- sl-menu-link -->
             <ul class="sl-menu-sub nav flex-column">
-                <li class="nav-item"><a href="{{ route('add.product') }}" class="nav-link">Add Product</a></li>
-                <li class="nav-item"><a href="{{ route('all.product') }}" class="nav-link">All Product</a></li>
+                <li class="nav-item"><a href="{{ route('add.product') }}" class="nav-link">新增產品</a></li>
+                <li class="nav-item"><a href="{{ route('all.product') }}" class="nav-link">全部產品</a></li>
             </ul>
             @else
             @endif
@@ -65,16 +65,16 @@
             <a href="#" class="sl-menu-link">
                 <div class="sl-menu-item">
                     <i class="menu-item-icon icon ion-ios-bookmarks-outline tx-20"></i>
-                    <span class="menu-item-label">Orders</span>
+                    <span class="menu-item-label">訂單</span>
                     <i class="menu-item-arrow fa fa-angle-down"></i>
                 </div><!-- menu-item -->
             </a><!-- sl-menu-link -->
             <ul class="sl-menu-sub nav flex-column">
-                <li class="nav-item"><a href="{{ route('admin.neworder') }}" class="nav-link">New Order</a></li>
-                <li class="nav-item"><a href="{{ route('admin.accept.payment') }}" class="nav-link">Accept Payment</a></li>
-                <li class="nav-item"><a href="{{ route('admin.cancel.order') }}" class="nav-link">Cancel Payment</a></li>
-                <li class="nav-item"><a href="{{ route('admin.process.payment') }}" class="nav-link">Process Delivery</a></li>
-                <li class="nav-item"><a href="{{ route('admin.success.payment') }}" class="nav-link">Delivery Success</a></li>
+                <li class="nav-item"><a href="{{ route('admin.neworder') }}" class="nav-link">新訂單</a></li>
+                <li class="nav-item"><a href="{{ route('admin.accept.payment') }}" class="nav-link">接受付款</a></li>
+                <li class="nav-item"><a href="{{ route('admin.cancel.order') }}" class="nav-link">取消付款</a></li>
+                <li class="nav-item"><a href="{{ route('admin.process.payment') }}" class="nav-link">流程交付</a></li>
+                <li class="nav-item"><a href="{{ route('admin.success.payment') }}" class="nav-link">送貨成功</a></li>
             </ul>
             @else
             @endif
@@ -83,14 +83,14 @@
             <a href="#" class="sl-menu-link">
                 <div class="sl-menu-item">
                     <i class="menu-item-icon icon ion-ios-bookmarks-outline tx-20"></i>
-                    <span class="menu-item-label">Blog</span>
+                    <span class="menu-item-label">部落格</span>
                     <i class="menu-item-arrow fa fa-angle-down"></i>
                 </div><!-- menu-item -->
             </a><!-- sl-menu-link -->
             <ul class="sl-menu-sub nav flex-column">
-                <li class="nav-item"><a href="{{ route('add.blog.categorylist') }}" class="nav-link">Blog Category</a></li>
-                <li class="nav-item"><a href="{{ route('add.blogpost')  }}" class="nav-link">Add Post</a></li>
-                <li class="nav-item"><a href="{{ route('all.blogpost')  }}" class="nav-link">Post List</a></li>
+                <li class="nav-item"><a href="{{ route('add.blog.categorylist') }}" class="nav-link">部落格 類別</a></li>
+                <li class="nav-item"><a href="{{ route('add.blogpost')  }}" class="nav-link">添加帖子</a></li>
+                <li class="nav-item"><a href="{{ route('all.blogpost')  }}" class="nav-link">帖子列表</a></li>
             </ul>
             @else
             @endif
@@ -99,13 +99,13 @@
             <a href="#" class="sl-menu-link">
                 <div class="sl-menu-item">
                     <i class="menu-item-icon icon ion-ios-filing-outline tx-24"></i>
-                    <span class="menu-item-label">Others</span>
+                    <span class="menu-item-label">其他</span>
                     <i class="menu-item-arrow fa fa-angle-down"></i>
                 </div><!-- menu-item -->
             </a><!-- sl-menu-link -->
             <ul class="sl-menu-sub nav flex-column">
-                <li class="nav-item"><a href="{{ route('admin.newslater') }}" class="nav-link">Newslaters</a></li>
-                <li class="nav-item"><a href="{{ route('admin.seo') }}" class="nav-link">SEO Setting</a></li>
+                <li class="nav-item"><a href="{{ route('admin.newslater') }}" class="nav-link">新聞通訊</a></li>
+                <li class="nav-item"><a href="{{ route('admin.seo') }}" class="nav-link">SEO 設定</a></li>
             </ul>
             @else
             @endif
@@ -114,13 +114,13 @@
             <a href="#" class="sl-menu-link">
                 <div class="sl-menu-item">
                     <i class="menu-item-icon icon ion-ios-navigate-outline tx-24"></i>
-                    <span class="menu-item-label">User Role</span>
+                    <span class="menu-item-label">使用者權限</span>
                     <i class="menu-item-arrow fa fa-angle-down"></i>
                 </div><!-- menu-item -->
             </a><!-- sl-menu-link -->
             <ul class="sl-menu-sub nav flex-column">
-                <li class="nav-item"><a href="{{ route('create.admin') }}" class="nav-link">Create User</a></li>
-                <li class="nav-item"><a href="{{ route('admin.all.user') }}" class="nav-link">All User </a></li>
+                <li class="nav-item"><a href="{{ route('create.admin') }}" class="nav-link">新增使用者</a></li>
+                <li class="nav-item"><a href="{{ route('admin.all.user') }}" class="nav-link">所有使用者</a></li>
             </ul>
             @else
             @endif
@@ -129,13 +129,13 @@
             <a href="#" class="sl-menu-link">
                 <div class="sl-menu-item">
                     <i class="menu-item-icon icon ion-ios-navigate-outline tx-24"></i>
-                    <span class="menu-item-label">Return Order</span>
+                    <span class="menu-item-label">退貨單</span>
                     <i class="menu-item-arrow fa fa-angle-down"></i>
                 </div><!-- menu-item -->
             </a><!-- sl-menu-link -->
             <ul class="sl-menu-sub nav flex-column">
-                <li class="nav-item"><a href="{{ route('admin.return.request') }}" class="nav-link">Return Request</a></li>
-                <li class="nav-item"><a href="{{ route('admin.all.request') }}" class="nav-link">All Request </a></li>
+                <li class="nav-item"><a href="{{ route('admin.return.request') }}" class="nav-link">退貨要求</a></li>
+                <li class="nav-item"><a href="{{ route('admin.all.request') }}" class="nav-link">所有請求</a></li>
             </ul>
             @else
             @endif
@@ -144,12 +144,12 @@
             <a href="#" class="sl-menu-link">
                 <div class="sl-menu-item">
                     <i class="menu-item-icon icon ion-ios-email-outline tx-24"></i>
-                    <span class="menu-item-label">Contact Message</span>
+                    <span class="menu-item-label">聯繫信息</span>
                     <i class="menu-item-arrow fa fa-angle-down"></i>
                 </div><!-- menu-item -->
             </a><!-- sl-menu-link -->
             <ul class="sl-menu-sub nav flex-column">
-                <li class="nav-item"><a href="{{ route('all.message') }}" class="nav-link">All Message </a></li>
+                <li class="nav-item"><a href="{{ route('all.message') }}" class="nav-link">所有留言</a></li>
             </ul>
             @else
             @endif
@@ -158,12 +158,12 @@
             <a href="#" class="sl-menu-link">
                 <div class="sl-menu-item">
                     <i class="menu-item-icon icon ion-ios-navigate-outline tx-24"></i>
-                    <span class="menu-item-label">Product Stocks</span>
+                    <span class="menu-item-label">產品庫存</span>
                     <i class="menu-item-arrow fa fa-angle-down"></i>
                 </div><!-- menu-item -->
             </a><!-- sl-menu-link -->
             <ul class="sl-menu-sub nav flex-column">
-                <li class="nav-item"><a href="{{ route('admin.product.stock') }}" class="nav-link">Stock</a></li>
+                <li class="nav-item"><a href="{{ route('admin.product.stock') }}" class="nav-link">庫存</a></li>
             </ul>
             @else
             @endif
@@ -172,13 +172,13 @@
             <a href="#" class="sl-menu-link">
                 <div class="sl-menu-item">
                     <i class="menu-item-icon icon ion-ios-navigate-outline tx-24"></i>
-                    <span class="menu-item-label">Product Comments</span>
+                    <span class="menu-item-label">產品評論</span>
                     <i class="menu-item-arrow fa fa-angle-down"></i>
                 </div><!-- menu-item -->
             </a><!-- sl-menu-link -->
             <ul class="sl-menu-sub nav flex-column">
-                <li class="nav-item"><a href=" " class="nav-link">New Comments</a></li>
-                <li class="nav-item"><a href="" class="nav-link">All Comments </a></li>
+                <li class="nav-item"><a href=" " class="nav-link">新評論</a></li>
+                <li class="nav-item"><a href="" class="nav-link">所有評論</a></li>
             </ul>
             @else
             @endif
@@ -187,12 +187,12 @@
             <a href="#" class="sl-menu-link">
                 <div class="sl-menu-item">
                     <i class="menu-item-icon icon ion-ios-navigate-outline tx-24"></i>
-                    <span class="menu-item-label">Site Setting</span>
+                    <span class="menu-item-label">網站設置</span>
                     <i class="menu-item-arrow fa fa-angle-down"></i>
                 </div><!-- menu-item -->
             </a><!-- sl-menu-link -->
             <ul class="sl-menu-sub nav flex-column">
-                <li class="nav-item"><a href="{{ route('admin.site.setting') }}" class="nav-link">Site Setting</a></li>
+                <li class="nav-item"><a href="{{ route('admin.site.setting') }}" class="nav-link">網站設置</a></li>
             </ul>
             @else
             @endif
@@ -201,15 +201,15 @@
             <a href="#" class="sl-menu-link">
                 <div class="sl-menu-item">
                     <i class="menu-item-icon icon ion-ios-paper-outline tx-22"></i>
-                    <span class="menu-item-label">Reports</span>
+                    <span class="menu-item-label">報告</span>
                     <i class="menu-item-arrow fa fa-angle-down"></i>
                 </div><!-- menu-item -->
             </a><!-- sl-menu-link -->
             <ul class="sl-menu-sub nav flex-column">
-                <li class="nav-item"><a href="{{ route('today.order') }}" class="nav-link">Today Order</a></li>
-                <li class="nav-item"><a href="{{ route('today.delivery') }}" class="nav-link">Today Delivery</a></li>
-                <li class="nav-item"><a href="{{ route('this.month') }}" class="nav-link">This Month</a></li>
-                <li class="nav-item"><a href="{{ route('search.report') }}" class="nav-link">Search Report</a></li>
+                <li class="nav-item"><a href="{{ route('today.order') }}" class="nav-link">今日 訂單</a></li>
+                <li class="nav-item"><a href="{{ route('today.delivery') }}" class="nav-link">今天交貨</a></li>
+                <li class="nav-item"><a href="{{ route('this.month') }}" class="nav-link">本月</a></li>
+                <li class="nav-item"><a href="{{ route('search.report') }}" class="nav-link">搜索報告</a></li>
             </ul>
             @else
             @endif

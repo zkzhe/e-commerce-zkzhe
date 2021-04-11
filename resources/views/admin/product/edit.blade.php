@@ -11,7 +11,7 @@ $brand = DB::table('brands')->get();
 
     <div class="card pd-20 pd-sm-40">
         <h6 class="card-body-title">Update Product</h6>
-        <a href="{{ route('all.product') }}" class="btn btn-success btn-sm pull-right"> All Product</a>
+        <a href="{{ route('all.product') }}" class="btn btn-success btn-sm pull-right">所有產品</a>
         <p class="mg-b-20 mg-sm-b-30">Update Product Form</p>
 
         <form method="post" action="{{ URL::to('admin/update/product/withoutphoto/'.$product->id) }}" enctype="multipart/form-data">
@@ -20,31 +20,31 @@ $brand = DB::table('brands')->get();
                 <div class="row mg-b-25">
                     <div class="col-lg-6">
                         <div class="form-group">
-                            <label class="form-control-label">Product Name: <span class="tx-danger">*</span></label>
+                            <label class="form-control-label">產品名稱: <span class="tx-danger">*</span></label>
                             <input class="form-control" type="text" name="product_name" value="{{ $product->product_name }}">
                         </div>
                     </div><!-- col-4 -->
                     <div class="col-lg-6">
                         <div class="form-group">
-                            <label class="form-control-label">Product Code: <span class="tx-danger">*</span></label>
+                            <label class="form-control-label">產品代碼: <span class="tx-danger">*</span></label>
                             <input class="form-control" type="text" name="product_code" value="{{ $product->product_code }}">
                         </div>
                     </div><!-- col-4 -->
                     <div class="col-lg-6">
                         <div class="form-group">
-                            <label class="form-control-label">Quantity: <span class="tx-danger">*</span></label>
+                            <label class="form-control-label">數量: <span class="tx-danger">*</span></label>
                             <input class="form-control" type="text" name="product_quantity" value="{{ $product->product_quantity }}">
                         </div>
                     </div><!-- col-4 -->
                     <div class="col-lg-6">
                         <div class="form-group">
-                            <label class="form-control-label">Discount Price: <span class="tx-danger">*</span></label>
+                            <label class="form-control-label">折扣價格: <span class="tx-danger">*</span></label>
                             <input class="form-control" type="text" name="discount_price" value="{{ $product->discount_price }}">
                         </div>
                     </div><!-- col-4 -->
                     <div class="col-lg-4">
                         <div class="form-group mg-b-10-force">
-                            <label class="form-control-label">Category: <span class="tx-danger">*</span></label>
+                            <label class="form-control-label">類別:<span class="tx-danger">*</span></label>
                             <select class="form-control select2" data-placeholder="Choose Category" name="category_id">
                                 <option label="Choose Category"></option>
                                 @foreach($category as $row)
@@ -61,7 +61,7 @@ $brand = DB::table('brands')->get();
                     </div><!-- col-4 -->
                     <div class="col-lg-4">
                         <div class="form-group mg-b-10-force">
-                            <label class="form-control-label">Sub Category: <span class="tx-danger">*</span></label>
+                            <label class="form-control-label">子類別: <span class="tx-danger">*</span></label>
                             <select class="form-control select2" name="subcategory_id">
                                 @foreach($subcategory as $row)
                                 <option value="{{ $row->id }}" <?php
@@ -77,7 +77,7 @@ $brand = DB::table('brands')->get();
                     </div><!-- col-4 -->
                     <div class="col-lg-4">
                         <div class="form-group mg-b-10-force">
-                            <label class="form-control-label">Brand: <span class="tx-danger">*</span></label>
+                            <label class="form-control-label">品牌:<span class="tx-danger">*</span></label>
                             <select class="form-control select2" data-placeholder="Choose Brand" name="brand_id">
                                 <option label="Choose country"></option>
                                 @foreach($brand as $br)
@@ -95,28 +95,28 @@ $brand = DB::table('brands')->get();
 
                     <div class="col-lg-4">
                         <div class="form-group">
-                            <label class="form-control-label">Product Size: <span class="tx-danger">*</span></label>
+                            <label class="form-control-label">產品尺寸: <span class="tx-danger">*</span></label>
                             <input class="form-control" type="text" name="product_size" id="size" data-role="tagsinput" value="{{ $product->product_size }}">
                         </div>
                     </div><!-- col-4 -->
 
                     <div class="col-lg-4">
                         <div class="form-group">
-                            <label class="form-control-label">Product Color: <span class="tx-danger">*</span></label>
+                            <label class="form-control-label">產品顏色: <span class="tx-danger">*</span></label>
                             <input class="form-control" type="text" name="product_color" id="color" data-role="tagsinput" value="{{ $product->product_color }}">
                         </div>
                     </div><!-- col-4 -->
 
                     <div class="col-lg-4">
                         <div class="form-group">
-                            <label class="form-control-label">Selling Price: <span class="tx-danger">*</span></label>
+                            <label class="form-control-label">價格:  <span class="tx-danger">*</span></label>
                             <input class="form-control" type="text" name="selling_price" placeholder="Selling Price" value="{{ $product->selling_price }}">
                         </div>
                     </div><!-- col-4 -->
 
                     <div class="col-lg-12">
                         <div class="form-group">
-                            <label class="form-control-label">Product Datails: <span class="tx-danger">*</span></label>
+                            <label class="form-control-label">產品介紹:  <span class="tx-danger">*</span></label>
                             <textarea class="form-control" id="summernote" name="product_details">
                             {{ $product->product_details }}
                             </textarea>
@@ -125,7 +125,7 @@ $brand = DB::table('brands')->get();
 
                     <div class="col-lg-12">
                         <div class="form-group">
-                            <label class="form-control-label">Video Link: <span class="tx-danger">*</span></label>
+                            <label class="form-control-label">影片連結:  <span class="tx-danger">*</span></label>
                             <input class="form-control" name="video_link" value="{{ $product->video_link }}">
                         </div>
                     </div><!-- col-4 -->
@@ -139,7 +139,7 @@ $brand = DB::table('brands')->get();
                             <input type="checkbox" name="main_slider" value="1" <?php if ($product->main_slider == 1) {
                                                                                     echo "checked";
                                                                                 } ?>>
-                            <span>Main Slider</span>
+                            <span>主滑塊</span>
                         </label>
                     </div><!-- col-4 -->
 
@@ -148,7 +148,7 @@ $brand = DB::table('brands')->get();
                             <input type="checkbox" name="hot_deal" value="1" <?php if ($product->hot_deal == 1) {
                                                                                     echo "checked";
                                                                                 } ?>>
-                            <span>Hot Deal</span>
+                            <span>特價促銷</span>
                         </label>
                     </div><!-- col-4 -->
 
@@ -157,7 +157,7 @@ $brand = DB::table('brands')->get();
                             <input type="checkbox" name="best_rated" value="1" <?php if ($product->best_rated == 1) {
                                                                                     echo "checked";
                                                                                 } ?>>
-                            <span>Best Rated</span>
+                            <span>最佳評分</span>
                         </label>
                     </div><!-- col-4 -->
 
@@ -166,7 +166,7 @@ $brand = DB::table('brands')->get();
                             <input type="checkbox" name="trend" value="1" <?php if ($product->trend == 1) {
                                                                                 echo "checked";
                                                                             } ?>>
-                            <span>Trend Product</span>
+                            <span>趨勢產品</span>
                         </label>
                     </div><!-- col-4 -->
 
@@ -175,7 +175,7 @@ $brand = DB::table('brands')->get();
                             <input type="checkbox" name="mid_slider" value="1" <?php if ($product->mid_slider == 1) {
                                                                                     echo "checked";
                                                                                 } ?>>
-                            <span>Mid Slider</span>
+                            <span>中滑塊</span>
                         </label>
                     </div><!-- col-4 -->
 
@@ -184,7 +184,7 @@ $brand = DB::table('brands')->get();
                             <input type="checkbox" name="hot_new" value="1" <?php if ($product->hot_new == 1) {
                                                                                 echo "checked";
                                                                             } ?>>
-                            <span>Hot New</span>
+                            <span>熱門</span>
                         </label>
                     </div><!-- col-4 -->
 
@@ -193,7 +193,7 @@ $brand = DB::table('brands')->get();
                             <input type="checkbox" name="buyone_getone" value="1" <?php if ($product->buyone_getone == 1) {
                                                                                         echo "checked";
                                                                                     } ?>>
-                            <span>Buyone Getone</span>
+                            <span>買一送一</span>
                         </label>
                     </div><!-- col-4 -->
 

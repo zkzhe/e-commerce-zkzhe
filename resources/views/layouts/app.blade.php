@@ -52,14 +52,14 @@ $setting = DB::table('sitesetting')->first();
                                 <div class="top_bar_menu">
                                     <ul class="standard_dropdown top_bar_dropdown">
                                         <li>
-                                            <a href="#" data-toggle="modal" data-target="#exampleModal">My Order Traking</a>
+                                            <a href="#" data-toggle="modal" data-target="#exampleModal">查看訂單</a>
                                         </li>
                                     </ul>
                                 </div>
                                 <div class="top_bar_menu">
                                     <ul class="standard_dropdown top_bar_dropdown">
                                         <li>
-                                            <a href="#">English<i class="fas fa-chevron-down"></i></a>
+                                            <a href="#">台灣<i class="fas fa-chevron-down"></i></a>
                                             <ul>
 
                                                 @php
@@ -68,30 +68,30 @@ $setting = DB::table('sitesetting')->first();
 
                                                 <li>
                                                     @if( Session()->get('lang') == 'taiwan')
-                                                    <a href="{{ route('language.english') }}">English<i class="fas fa-chevron-down"></i></a>
+                                                    <a href="{{ route('language.english') }}">英文<i class="fas fa-chevron-down"></i></a>
                                                     @else
-                                                    <a href="{{ route('language.taiwan') }}">Taiwan<i class="fas fa-chevron-down"></i></a>
+                                                    <a href="{{ route('language.taiwan') }}">台灣<i class="fas fa-chevron-down"></i></a>
                                                     @endif
                                                 </li>
                                             </ul>
 
                                         </li>
-                                        <li>
+                                        <!-- <li>
                                             <a href="#">$ US dollar<i class="fas fa-chevron-down"></i></a>
                                             <ul>
                                                 <li><a href="#">EUR Euro</a></li>
                                                 <li><a href="#">GBP British Pound</a></li>
                                                 <li><a href="#">JPY Japanese Yen</a></li>
                                             </ul>
-                                        </li>
+                                        </li> -->
                                     </ul>
                                 </div>
                                 <div class="top_bar_user">
                                     <div class="user_icon"><img src="{{ asset('frontend/images/user.svg') }}" alt=""></div>
-                                    <div><a href="{{ route('user.wishlist') }}">Wishlist</a></div>
-                                    <div><a href="{{ route('user.checkout') }}">Checkout</a></div>
-                                    <div><a href="{{ route('register') }}">Register</a></div>
-                                    <div><a href="{{ route('login') }}">Sign in</a></div>
+                                    <div><a href="{{ route('user.wishlist') }}">願望清單</a></div>
+                                    <!-- <div><a href="{{ route('user.checkout') }}">登出</a></div> -->
+                                    <div><a href="{{ route('register') }}">註冊</a></div>
+                                    <div><a href="{{ route('login') }}">登入</a></div>
                                 </div>
                             </div>
                         </div>
@@ -123,10 +123,10 @@ $setting = DB::table('sitesetting')->first();
                                     <div class="header_search_form_container">
                                         <form method="post" action="{{ route('product.search') }}" class="header_search_form clearfix">
                                             @csrf
-                                            <input type="search" required="required" class="header_search_input" placeholder="Search for products..." name="search">
+                                            <input type="search" required="required" class="header_search_input" placeholder="尋找產品" name="search">
                                             <div class="custom_dropdown">
                                                 <div class="custom_dropdown_list">
-                                                    <span class="custom_dropdown_placeholder clc">All Categories</span>
+                                                    <span class="custom_dropdown_placeholder clc">所有類別</span>
                                                     <i class="fas fa-chevron-down"></i>
                                                     <ul class="custom_list clc">
                                                         @foreach($category as $key)
@@ -155,7 +155,7 @@ $setting = DB::table('sitesetting')->first();
                                     @endphp
                                     <div class="wishlist_icon"><img src="{{ asset('frontend/images/heart.png') }}" alt=""></div>
                                     <div class="wishlist_content">
-                                        <div class="wishlist_text"><a href="#">Wishlist</a></div>
+                                        <div class="wishlist_text"><a href="#">願望清單</a></div>
                                         <div class="wishlist_count">{{ count($wishlist) }}</div>
                                     </div>
                                 </div>
@@ -170,7 +170,7 @@ $setting = DB::table('sitesetting')->first();
                                             <div class="cart_count"><span>{{ Cart::count() }}</span></div>
                                         </div>
                                         <div class="cart_content">
-                                            <div class="cart_text"><a href="{{ route('show.cart') }}">Cart</a></div>
+                                            <div class="cart_text"><a href="{{ route('show.cart') }}">購物車</a></div>
                                             <div class="cart_price">{{ Cart::subtotal() }}</div>
                                         </div>
                                     </div>
@@ -220,17 +220,17 @@ $setting = DB::table('sitesetting')->first();
 
                         <div class="col-lg-2 offset-lg-2">
                             <div class="footer_column">
-                                <div class="footer_title">Find it Fast</div>
+                                <!-- <div class="footer_title">Find it Fast</div> -->
                                 <ul class="footer_list">
-                                    <li><a href="#">Computers & Laptops</a></li>
+                                    <!-- <li><a href="#">Computers & Laptops</a></li>
                                     <li><a href="#">Cameras & Photos</a></li>
                                     <li><a href="#">Hardware</a></li>
                                     <li><a href="#">Smartphones & Tablets</a></li>
-                                    <li><a href="#">TV & Audio</a></li>
+                                    <li><a href="#">TV & Audio</a></li> -->
                                 </ul>
-                                <div class="footer_subtitle">Gadgets</div>
+                                <!-- <div class="footer_subtitle">Gadgets</div> -->
                                 <ul class="footer_list">
-                                    <li><a href="#">Car Electronics</a></li>
+                                    <!-- <li><a href="#">Car Electronics</a></li> -->
                                 </ul>
                             </div>
                         </div>
@@ -238,26 +238,26 @@ $setting = DB::table('sitesetting')->first();
                         <div class="col-lg-2">
                             <div class="footer_column">
                                 <ul class="footer_list footer_list_2">
-                                    <li><a href="#">Video Games & Consoles</a></li>
+                                    <!-- <li><a href="#">Video Games & Consoles</a></li>
                                     <li><a href="#">Accessories</a></li>
                                     <li><a href="#">Cameras & Photos</a></li>
                                     <li><a href="#">Hardware</a></li>
-                                    <li><a href="#">Computers & Laptops</a></li>
+                                    <li><a href="#">Computers & Laptops</a></li> -->
                                 </ul>
                             </div>
                         </div>
 
                         <div class="col-lg-2">
                             <div class="footer_column">
-                                <div class="footer_title">Customer Care</div>
+                                <!-- <div class="footer_title">Customer Care</div> -->
                                 <ul class="footer_list">
-                                    <li><a href="#">My Account</a></li>
+                                    <!-- <li><a href="#">My Account</a></li>
                                     <li><a href="#">Order Tracking</a></li>
                                     <li><a href="#">Wish List</a></li>
                                     <li><a href="#">Customer Services</a></li>
                                     <li><a href="#">Returns / Exchange</a></li>
                                     <li><a href="#">FAQs</a></li>
-                                    <li><a href="#">Product Support</a></li>
+                                    <li><a href="#">Product Support</a></li> -->
                                 </ul>
                             </div>
                         </div>
@@ -276,17 +276,17 @@ $setting = DB::table('sitesetting')->first();
                             <div class="copyright_container d-flex flex-sm-row flex-column align-items-center justify-content-start">
                                 <div class="copyright_content">
                                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                                    Copyright &copy;<script>
+                                    <!-- Copyright &copy;<script>
                                         document.write(new Date().getFullYear());
-                                    </script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                                    </script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a> -->
                                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                                 </div>
                                 <div class="logos ml-sm-auto">
                                     <ul class="logos_list">
-                                        <li><a href="#"><img src="{{ asset('frontend/images/logos_1.png') }}" alt=""></a></li>
+                                        <!-- <li><a href="#"><img src="{{ asset('frontend/images/logos_1.png') }}" alt=""></a></li>
                                         <li><a href="#"><img src="{{ asset('frontend/images/logos_2.png') }}" alt=""></a></li>
                                         <li><a href="#"><img src="{{ asset('frontend/images/logos_3.png') }}" alt=""></a></li>
-                                        <li><a href="#"><img src="{{ asset('frontend/images/logos_4.png') }}" alt=""></a></li>
+                                        <li><a href="#"><img src="{{ asset('frontend/images/logos_4.png') }}" alt=""></a></li> -->
                                     </ul>
                                 </div>
                             </div>
@@ -301,7 +301,7 @@ $setting = DB::table('sitesetting')->first();
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Your Status Code</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">訂單號</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -310,11 +310,11 @@ $setting = DB::table('sitesetting')->first();
                     <form method="post" action="{{ route('order.tracking') }}">
                         @csrf
                         <div class="modal-body">
-                            <label> Status Code</label>
+                            <label>單號</label>
                             <input type="text" name="code" required="" class="form-control" placeholder="Your Order Status Code">
                         </div>
 
-                        <button class="btn btn-danger" type="submit">Track Now </button>
+                        <button class="btn btn-danger" type="submit">確認</button>
 
                     </form>
 

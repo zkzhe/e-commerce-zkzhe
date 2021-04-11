@@ -5,17 +5,17 @@
     <div class="sl-pagebody">
 
         <div class="card pd-20 pd-sm-40">
-            <h6 class="card-body-title">Order Details </h6>
+            <h6 class="card-body-title">訂單內容 </h6>
 
 
             <div class="row">
                 <div class="col-md-6">
                     <div class="card">
-                        <div class="card-header"><strong>Order</strong> Details</div>
+                        <div class="card-header"><strong>其他</strong> Details</div>
                         <div class="card-body">
                             <table class="table">
                                 <tr>
-                                    <th> Name: </th>
+                                    <th> 名稱: </th>
                                     <th> {{ $order->name }} </th>
                                 </tr>
 
@@ -27,30 +27,30 @@
 
 
                                 <tr>
-                                    <th> Payment Type: </th>
+                                    <th> 付款方式: </th>
                                     <th>{{ $order->payment_type }} </th>
                                 </tr>
 
 
 
                                 <tr>
-                                    <th> Payment Id: </th>
+                                    <th> 付款編號: </th>
                                     <th> {{ $order->payment_id }} </th>
                                 </tr>
 
 
                                 <tr>
-                                    <th> Total : </th>
+                                    <th> 合計 : </th>
                                     <th> {{ $order->total }} $ </th>
                                 </tr>
 
                                 <tr>
-                                    <th> Month: </th>
+                                    <th> 月份: </th>
                                     <th> {{ $order->month }} </th>
                                 </tr>
 
                                 <tr>
-                                    <th> Date: </th>
+                                    <th> 日期: </th>
                                     <th> {{ $order->date }} </th>
                                 </tr>
 
@@ -68,11 +68,11 @@
 
                 <div class="col-md-6">
                     <div class="card">
-                        <div class="card-header"><strong>Shipping</strong> Details</div>
+                        <div class="card-header"><strong>運輸</strong> Details</div>
                         <div class="card-body">
                             <table class="table">
                                 <tr>
-                                    <th> Name: </th>
+                                    <th> 名稱: </th>
                                     <th> {{ $shipping->ship_name }} </th>
                                 </tr>
 
@@ -91,29 +91,29 @@
 
 
                                 <tr>
-                                    <th> Address: </th>
+                                    <th> 地址: </th>
                                     <th> {{ $shipping->ship_address }} </th>
                                 </tr>
 
 
                                 <tr>
-                                    <th> City : </th>
+                                    <th> 地區 : </th>
                                     <th> {{ $shipping->ship_city }} </th>
                                 </tr>
 
                                 <tr>
-                                    <th> Status: </th>
+                                    <th> 狀態: </th>
                                     <th>
                                         @if($order->status == 0)
-                                        <span class="badge badge-warning">Pending</span>
+                                        <span class="badge badge-warning">待處理</span>
                                         @elseif($order->status == 1)
-                                        <span class="badge badge-info">Payment Accept</span>
+                                        <span class="badge badge-info">付款接受</span>
                                         @elseif($order->status == 2)
-                                        <span class="badge badge-warning">Progress</span>
+                                        <span class="badge badge-warning">進行中</span>
                                         @elseif($order->status == 3)
-                                        <span class="badge badge-success">Delevered</span>
+                                        <span class="badge badge-success">運送中</span>
                                         @else
-                                        <span class="badge badge-danger">Cancle</span>
+                                        <span class="badge badge-danger">取消</span>
 
                                         @endif
 
@@ -145,14 +145,14 @@
                         <table class="table display responsive nowrap">
                             <thead>
                                 <tr>
-                                    <th class="wd-15p">Product ID</th>
-                                    <th class="wd-15p">Product Name</th>
-                                    <th class="wd-15p">Image</th>
-                                    <th class="wd-15p">Color</th>
-                                    <th class="wd-15p">Size</th>
-                                    <th class="wd-15p">Quantity</th>
-                                    <th class="wd-15p">Unit Price</th>
-                                    <th class="wd-20p">Total</th>
+                                    <th class="wd-15p">產品代碼</th>
+                                    <th class="wd-15p">產品名稱</th>
+                                    <th class="wd-15p">圖片</th>
+                                    <th class="wd-15p">顏色</th>
+                                    <th class="wd-15p">尺寸</th>
+                                    <th class="wd-15p">數量</th>
+                                    <th class="wd-15p">單價</th>
+                                    <th class="wd-20p">總計</th>
 
                                 </tr>
                             </thead>

@@ -9,7 +9,7 @@
 
             <div class="col-5 offset-lg-1">
                 <div class="contact_form_title">
-                    <h4> Your Order Status </h4>
+                    <h4> Your Order 狀態 </h4>
                 </div>
 
                 <div class="progress">
@@ -46,20 +46,20 @@
                 </div><br>
 
                 @if($track->status == 0)
-                <h4>Note : Your Order are Under Review </h4>
+                <h4>注意：您的訂單正在審核中 </h4>
 
                 @elseif($track->status == 1)
-                <h4>Note : Payment Accept Under Process </h4>
+                <h4>注意：付款接受處理中 </h4>
 
                 @elseif($track->status == 2)
-                <h4>Note : Packing Done Handover Process </h4>
+                <h4>注意：打包完成移交過程 </h4>
 
                 @elseif($track->status == 3)
-                <h4>Note : Order Complete </h4>
+                <h4>注意：訂單已完成 </h4>
 
                 @else
 
-                <h4>Note : Order Cancel </h4>
+                <h4>注意：訂單已取消 </h4>
 
                 @endif
 
@@ -78,20 +78,20 @@
 
             <div class="col-5 offset-lg-1">
                 <div class="contact_form_title">
-                    <h4> Your Order Details</h4>
+                    <h4>你的訂單明細</h4>
                 </div>
 
                 <ul class="list-group col-lg-12">
-                    <li class="list-group-item"> <b>Payment Type:</b> {{ $track->payment_type  }} </li>
-                    <li class="list-group-item"> <b>Transection ID:</b> {{ $track->payment_id  }}</li>
+                    <li class="list-group-item"> <b>付款方式:</b> {{ $track->payment_type  }} </li>
+                    <li class="list-group-item"> <b>交易編號：</b> {{ $track->payment_id  }}</li>
                     <li class="list-group-item"> <b>Balance ID:</b> {{ $track->blnc_transection  }}</li>
-                    <li class="list-group-item"> <b>Subtotal:</b> $ {{ $track->subtotal  }}</li>
-                    <li class="list-group-item"> <b>Shipping:</b> $ {{ $track->shipping  }}</li>
-                    <li class="list-group-item"> <b>Vat:</b> $ {{ $track->vat  }}</li>
-                    <li class="list-group-item"> <b>Total:</b> $ {{ $track->total  }}</li>
-                    <li class="list-group-item"> <b>Month:</b> {{ $track->month  }}</li>
-                    <li class="list-group-item"> <b>Date:</b> {{ $track->date  }}</li>
-                    <li class="list-group-item"> <b>Year:</b> {{ $track->year  }}</li>
+                    <li class="list-group-item"> <b>小計:</b> $ {{ $track->subtotal  }}</li>
+                    <li class="list-group-item"> <b>手續費:</b> $ {{ $track->shipping  }}</li>
+                    <li class="list-group-item"> <b>稅:</b> $ {{ $track->vat  }}</li>
+                    <li class="list-group-item"> <b>合計:</b> $ {{ $track->total  }}</li>
+                    <li class="list-group-item"> <b>月份:</b> {{ $track->month  }}</li>
+                    <li class="list-group-item"> <b>日期:</b> {{ $track->date  }}</li>
+                    <li class="list-group-item"> <b>年分:</b> {{ $track->year  }}</li>
 
 
 

@@ -6,23 +6,23 @@
 
     <div class="sl-pagebody">
         <div class="sl-page-title">
-            <h5>Order Details</h5>
+            <h5>訂單明細</h5>
 
         </div><!-- sl-page-title -->
 
         <div class="card pd-20 pd-sm-40">
-            <h6 class="card-body-title">Order List </h6>
+            <h6 class="card-body-title">列表</h6>
 
 
             <div class="table-wrapper">
                 <table id="datatable1" class="table display responsive nowrap">
                     <thead>
                         <tr>
-                            <th class="wd-15p">Name</th>
-                            <th class="wd-15p">Phone</th>
-                            <th class="wd-15p">Email</th>
-                            <th class="wd-20p">Message</th>
-                            <th class="wd-20p">Action</th>
+                            <th class="wd-15p">名稱</th>
+                            <th class="wd-15p">手機號碼</th>
+                            <th class="wd-15p">信箱</th>
+                            <th class="wd-20p">訊息</th>
+                            <th class="wd-20p">行動</th>
 
                         </tr>
                     </thead>
@@ -36,7 +36,7 @@
 
 
                             <td>
-                                <a href=" " class="btn btn-sm btn-info">View</a>
+                                <a href=" " class="btn btn-sm btn-info">查看</a>
 
                             </td>
 

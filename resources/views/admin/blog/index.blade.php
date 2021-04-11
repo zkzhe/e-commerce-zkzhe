@@ -5,7 +5,7 @@
 <div class="sl-mainpanel">
     <div class="sl-pagebody">
         <div class="sl-page-title">
-            <h5>Post List</h5>
+            <h5>帖子列表</h5>
         </div><!-- sl-page-title -->
 
         <div class="card pd-20 pd-sm-40">
@@ -17,10 +17,10 @@
                 <table id="datatable1" class="table display responsive nowrap">
                     <thead>
                         <tr>
-                            <th class="wd-15p">Post Title</th>
+                            <th class="wd-15p">標題</th>
                             <th class="wd-15p">Post Category</th>
-                            <th class="wd-15p">Image</th>
-                            <th class="wd-20p">Action</th>
+                            <th class="wd-15p">圖片</th>
+                            <th class="wd-20p">行動</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -30,8 +30,8 @@
                             <td>{{ $value->category_name_en }}</td>
                             <td><img src="{{ URL::to($value->post_image) }}" style="height: 50px; width: 50px;"></td>
                             <td>
-                                <a href="{{ URL::to('admin/edit/post/'.$value->id) }}" class="btn btn-sm btn-info">Edit</a>
-                                <a href="{{ URL::to('admin/delete/post/'.$value->id) }}" class="btn btn-sm btn-danger" id="delete">Delete</a>
+                                <a href="{{ URL::to('admin/edit/post/'.$value->id) }}" class="btn btn-sm btn-info">編輯</a>
+                                <a href="{{ URL::to('admin/delete/post/'.$value->id) }}" class="btn btn-sm btn-danger" id="delete">刪除</a>
                             </td>
                         </tr>
                         @endforeach

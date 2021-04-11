@@ -5,11 +5,11 @@
 <div class="sl-mainpanel">
     <div class="sl-pagebody">
         <div class="sl-page-title">
-            <h5>Category Table</h5>
+            <h5>分類表</h5>
         </div><!-- sl-page-title -->
 
         <div class="card pd-20 pd-sm-40">
-            <h6 class="card-body-title">Category List
+            <h6 class="card-body-title">分類表
                 <a href="#" class="btn btn-sm btn-warning" style="float: right;" data-toggle="modal" data-target="#modaldemo3">Add New</a>
             </h6>
 
@@ -18,8 +18,8 @@
                     <thead>
                         <tr>
                             <th class="wd-15p">ID</th>
-                            <th class="wd-15p">Category name</th>
-                            <th class="wd-20p">Action</th>
+                            <th class="wd-15p">類別名稱</th>
+                            <th class="wd-20p">行動</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -28,8 +28,8 @@
                             <td>{{ $key + 1 }}</td>
                             <td>{{ $value->category_name }}</td>
                             <td>
-                                <a href="{{ URL::to('admin/edit/category/'.$value->id) }}" class="btn btn-sm btn-info">Edit</a>
-                                <a href="{{ URL::to('admin/delete/category/'.$value->id) }}" class="btn btn-sm btn-danger" id="delete">Delete</a>
+                                <a href="{{ URL::to('admin/edit/category/'.$value->id) }}" class="btn btn-sm btn-info">編輯</a>
+                                <a href="{{ URL::to('admin/delete/category/'.$value->id) }}" class="btn btn-sm btn-danger" id="delete">刪除</a>
                             </td>
                         </tr>
                         @endforeach
@@ -63,13 +63,13 @@
                     @csrf
                     <div class="modal-body pd-20">
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Category Name</label>
+                            <label for="exampleInputEmail1">類別名稱</label>
                             <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Category" name="category_name">
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-info pd-x-20">Submit</button>
-                        <button type="button" class="btn btn-secondary pd-x-20" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-info pd-x-20">提交</button>
+                        <button type="button" class="btn btn-secondary pd-x-20" data-dismiss="modal">關閉</button>
                     </div>
                 </form>
             </div><!-- modal-body -->

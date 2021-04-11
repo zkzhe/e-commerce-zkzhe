@@ -23,7 +23,7 @@ $slider = DB::table('products')
                         @endif
                     </div>
                     <div class="banner_product_name">{{ $slider->brand_name }}</div>
-                    <div class="button banner_button"><a href="#">Shop Now</a></div>
+                    <div class="button banner_button"><a href="#">立刻購買</a></div>
                 </div>
             </div>
         </div>

@@ -5,14 +5,14 @@
 <div class="sl-mainpanel">
     <nav class="breadcrumb sl-breadcrumb">
         <a class="breadcrumb-item" href="index.html">Starlight</a>
-        <span class="breadcrumb-item active">Website Setting</span>
+        <span class="breadcrumb-item active">網站設定</span>
     </nav>
 
     <div class="sl-pagebody">
 
 
         <div class="card pd-20 pd-sm-40">
-            <h6 class="card-body-title">Site Setting </h6>
+            <h6 class="card-body-title">網站設定</h6>
 
 
             <form method="post" action="{{ route('update.sitesetting')  }}">
@@ -24,14 +24,14 @@
                     <div class="row mg-b-25">
                         <div class="col-lg-4">
                             <div class="form-group">
-                                <label class="form-control-label"> Phone One: <span class="tx-danger">*</span></label>
+                                <label class="form-control-label"> 手機1:<span class="tx-danger">*</span></label>
                                 <input class="form-control" type="text" name="phone_one" required="" value="{{ $setting->phone_one }}">
                             </div>
                         </div><!-- col-4 -->
 
                         <div class="col-lg-4">
                             <div class="form-group">
-                                <label class="form-control-label">Phone Two: <span class="tx-danger">*</span></label>
+                                <label class="form-control-label">手機2:<span class="tx-danger">*</span></label>
                                 <input class="form-control" type="text" name="phone_two" required="" value="{{ $setting->phone_two }}">
                             </div>
                         </div><!-- col-4 -->
@@ -49,7 +49,7 @@
 
                         <div class="col-lg-4">
                             <div class="form-group">
-                                <label class="form-control-label">Compay Name: <span class="tx-danger">*</span></label>
+                                <label class="form-control-label">公司名稱: <span class="tx-danger">*</span></label>
                                 <input class="form-control" type="text" name="company_name" required="" value="{{ $setting->company_name }}">
                             </div>
                         </div><!-- col-4 -->
@@ -105,7 +105,7 @@
 
 
                 <div class="form-layout-footer">
-                    <button type="submit" class="btn btn-info mg-r-5">Update </button>
+                    <button type="submit" class="btn btn-info mg-r-5">更新</button>
 
                 </div><!-- form-layout-footer -->
         </div><!-- form-layout -->

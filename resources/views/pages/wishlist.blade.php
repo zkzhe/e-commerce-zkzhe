@@ -12,7 +12,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="cart_container">
-                    <div class="cart_title">Your Wishlist Product</div>
+                    <div class="cart_title">你的願望產品</div>
                     <div class="cart_items">
                         <ul class="cart_list">
 
@@ -22,7 +22,7 @@
                                 <div class="cart_item_image text-center"><br><img src="{{ asset($row->image_one) }}" style="width: 70px; height: 70px;" alt=""></div>
                                 <div class="cart_item_info d-flex flex-md-row flex-column justify-content-between">
                                     <div class="cart_item_name cart_info_col">
-                                        <div class="cart_item_title">Name</div>
+                                        <div class="cart_item_title">名稱</div>
                                         <div class="cart_item_text">{{ $row->product_name }}</div>
                                     </div>
 
@@ -30,7 +30,7 @@
 
                                     @else
                                     <div class="cart_item_color cart_info_col">
-                                        <div class="cart_item_title">Color</div>
+                                        <div class="cart_item_title">顏色</div>
                                         <div class="cart_item_text">{{ $row->product_color }}</div>
                                     </div>
                                     @endif
@@ -39,13 +39,13 @@
 
                                     @else
                                     <div class="cart_item_color cart_info_col">
-                                        <div class="cart_item_title">Size</div>
+                                        <div class="cart_item_title">尺寸</div>
                                         <div class="cart_item_text">{{ $row->product_size }}</div>
                                     </div>
                                     @endif
                                     <div class="cart_item_color cart_info_col">
-                                        <div class="cart_item_title">Action</div><br>
-                                        <a href="#" class="btn btn-sm btn-danger">Add to Cart</a>
+                                        <div class="cart_item_title">行動</div><br>
+                                        <a href="#" class="btn btn-sm btn-danger">添加至購物車</a>
                                     </div>
                                 </div>
                             </li>

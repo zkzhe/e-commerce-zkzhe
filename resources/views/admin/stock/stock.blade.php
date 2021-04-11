@@ -6,12 +6,12 @@
 
     <div class="sl-pagebody">
         <div class="sl-page-title">
-            <h5>Stock Product List</h5>
+            <h5>庫存產品清單</h5>
 
         </div><!-- sl-page-title -->
 
         <div class="card pd-20 pd-sm-40">
-            <h6 class="card-body-title">Stock Product List
+            <h6 class="card-body-title">庫存產品清單
 
             </h6>
 
@@ -20,13 +20,13 @@
                 <table id="datatable1" class="table display responsive nowrap">
                     <thead>
                         <tr>
-                            <th class="wd-15p">Product Code</th>
-                            <th class="wd-15p">Product Name</th>
-                            <th class="wd-15p">Image</th>
-                            <th class="wd-15p">Category</th>
-                            <th class="wd-15p">Brand</th>
-                            <th class="wd-15p">Quantity</th>
-                            <th class="wd-15p">Status</th>
+                            <th class="wd-15p">產品代碼</th>
+                            <th class="wd-15p">產品名稱</th>
+                            <th class="wd-15p">圖片</th>
+                            <th class="wd-15p">類別</th>
+                            <th class="wd-15p">品牌</th>
+                            <th class="wd-15p">數量</th>
+                            <th class="wd-15p">狀態</th>
 
 
                         </tr>

@@ -18,9 +18,9 @@
                 <table id="datatable1" class="table display responsive nowrap">
                     <thead>
                         <tr>
-                            <th class="wd-15p">Name</th>
+                            <th class="wd-15p">名稱</th>
                             <th class="wd-15p">Access</th>
-                            <th class="wd-20p">Action</th>
+                            <th class="wd-20p">行動</th>
 
                         </tr>
                     </thead>
@@ -64,7 +64,7 @@
 
 
                                 @if($row->other == 1)
-                                <span class="badge btn-danger">other </span>
+                                <span class="badge btn-danger">其他</span>
                                 @else
                                 @endif
 
@@ -83,7 +83,7 @@
 
 
                                 @if($row->return == 1)
-                                <span class="badge btn-primary">return </span>
+                                <span class="badge btn-primary">回覆 </span>
                                 @else
                                 @endif
 
@@ -114,8 +114,8 @@
 
                             </td>
                             <td>
-                                <a href="{{ URL::to('edit/admin/'.$row->id) }} " class="btn btn-sm btn-info">Edit</a>
-                                <a href="{{ URL::to('delete/admin/'.$row->id) }}" class="btn btn-sm btn-danger">Delete</a>
+                                <a href="{{ URL::to('edit/admin/'.$row->id) }} " class="btn btn-sm btn-info">編輯</a>
+                                <a href="{{ URL::to('delete/admin/'.$row->id) }}" class="btn btn-sm btn-danger">刪除</a>
                             </td>
 
                         </tr>

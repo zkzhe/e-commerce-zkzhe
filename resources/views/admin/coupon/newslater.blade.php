@@ -12,7 +12,7 @@
             <form method="post">
                 @csrf
                 @method('DELETE')
-                <button type="submit" class="btn btn-danger" formaction="{{ route('deleteall') }}">All Delete</button>
+                <button type="submit" class="btn btn-danger" formaction="{{ route('deleteall') }}">全部刪除</button>
                 <h6 class="card-body-title">Subscriber List</h6>
 
                 <div class="table-wrapper">
@@ -20,9 +20,9 @@
                         <thead>
                             <tr>
                                 <th class="wd-15p">ID</th>
-                                <th class="wd-15p">Email</th>
+                                <th class="wd-15p">信箱</th>
                                 <th class="wd-15p">Subscribiing Time</th>
-                                <th class="wd-20p">Action</th>
+                                <th class="wd-20p">行動</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -32,7 +32,7 @@
                                 <td>{{ $value->email }}</td>
                                 <td>{{ \Carbon\Carbon::parse($value->created_at)->diffForhumans() }}</td>
                                 <td>
-                                    <a href="{{ URL::to('delete/newslater/'.$value->id) }}" class="btn btn-sm btn-danger" id="delete">Delete</a>
+                                    <a href="{{ URL::to('delete/newslater/'.$value->id) }}" class="btn btn-sm btn-danger" id="delete">刪除</a>
                                 </td>
                             </tr>
                             @endforeach

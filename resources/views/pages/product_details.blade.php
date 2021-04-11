@@ -43,7 +43,7 @@
                                 <div class="row">
                                     <div class="col-lg-4">
                                         <div class="form-group">
-                                            <label for="exampleFromControlSelect1">Color</label>
+                                            <label for="exampleFromControlSelect1">顏色</label>
                                             <select class="from-control input-lg" id="exampleFromControlSelect1" name="color">
                                                 @foreach($product_color as $color)
                                                 <option value="{{ $color }}"> {{ $color }} </option>
@@ -58,7 +58,7 @@
                                 <div class="row">
                                     <div class="col-lg-4">
                                         <div class="form-group">
-                                            <label for="exampleFromControlSelect1">Size</label>
+                                            <label for="exampleFromControlSelect1">尺寸</label>
                                             <select class="from-control input-lg" id="exampleFromControlSelect1" name="size">
                                                 @foreach($product_size as $size)
                                                 <option value="{{ $size }}"> {{ $size }} </option>
@@ -71,7 +71,7 @@
                                 <div class="row">
                                     <div class="col-lg-4">
                                         <div class="form-group">
-                                            <label for="exampleFromControlSelect1">Quantity</label>
+                                            <label for="exampleFromControlSelect1">數量</label>
                                             <input class="from-control" type="number" value="1" pattern="[0-9]" name="qty">
                                         </div>
                                     </div>
@@ -86,7 +86,7 @@
                             @endif
 
                             <div class="button_container">
-                                <button type="submit" class="button cart_button">Add to Cart</button>
+                                <button type="submit" class="button cart_button">添加至購物車</button>
                                 <div class="product_fav"><i class="fas fa-heart"></i></div>
                             </div>
 
@@ -124,13 +124,13 @@
 
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item">
-                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Product Details</a>
+                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">產品介紹</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Video Link</a>
+                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">影片連結</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Product Review</a>
+                            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">評論</a>
                         </li>
                     </ul>
                     <div class="tab-content" id="myTabContent">

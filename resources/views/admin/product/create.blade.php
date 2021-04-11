@@ -4,9 +4,9 @@
 <div class="sl-pagebody">
 
     <div class="card pd-20 pd-sm-40">
-        <h6 class="card-body-title">New Product ADD</h6>
-        <a href="{{ route('all.product') }}" class="btn btn-success btn-sm pull-right"> All Product</a>
-        <p class="mg-b-20 mg-sm-b-30">New Product ADD Form</p>
+        <h6 class="card-body-title">新產品添加</h6>
+        <a href="{{ route('all.product') }}" class="btn btn-success btn-sm pull-right">所有產品</a>
+        <p class="mg-b-20 mg-sm-b-30">新產品添加 表格</p>
 
         <form method="post" action="{{ route('store.product') }}" enctype="multipart/form-data">
             @csrf
@@ -14,31 +14,31 @@
                 <div class="row mg-b-25">
                     <div class="col-lg-6">
                         <div class="form-group">
-                            <label class="form-control-label">Product Name: <span class="tx-danger">*</span></label>
+                            <label class="form-control-label">產品名稱: <span class="tx-danger">*</span></label>
                             <input class="form-control" type="text" name="product_name" placeholder="Enter Product Name">
                         </div>
                     </div><!-- col-4 -->
                     <div class="col-lg-6">
                         <div class="form-group">
-                            <label class="form-control-label">Product Code: <span class="tx-danger">*</span></label>
+                            <label class="form-control-label">產品代碼: <span class="tx-danger">*</span></label>
                             <input class="form-control" type="text" name="product_code" placeholder="Enter Product Code">
                         </div>
                     </div><!-- col-4 -->
                     <div class="col-lg-6">
                         <div class="form-group">
-                            <label class="form-control-label">Quantity: <span class="tx-danger">*</span></label>
+                            <label class="form-control-label">數量: <span class="tx-danger">*</span></label>
                             <input class="form-control" type="text" name="product_quantity" placeholder="Enter Quantity">
                         </div>
                     </div><!-- col-4 -->
                     <div class="col-lg-6">
                         <div class="form-group">
-                            <label class="form-control-label">Discount Price: <span class="tx-danger">*</span></label>
+                            <label class="form-control-label">折扣價格: <span class="tx-danger">*</span></label>
                             <input class="form-control" type="text" name="discount_price" placeholder="Enter Discount Price">
                         </div>
                     </div><!-- col-4 -->
                     <div class="col-lg-4">
                         <div class="form-group mg-b-10-force">
-                            <label class="form-control-label">Category: <span class="tx-danger">*</span></label>
+                            <label class="form-control-label">類別:<span class="tx-danger">*</span></label>
                             <select class="form-control select2" data-placeholder="Choose Category" name="category_id">
                                 <option label="Choose Category"></option>
                                 @foreach($category as $row)
@@ -49,7 +49,7 @@
                     </div><!-- col-4 -->
                     <div class="col-lg-4">
                         <div class="form-group mg-b-10-force">
-                            <label class="form-control-label">Sub Category: <span class="tx-danger">*</span></label>
+                            <label class="form-control-label">子類別: <span class="tx-danger">*</span></label>
                             <select class="form-control select2" data-placeholder="Choose Sub Category" name="subcategory_id">
 
                             </select>
@@ -57,7 +57,7 @@
                     </div><!-- col-4 -->
                     <div class="col-lg-4">
                         <div class="form-group mg-b-10-force">
-                            <label class="form-control-label">Brand: <span class="tx-danger">*</span></label>
+                            <label class="form-control-label">品牌:<span class="tx-danger">*</span></label>
                             <select class="form-control select2" data-placeholder="Choose Brand" name="brand_id">
                                 <option label="Choose country"></option>
                                 @foreach($brand as $br)
@@ -69,35 +69,35 @@
 
                     <div class="col-lg-4">
                         <div class="form-group">
-                            <label class="form-control-label">Product Size: <span class="tx-danger">*</span></label>
+                            <label class="form-control-label">產品尺寸: <span class="tx-danger">*</span></label>
                             <input class="form-control" type="text" name="product_size" id="size" data-role="tagsinput">
                         </div>
                     </div><!-- col-4 -->
 
                     <div class="col-lg-4">
                         <div class="form-group">
-                            <label class="form-control-label">Product Color: <span class="tx-danger">*</span></label>
+                            <label class="form-control-label">產品顏色: <span class="tx-danger">*</span></label>
                             <input class="form-control" type="text" name="product_color" id="color" data-role="tagsinput">
                         </div>
                     </div><!-- col-4 -->
 
                     <div class="col-lg-4">
                         <div class="form-group">
-                            <label class="form-control-label">Selling Price: <span class="tx-danger">*</span></label>
+                            <label class="form-control-label">價格:  <span class="tx-danger">*</span></label>
                             <input class="form-control" type="text" name="selling_price" placeholder="Selling Price">
                         </div>
                     </div><!-- col-4 -->
 
                     <div class="col-lg-12">
                         <div class="form-group">
-                            <label class="form-control-label">Product Datails: <span class="tx-danger">*</span></label>
+                            <label class="form-control-label">產品介紹:  <span class="tx-danger">*</span></label>
                             <textarea class="form-control" id="summernote" name="product_details"></textarea>
                         </div>
                     </div><!-- col-4 -->
 
                     <div class="col-lg-12">
                         <div class="form-group">
-                            <label class="form-control-label">Video Link: <span class="tx-danger">*</span></label>
+                            <label class="form-control-label">影片連結:  <span class="tx-danger">*</span></label>
                             <input class="form-control" name="video_link" placeholder="Video Link">
                         </div>
                     </div><!-- col-4 -->
@@ -141,57 +141,57 @@
                     <div class="col-lg-4">
                         <label class="ckbox">
                             <input type="checkbox" name="main_slider" value="1">
-                            <span>Main Slider</span>
+                            <span>主滑塊</span>
                         </label>
                     </div><!-- col-4 -->
 
                     <div class="col-lg-4">
                         <label class="ckbox">
                             <input type="checkbox" name="hot_deal" value="1">
-                            <span>Hot Deal</span>
+                            <span>特價促銷</span>
                         </label>
                     </div><!-- col-4 -->
 
                     <div class="col-lg-4">
                         <label class="ckbox">
                             <input type="checkbox" name="best_rated" value="1">
-                            <span>Best Rated</span>
+                            <span>最佳評分</span>
                         </label>
                     </div><!-- col-4 -->
 
                     <div class="col-lg-4">
                         <label class="ckbox">
                             <input type="checkbox" name="trend" value="1">
-                            <span>Trend Product</span>
+                            <span>趨勢產品</span>
                         </label>
                     </div><!-- col-4 -->
 
                     <div class="col-lg-4">
                         <label class="ckbox">
                             <input type="checkbox" name="mid_slider" value="1">
-                            <span>Mid Slider</span>
+                            <span>中滑塊</span>
                         </label>
                     </div><!-- col-4 -->
 
                     <div class="col-lg-4">
                         <label class="ckbox">
                             <input type="checkbox" name="hot_new" value="1">
-                            <span>Hot New</span>
+                            <span>熱門</span>
                         </label>
                     </div><!-- col-4 -->
 
                     <div class="col-lg-4">
                         <label class="ckbox">
                             <input type="checkbox" name="buyone_getone" value="1">
-                            <span>Buyone Getone</span>
+                            <span>買一送一</span>
                         </label>
                     </div><!-- col-4 -->
 
                 </div><!-- end row -->
                 <br><br>
                 <div class="form-layout-footer">
-                    <button class="btn btn-info mg-r-5">Submit Form</button>
-                    <button class="btn btn-secondary">Cancel</button>
+                    <button class="btn btn-info mg-r-5">提交表格</button>
+                    <button class="btn btn-secondary">取消</button>
                 </div><!-- form-layout-footer -->
             </div><!-- form-layout -->
 

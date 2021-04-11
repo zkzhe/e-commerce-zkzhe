@@ -20,14 +20,14 @@
                 <table id="datatable1" class="table display responsive nowrap">
                     <thead>
                         <tr>
-                            <th class="wd-15p">Payment Type</th>
-                            <th class="wd-15p">Transction ID</th>
-                            <th class="wd-15p">SubTotal</th>
-                            <th class="wd-20p">Shipping</th>
-                            <th class="wd-20p">Total</th>
-                            <th class="wd-20p">Date</th>
-                            <th class="wd-20p">Status</th>
-                            <th class="wd-20p">Action</th>
+                            <th class="wd-15p">付款方式</th>
+                            <th class="wd-15p">交易編號</th>
+                            <th class="wd-15p">小計</th>
+                            <th class="wd-20p">運輸</th>
+                            <th class="wd-20p">總計</th>
+                            <th class="wd-20p">日期</th>
+                            <th class="wd-20p">狀態</th>
+                            <th class="wd-20p">行動</th>
 
                         </tr>
                     </thead>
@@ -43,22 +43,22 @@
 
                             <td>
                                 @if($row->status == 0)
-                                <span class="badge badge-warning">Pending</span>
+                                <span class="badge badge-warning">待處理</span>
                                 @elseif($row->status == 1)
-                                <span class="badge badge-info">Payment Accept</span>
+                                <span class="badge badge-info">付款接受</span>
                                 @elseif($row->status == 2)
-                                <span class="badge badge-warning">Progress</span>
+                                <span class="badge badge-warning">進行中</span>
                                 @elseif($row->status == 3)
-                                <span class="badge badge-success">Delevered</span>
+                                <span class="badge badge-success">運送中</span>
                                 @else
-                                <span class="badge badge-danger">Cancle</span>
+                                <span class="badge badge-danger">取消</span>
 
                                 @endif
 
                             </td>
 
                             <td>
-                                <a href="{{ URL::to('admin/view/order/'.$row->id) }} " class="btn btn-sm btn-info">View</a>
+                                <a href="{{ URL::to('admin/view/order/'.$row->id) }} " class="btn btn-sm btn-info">查看</a>
 
                             </td>
 

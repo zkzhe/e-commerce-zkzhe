@@ -38,7 +38,7 @@
                     </div>
                     <div class="sidebar_section filter_by_section">
                         <div class="sidebar_title">Filter By</div>
-                        <div class="sidebar_subtitle">Price</div>
+                        <div class="sidebar_subtitle">價格</div>
                         <div class="filter_price">
                             <div id="slider-range" class="slider_range"></div>
                             <p>Range: </p>
@@ -77,8 +77,8 @@
                                     <span class="sorting_text">highest rated<i class="fas fa-chevron-down"></span></i>
                                     <ul>
                                         <li class="shop_sorting_button" data-isotope-option='{ "sortBy": "original-order" }'>highest rated</li>
-                                        <li class="shop_sorting_button" data-isotope-option='{ "sortBy": "name" }'>name</li>
-                                        <li class="shop_sorting_button" data-isotope-option='{ "sortBy": "price" }'>price</li>
+                                        <li class="shop_sorting_button" data-isotope-option='{ "sortBy": "name" }'>名稱</li>
+                                        <li class="shop_sorting_button" data-isotope-option='{ "sortBy": "price" }'>價格</li>
                                     </ul>
                                 </li>
                             </ul>
@@ -110,7 +110,7 @@
 
                             <ul class="product_marks">
                                 @if($pro->discount_price == NULL)
-                                <li class="product_mark product_new" style="background: blue;">New</li>
+                                <li class="product_mark product_new" style="background: blue;">新品</li>
                                 @else
                                 <li class="product_mark product_new" style="background: red;">
                                     @php

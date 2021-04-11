@@ -5,7 +5,7 @@
 
     <div class="sl-pagebody">
         <div class="sl-page-title">
-            <h5>Search Report</h5>
+            <h5>搜索報告</h5>
 
         </div><!-- sl-page-title -->
 
@@ -24,7 +24,7 @@
                                 </div>
                             </div><!-- modal-body -->
                             <div class="modal-footer">
-                                <button type="submit" class="btn btn-info pd-x-20">Submit</button>
+                                <button type="submit" class="btn btn-info pd-x-20">提交</button>
 
                             </div>
                         </form>
@@ -65,7 +65,7 @@
                                 </div>
                             </div><!-- modal-body -->
                             <div class="modal-footer">
-                                <button type="submit" class="btn btn-info pd-x-20">Submit</button>
+                                <button type="submit" class="btn btn-info pd-x-20">提交</button>
 
                             </div>
                         </form>
@@ -104,7 +104,7 @@
                                 </div>
                             </div><!-- modal-body -->
                             <div class="modal-footer">
-                                <button type="submit" class="btn btn-info pd-x-20">Submit</button>
+                                <button type="submit" class="btn btn-info pd-x-20">提交</button>
 
                             </div>
                         </form>

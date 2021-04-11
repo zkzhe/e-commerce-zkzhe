@@ -326,10 +326,10 @@
                             <li><a href="tabs.html">Tab</a></li>
                             <li><a href="modals.html">Modals</a></li>
                             <li><a href="progressbars.html">Progressber</a></li>
-                            <li><a href="list.html">List View</a></li>
+                            <li><a href="list.html">列表顯示</a></li>
                             <li><a href="icheck_toggle_pagination.html">iCheck, Toggle</a></li>
                             <li><a href="label-badge-alert.html">labels, Badges</a></li>
-                            <li><a href="treeview.html">Tree View</a></li>
+                            <li><a href="treeview.html">樹狀視圖</a></li>
                         </ul>
                     </li>
                     <li class="single-nav-wrapper">
@@ -359,7 +359,7 @@
                     <li class="single-nav-wrapper">
                         <a class="has-arrow menu-item" href="#" aria-expanded="false">
                             <span class="left-icon"><i class="fas fa-mobile-alt"></i></span>
-                            <span class="menu-text">App View</span>
+                            <span class="menu-text">查看</span>
                         </a>
                         <ul class="dashboard-menu">
                             <li><a href="invoice.html">Invoice</a></li>

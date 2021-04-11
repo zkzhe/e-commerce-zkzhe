@@ -22,7 +22,7 @@ $site = DB::table('sitesetting')->first();
                     <div class="contact_info_item d-flex flex-row align-items-center justify-content-start">
                         <div class="contact_info_image"><img src="{{ asset('frontend/images/contact_1.png') }}" alt=""></div>
                         <div class="contact_info_content">
-                            <div class="contact_info_title">Phone</div>
+                            <div class="contact_info_title">手機號碼</div>
                             <div class="contact_info_text">{{ $site->phone_one }}</div>
                         </div>
                     </div>
@@ -31,7 +31,7 @@ $site = DB::table('sitesetting')->first();
                     <div class="contact_info_item d-flex flex-row align-items-center justify-content-start">
                         <div class="contact_info_image"><img src="{{ asset('frontend/images/contact_2.png') }}" alt=""></div>
                         <div class="contact_info_content">
-                            <div class="contact_info_title">Email</div>
+                            <div class="contact_info_title">信箱</div>
                             <div class="contact_info_text">{{ $site->email }}</div>
                         </div>
                     </div>
@@ -40,7 +40,7 @@ $site = DB::table('sitesetting')->first();
                     <div class="contact_info_item d-flex flex-row align-items-center justify-content-start">
                         <div class="contact_info_image"><img src="{{ asset('frontend/images/contact_3.png') }}" alt=""></div>
                         <div class="contact_info_content">
-                            <div class="contact_info_title">Address</div>
+                            <div class="contact_info_title">地址</div>
                             <div class="contact_info_text">{{ $site->company_address }}</div>
                         </div>
                     </div>

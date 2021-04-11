@@ -28,8 +28,8 @@ $hot = DB::table('products')
                 <div class="char_item d-flex flex-row align-items-center justify-content-start">
                     <div class="char_icon"><img src="{{ asset('frontend/images/char_1.png') }}" alt=""></div>
                     <div class="char_content">
-                        <div class="char_title">Free Delivery</div>
-                        <div class="char_subtitle">from $50</div>
+                        <div class="char_title">免運門檻</div>
+                        <div class="char_subtitle">$50</div>
                     </div>
                 </div>
             </div>
@@ -40,8 +40,8 @@ $hot = DB::table('products')
                 <div class="char_item d-flex flex-row align-items-center justify-content-start">
                     <div class="char_icon"><img src="{{ asset('frontend/images/char_2.png') }}" alt=""></div>
                     <div class="char_content">
-                        <div class="char_title">Free Delivery</div>
-                        <div class="char_subtitle">from $50</div>
+                        <div class="char_title">商品鑑賞期</div>
+                        <div class="char_subtitle">七日</div>
                     </div>
                 </div>
             </div>
@@ -52,8 +52,8 @@ $hot = DB::table('products')
                 <div class="char_item d-flex flex-row align-items-center justify-content-start">
                     <div class="char_icon"><img src="{{ asset('frontend/images/char_3.png') }}" alt=""></div>
                     <div class="char_content">
-                        <div class="char_title">Free Delivery</div>
-                        <div class="char_subtitle">from $50</div>
+                        <div class="char_title">退貨免手續費</div>
+                        <!-- <div class="char_subtitle">from $50</div> -->
                     </div>
                 </div>
             </div>
@@ -64,8 +64,8 @@ $hot = DB::table('products')
                 <div class="char_item d-flex flex-row align-items-center justify-content-start">
                     <div class="char_icon"><img src="{{ asset('frontend/images/char_4.png') }}" alt=""></div>
                     <div class="char_content">
-                        <div class="char_title">Free Delivery</div>
-                        <div class="char_subtitle">from $50</div>
+                        <div class="char_title">特定品牌</div>
+                        <div class="char_subtitle">折購$50</div>
                     </div>
                 </div>
             </div>
@@ -83,7 +83,7 @@ $hot = DB::table('products')
                 <!-- Deals -->
 
                 <div class="deals">
-                    <div class="deals_title">Deals of the Week</div>
+                    <div class="deals_title">本週交易</div>
                     <div class="deals_slider_container">
 
                         <!-- Deals Slider -->
@@ -114,29 +114,29 @@ $hot = DB::table('products')
                                     </div>
                                     <div class="available">
                                         <div class="available_line d-flex flex-row justify-content-start">
-                                            <div class="available_title">Available: <span>{{ $row->product_quantity }}</span></div>
-                                            <div class="sold_title ml-auto">Already sold: <span>28</span></div>
+                                            <div class="available_title">庫存: <span>{{ $row->product_quantity }}</span></div>
+                                            <div class="sold_title ml-auto">已被搶購: <span>28件</span></div>
                                         </div>
                                         <div class="available_bar"><span style="width:17%"></span></div>
                                     </div>
                                     <div class="deals_timer d-flex flex-row align-items-center justify-content-start">
                                         <div class="deals_timer_title_container">
-                                            <div class="deals_timer_title">Hurry Up</div>
-                                            <div class="deals_timer_subtitle">Offer ends in:</div>
+                                            <div class="deals_timer_title">優惠</div>
+                                            <div class="deals_timer_subtitle">剩餘時間:</div>
                                         </div>
                                         <div class="deals_timer_content ml-auto">
                                             <div class="deals_timer_box clearfix" data-target-time="">
                                                 <div class="deals_timer_unit">
                                                     <div id="deals_timer1_hr" class="deals_timer_hr"></div>
-                                                    <span>hours</span>
+                                                    <span>時</span>
                                                 </div>
                                                 <div class="deals_timer_unit">
                                                     <div id="deals_timer1_min" class="deals_timer_min"></div>
-                                                    <span>mins</span>
+                                                    <span>分</span>
                                                 </div>
                                                 <div class="deals_timer_unit">
                                                     <div id="deals_timer1_sec" class="deals_timer_sec"></div>
-                                                    <span>secs</span>
+                                                    <span>秒</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -159,9 +159,9 @@ $hot = DB::table('products')
                     <div class="tabbed_container">
                         <div class="tabs">
                             <ul class="clearfix">
-                                <li class="active">Featured</li>
-                                <li>Trend</li>
-                                <li>Best Rated</li>
+                                <li class="active">精選</li>
+                                <li>趨勢</li>
+                                <li>最受好評</li>
                             </ul>
                             <div class="tabs_line"><span></span></div>
                         </div>
@@ -188,11 +188,11 @@ $hot = DB::table('products')
                                             </div>
                                             <!-- <div class="product_extras">
 
-                                                <button class="product_cart_button addcart" data-id="{{ $row->id }}">Add to Cart</button>
+                                                <button class="product_cart_button addcart" data-id="{{ $row->id }}">添加至購物車</button>
                                             </div> -->
                                             <div class="product_extras">
 
-                                                <button id="{{ $row->id }}" class="product_cart_button addcart" data-toggle="modal" data-target="#cartmodal" onclick="productview(this.id)">Add to Cart</button>
+                                                <button id="{{ $row->id }}" class="product_cart_button addcart" data-toggle="modal" data-target="#cartmodal" onclick="productview(this.id)">添加至購物車</button>
                                             </div>
                                         </div>
                                         <button class="addwishlist" data-id="{{ $row->id }}">
@@ -200,7 +200,7 @@ $hot = DB::table('products')
                                         </button>
                                         <ul class="product_marks">
                                             @if($row->discount_price == NULL)
-                                            <li class="product_mark product_discount" style="background: blue;">New</li>
+                                            <li class="product_mark product_discount" style="background: blue;">新品</li>
                                             @else
                                             <li class="product_mark product_discount">
                                                 @php
@@ -210,7 +210,7 @@ $hot = DB::table('products')
                                                 {{ intval($discount) }}%
                                             </li>
                                             @endif
-                                            <li class="product_mark product_new">new</li>
+                                            <li class="product_mark product_new">新品</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -247,13 +247,13 @@ $hot = DB::table('products')
                                                     <input type="radio" name="product_color" style="background:#000000">
                                                     <input type="radio" name="product_color" style="background:#999999">
                                                 </div>
-                                                <button class="product_cart_button">Add to Cart</button>
+                                                <button class="product_cart_button">添加至購物車</button>
                                             </div>
                                         </div>
                                         <div class="product_fav"><i class="fas fa-heart"></i></div>
                                         <ul class="product_marks">
                                             @if($row->discount_price == NULL)
-                                            <li class="product_mark product_discount" style="background: blue;">New</li>
+                                            <li class="product_mark product_discount" style="background: blue;">新品</li>
                                             @else
                                             <li class="product_mark product_discount">
                                                 @php
@@ -263,7 +263,7 @@ $hot = DB::table('products')
                                                 {{ intval($discount) }}%
                                             </li>
                                             @endif
-                                            <li class="product_mark product_new">new</li>
+                                            <li class="product_mark product_new">新品</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -301,13 +301,13 @@ $hot = DB::table('products')
                                                     <input type="radio" name="product_color" style="background:#000000">
                                                     <input type="radio" name="product_color" style="background:#999999">
                                                 </div>
-                                                <button class="product_cart_button">Add to Cart</button>
+                                                <button class="product_cart_button">添加至購物車</button>
                                             </div>
                                         </div>
                                         <div class="product_fav"><i class="fas fa-heart"></i></div>
                                         <ul class="product_marks">
                                             @if($row->discount_price == NULL)
-                                            <li class="product_mark product_discount" style="background: blue;">New</li>
+                                            <li class="product_mark product_discount" style="background: blue;">新品</li>
                                             @else
                                             <li class="product_mark product_discount">
                                                 @php
@@ -317,7 +317,7 @@ $hot = DB::table('products')
                                                 {{ intval($discount) }}%
                                             </li>
                                             @endif
-                                            <li class="product_mark product_new">new</li>
+                                            <li class="product_mark product_new">新品</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -343,12 +343,12 @@ $hot = DB::table('products')
         <div class="row">
             <div class="col-lg-3">
                 <div class="popular_categories_content">
-                    <div class="popular_categories_title">Popular Categories</div>
+                    <div class="popular_categories_title">人氣類別</div>
                     <div class="popular_categories_slider_nav">
                         <div class="popular_categories_prev popular_categories_nav"><i class="fas fa-angle-left ml-auto"></i></div>
                         <div class="popular_categories_next popular_categories_nav"><i class="fas fa-angle-right ml-auto"></i></div>
                     </div>
-                    <div class="popular_categories_link"><a href="#">full catalog</a></div>
+                    <div class="popular_categories_link"><a href="#">完整目錄</a></div>
                 </div>
             </div>
 
@@ -486,7 +486,7 @@ $product = DB::table('products')->where('category_id', $catId)->where('status', 
                                                         <input type="radio" name="product_color" style="background:#000000">
                                                         <input type="radio" name="product_color" style="background:#999999">
                                                     </div>
-                                                    <button class="product_cart_button">Add to Cart</button>
+                                                    <button class="product_cart_button">添加至購物車</button>
                                                 </div>
                                             </div>
                                             <button class="addwishlist" data-id="{{ $row->id }}">
@@ -494,7 +494,7 @@ $product = DB::table('products')->where('category_id', $catId)->where('status', 
                                             </button>
                                             <ul class="product_marks">
                                                 @if($row->discount_price == NULL)
-                                                <li class="product_mark product_discount" style="background: blue;">New</li>
+                                                <li class="product_mark product_discount" style="background: blue;">新品</li>
                                                 @else
                                                 <li class="product_mark product_discount">
                                                     @php
@@ -504,7 +504,7 @@ $product = DB::table('products')->where('category_id', $catId)->where('status', 
                                                     {{ intval($discount) }}%
                                                 </li>
                                                 @endif
-                                                <li class="product_mark product_new">new</li>
+                                                <li class="product_mark product_new">新品</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -570,7 +570,7 @@ $product = DB::table('products')->where('category_id', $catId)->where('status', 
                                                         <input type="radio" name="product_color" style="background:#000000">
                                                         <input type="radio" name="product_color" style="background:#999999">
                                                     </div>
-                                                    <button class="product_cart_button">Add to Cart</button>
+                                                    <button class="product_cart_button">添加至購物車</button>
                                                 </div>
                                             </div>
                                             <button class="addwishlist" data-id="{{ $row->id }}">
@@ -578,7 +578,7 @@ $product = DB::table('products')->where('category_id', $catId)->where('status', 
                                             </button>
                                             <ul class="product_marks">
                                                 @if($row->discount_price == NULL)
-                                                <li class="product_mark product_discount" style="background: blue;">New</li>
+                                                <li class="product_mark product_discount" style="background: blue;">新品</li>
                                                 @else
                                                 <li class="product_mark product_discount">
                                                     @php
@@ -588,7 +588,7 @@ $product = DB::table('products')->where('category_id', $catId)->where('status', 
                                                     {{ intval($discount) }}%
                                                 </li>
                                                 @endif
-                                                <li class="product_mark product_new">new</li>
+                                                <li class="product_mark product_new">新品</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -612,11 +612,11 @@ $product = DB::table('products')->where('category_id', $catId)->where('status', 
             <div class="col">
                 <div class="tabbed_container">
                     <div class="tabs clearfix tabs-right">
-                        <div class="new_arrivals_title">Hot Best Sellers</div>
+                        <div class="new_arrivals_title">暢銷商品</div>
                         <ul class="clearfix">
-                            <li class="active">Top 20</li>
-                            <li>Audio & Video</li>
-                            <li>Laptops & Computers</li>
+                            <li class="active">前20名</li>
+                            <li>音頻視頻</li>
+                            <li>筆記本電腦</li>
                         </ul>
                         <div class="tabs_line"><span></span></div>
                     </div>
@@ -641,7 +641,7 @@ $product = DB::table('products')->where('category_id', $catId)->where('status', 
                                 <div class="bestsellers_fav active"><i class="fas fa-heart"></i></div>
                                 <ul class="bestsellers_marks">
                                     <li class="bestsellers_mark bestsellers_discount">-25%</li>
-                                    <li class="bestsellers_mark bestsellers_new">new</li>
+                                    <li class="bestsellers_mark bestsellers_new">新品</li>
                                 </ul>
                             </div>
 
@@ -659,7 +659,7 @@ $product = DB::table('products')->where('category_id', $catId)->where('status', 
                                 <div class="bestsellers_fav"><i class="fas fa-heart"></i></div>
                                 <ul class="bestsellers_marks">
                                     <li class="bestsellers_mark bestsellers_discount">-25%</li>
-                                    <li class="bestsellers_mark bestsellers_new">new</li>
+                                    <li class="bestsellers_mark bestsellers_new">新品</li>
                                 </ul>
                             </div>
 
@@ -677,7 +677,7 @@ $product = DB::table('products')->where('category_id', $catId)->where('status', 
                                 <div class="bestsellers_fav"><i class="fas fa-heart"></i></div>
                                 <ul class="bestsellers_marks">
                                     <li class="bestsellers_mark bestsellers_discount">-25%</li>
-                                    <li class="bestsellers_mark bestsellers_new">new</li>
+                                    <li class="bestsellers_mark bestsellers_new">新品</li>
                                 </ul>
                             </div>
 
@@ -695,7 +695,7 @@ $product = DB::table('products')->where('category_id', $catId)->where('status', 
                                 <div class="bestsellers_fav"><i class="fas fa-heart"></i></div>
                                 <ul class="bestsellers_marks">
                                     <li class="bestsellers_mark bestsellers_discount">-25%</li>
-                                    <li class="bestsellers_mark bestsellers_new">new</li>
+                                    <li class="bestsellers_mark bestsellers_new">新品</li>
                                 </ul>
                             </div>
 
@@ -713,7 +713,7 @@ $product = DB::table('products')->where('category_id', $catId)->where('status', 
                                 <div class="bestsellers_fav active"><i class="fas fa-heart"></i></div>
                                 <ul class="bestsellers_marks">
                                     <li class="bestsellers_mark bestsellers_discount">-25%</li>
-                                    <li class="bestsellers_mark bestsellers_new">new</li>
+                                    <li class="bestsellers_mark bestsellers_new">新品</li>
                                 </ul>
                             </div>
 
@@ -731,7 +731,7 @@ $product = DB::table('products')->where('category_id', $catId)->where('status', 
                                 <div class="bestsellers_fav active"><i class="fas fa-heart"></i></div>
                                 <ul class="bestsellers_marks">
                                     <li class="bestsellers_mark bestsellers_discount">-25%</li>
-                                    <li class="bestsellers_mark bestsellers_new">new</li>
+                                    <li class="bestsellers_mark bestsellers_new">新品</li>
                                 </ul>
                             </div>
 
@@ -749,7 +749,7 @@ $product = DB::table('products')->where('category_id', $catId)->where('status', 
                                 <div class="bestsellers_fav active"><i class="fas fa-heart"></i></div>
                                 <ul class="bestsellers_marks">
                                     <li class="bestsellers_mark bestsellers_discount">-25%</li>
-                                    <li class="bestsellers_mark bestsellers_new">new</li>
+                                    <li class="bestsellers_mark bestsellers_new">新品</li>
                                 </ul>
                             </div>
 
@@ -767,7 +767,7 @@ $product = DB::table('products')->where('category_id', $catId)->where('status', 
                                 <div class="bestsellers_fav"><i class="fas fa-heart"></i></div>
                                 <ul class="bestsellers_marks">
                                     <li class="bestsellers_mark bestsellers_discount">-25%</li>
-                                    <li class="bestsellers_mark bestsellers_new">new</li>
+                                    <li class="bestsellers_mark bestsellers_new">新品</li>
                                 </ul>
                             </div>
 
@@ -785,7 +785,7 @@ $product = DB::table('products')->where('category_id', $catId)->where('status', 
                                 <div class="bestsellers_fav"><i class="fas fa-heart"></i></div>
                                 <ul class="bestsellers_marks">
                                     <li class="bestsellers_mark bestsellers_discount">-25%</li>
-                                    <li class="bestsellers_mark bestsellers_new">new</li>
+                                    <li class="bestsellers_mark bestsellers_new">新品</li>
                                 </ul>
                             </div>
 
@@ -803,7 +803,7 @@ $product = DB::table('products')->where('category_id', $catId)->where('status', 
                                 <div class="bestsellers_fav"><i class="fas fa-heart"></i></div>
                                 <ul class="bestsellers_marks">
                                     <li class="bestsellers_mark bestsellers_discount">-25%</li>
-                                    <li class="bestsellers_mark bestsellers_new">new</li>
+                                    <li class="bestsellers_mark bestsellers_new">新品</li>
                                 </ul>
                             </div>
 
@@ -821,7 +821,7 @@ $product = DB::table('products')->where('category_id', $catId)->where('status', 
                                 <div class="bestsellers_fav active"><i class="fas fa-heart"></i></div>
                                 <ul class="bestsellers_marks">
                                     <li class="bestsellers_mark bestsellers_discount">-25%</li>
-                                    <li class="bestsellers_mark bestsellers_new">new</li>
+                                    <li class="bestsellers_mark bestsellers_new">新品</li>
                                 </ul>
                             </div>
 
@@ -839,7 +839,7 @@ $product = DB::table('products')->where('category_id', $catId)->where('status', 
                                 <div class="bestsellers_fav active"><i class="fas fa-heart"></i></div>
                                 <ul class="bestsellers_marks">
                                     <li class="bestsellers_mark bestsellers_discount">-25%</li>
-                                    <li class="bestsellers_mark bestsellers_new">new</li>
+                                    <li class="bestsellers_mark bestsellers_new">新品</li>
                                 </ul>
                             </div>
 
@@ -866,7 +866,7 @@ $product = DB::table('products')->where('category_id', $catId)->where('status', 
                                 <div class="bestsellers_fav active"><i class="fas fa-heart"></i></div>
                                 <ul class="bestsellers_marks">
                                     <li class="bestsellers_mark bestsellers_discount">-25%</li>
-                                    <li class="bestsellers_mark bestsellers_new">new</li>
+                                    <li class="bestsellers_mark bestsellers_new">新品</li>
                                 </ul>
                             </div>
 
@@ -884,7 +884,7 @@ $product = DB::table('products')->where('category_id', $catId)->where('status', 
                                 <div class="bestsellers_fav"><i class="fas fa-heart"></i></div>
                                 <ul class="bestsellers_marks">
                                     <li class="bestsellers_mark bestsellers_discount">-25%</li>
-                                    <li class="bestsellers_mark bestsellers_new">new</li>
+                                    <li class="bestsellers_mark bestsellers_new">新品</li>
                                 </ul>
                             </div>
 
@@ -902,7 +902,7 @@ $product = DB::table('products')->where('category_id', $catId)->where('status', 
                                 <div class="bestsellers_fav"><i class="fas fa-heart"></i></div>
                                 <ul class="bestsellers_marks">
                                     <li class="bestsellers_mark bestsellers_discount">-25%</li>
-                                    <li class="bestsellers_mark bestsellers_new">new</li>
+                                    <li class="bestsellers_mark bestsellers_new">新品</li>
                                 </ul>
                             </div>
 
@@ -920,7 +920,7 @@ $product = DB::table('products')->where('category_id', $catId)->where('status', 
                                 <div class="bestsellers_fav"><i class="fas fa-heart"></i></div>
                                 <ul class="bestsellers_marks">
                                     <li class="bestsellers_mark bestsellers_discount">-25%</li>
-                                    <li class="bestsellers_mark bestsellers_new">new</li>
+                                    <li class="bestsellers_mark bestsellers_new">新品</li>
                                 </ul>
                             </div>
 
@@ -938,7 +938,7 @@ $product = DB::table('products')->where('category_id', $catId)->where('status', 
                                 <div class="bestsellers_fav active"><i class="fas fa-heart"></i></div>
                                 <ul class="bestsellers_marks">
                                     <li class="bestsellers_mark bestsellers_discount">-25%</li>
-                                    <li class="bestsellers_mark bestsellers_new">new</li>
+                                    <li class="bestsellers_mark bestsellers_new">新品</li>
                                 </ul>
                             </div>
 
@@ -956,7 +956,7 @@ $product = DB::table('products')->where('category_id', $catId)->where('status', 
                                 <div class="bestsellers_fav active"><i class="fas fa-heart"></i></div>
                                 <ul class="bestsellers_marks">
                                     <li class="bestsellers_mark bestsellers_discount">-25%</li>
-                                    <li class="bestsellers_mark bestsellers_new">new</li>
+                                    <li class="bestsellers_mark bestsellers_new">新品</li>
                                 </ul>
                             </div>
 
@@ -974,7 +974,7 @@ $product = DB::table('products')->where('category_id', $catId)->where('status', 
                                 <div class="bestsellers_fav active"><i class="fas fa-heart"></i></div>
                                 <ul class="bestsellers_marks">
                                     <li class="bestsellers_mark bestsellers_discount">-25%</li>
-                                    <li class="bestsellers_mark bestsellers_new">new</li>
+                                    <li class="bestsellers_mark bestsellers_new">新品</li>
                                 </ul>
                             </div>
 
@@ -992,7 +992,7 @@ $product = DB::table('products')->where('category_id', $catId)->where('status', 
                                 <div class="bestsellers_fav"><i class="fas fa-heart"></i></div>
                                 <ul class="bestsellers_marks">
                                     <li class="bestsellers_mark bestsellers_discount">-25%</li>
-                                    <li class="bestsellers_mark bestsellers_new">new</li>
+                                    <li class="bestsellers_mark bestsellers_new">新品</li>
                                 </ul>
                             </div>
 
@@ -1010,7 +1010,7 @@ $product = DB::table('products')->where('category_id', $catId)->where('status', 
                                 <div class="bestsellers_fav"><i class="fas fa-heart"></i></div>
                                 <ul class="bestsellers_marks">
                                     <li class="bestsellers_mark bestsellers_discount">-25%</li>
-                                    <li class="bestsellers_mark bestsellers_new">new</li>
+                                    <li class="bestsellers_mark bestsellers_new">新品</li>
                                 </ul>
                             </div>
 
@@ -1028,7 +1028,7 @@ $product = DB::table('products')->where('category_id', $catId)->where('status', 
                                 <div class="bestsellers_fav"><i class="fas fa-heart"></i></div>
                                 <ul class="bestsellers_marks">
                                     <li class="bestsellers_mark bestsellers_discount">-25%</li>
-                                    <li class="bestsellers_mark bestsellers_new">new</li>
+                                    <li class="bestsellers_mark bestsellers_new">新品</li>
                                 </ul>
                             </div>
 
@@ -1046,7 +1046,7 @@ $product = DB::table('products')->where('category_id', $catId)->where('status', 
                                 <div class="bestsellers_fav active"><i class="fas fa-heart"></i></div>
                                 <ul class="bestsellers_marks">
                                     <li class="bestsellers_mark bestsellers_discount">-25%</li>
-                                    <li class="bestsellers_mark bestsellers_new">new</li>
+                                    <li class="bestsellers_mark bestsellers_new">新品</li>
                                 </ul>
                             </div>
 
@@ -1064,7 +1064,7 @@ $product = DB::table('products')->where('category_id', $catId)->where('status', 
                                 <div class="bestsellers_fav active"><i class="fas fa-heart"></i></div>
                                 <ul class="bestsellers_marks">
                                     <li class="bestsellers_mark bestsellers_discount">-25%</li>
-                                    <li class="bestsellers_mark bestsellers_new">new</li>
+                                    <li class="bestsellers_mark bestsellers_new">新品</li>
                                 </ul>
                             </div>
 
@@ -1091,7 +1091,7 @@ $product = DB::table('products')->where('category_id', $catId)->where('status', 
                                 <div class="bestsellers_fav active"><i class="fas fa-heart"></i></div>
                                 <ul class="bestsellers_marks">
                                     <li class="bestsellers_mark bestsellers_discount">-25%</li>
-                                    <li class="bestsellers_mark bestsellers_new">new</li>
+                                    <li class="bestsellers_mark bestsellers_new">新品</li>
                                 </ul>
                             </div>
 
@@ -1109,7 +1109,7 @@ $product = DB::table('products')->where('category_id', $catId)->where('status', 
                                 <div class="bestsellers_fav"><i class="fas fa-heart"></i></div>
                                 <ul class="bestsellers_marks">
                                     <li class="bestsellers_mark bestsellers_discount">-25%</li>
-                                    <li class="bestsellers_mark bestsellers_new">new</li>
+                                    <li class="bestsellers_mark bestsellers_new">新品</li>
                                 </ul>
                             </div>
 
@@ -1127,7 +1127,7 @@ $product = DB::table('products')->where('category_id', $catId)->where('status', 
                                 <div class="bestsellers_fav"><i class="fas fa-heart"></i></div>
                                 <ul class="bestsellers_marks">
                                     <li class="bestsellers_mark bestsellers_discount">-25%</li>
-                                    <li class="bestsellers_mark bestsellers_new">new</li>
+                                    <li class="bestsellers_mark bestsellers_new">新品</li>
                                 </ul>
                             </div>
 
@@ -1145,7 +1145,7 @@ $product = DB::table('products')->where('category_id', $catId)->where('status', 
                                 <div class="bestsellers_fav"><i class="fas fa-heart"></i></div>
                                 <ul class="bestsellers_marks">
                                     <li class="bestsellers_mark bestsellers_discount">-25%</li>
-                                    <li class="bestsellers_mark bestsellers_new">new</li>
+                                    <li class="bestsellers_mark bestsellers_new">新品</li>
                                 </ul>
                             </div>
 
@@ -1163,7 +1163,7 @@ $product = DB::table('products')->where('category_id', $catId)->where('status', 
                                 <div class="bestsellers_fav active"><i class="fas fa-heart"></i></div>
                                 <ul class="bestsellers_marks">
                                     <li class="bestsellers_mark bestsellers_discount">-25%</li>
-                                    <li class="bestsellers_mark bestsellers_new">new</li>
+                                    <li class="bestsellers_mark bestsellers_new">新品</li>
                                 </ul>
                             </div>
 
@@ -1181,7 +1181,7 @@ $product = DB::table('products')->where('category_id', $catId)->where('status', 
                                 <div class="bestsellers_fav active"><i class="fas fa-heart"></i></div>
                                 <ul class="bestsellers_marks">
                                     <li class="bestsellers_mark bestsellers_discount">-25%</li>
-                                    <li class="bestsellers_mark bestsellers_new">new</li>
+                                    <li class="bestsellers_mark bestsellers_new">新品</li>
                                 </ul>
                             </div>
 
@@ -1199,7 +1199,7 @@ $product = DB::table('products')->where('category_id', $catId)->where('status', 
                                 <div class="bestsellers_fav active"><i class="fas fa-heart"></i></div>
                                 <ul class="bestsellers_marks">
                                     <li class="bestsellers_mark bestsellers_discount">-25%</li>
-                                    <li class="bestsellers_mark bestsellers_new">new</li>
+                                    <li class="bestsellers_mark bestsellers_new">新品</li>
                                 </ul>
                             </div>
 
@@ -1217,7 +1217,7 @@ $product = DB::table('products')->where('category_id', $catId)->where('status', 
                                 <div class="bestsellers_fav"><i class="fas fa-heart"></i></div>
                                 <ul class="bestsellers_marks">
                                     <li class="bestsellers_mark bestsellers_discount">-25%</li>
-                                    <li class="bestsellers_mark bestsellers_new">new</li>
+                                    <li class="bestsellers_mark bestsellers_new">新品</li>
                                 </ul>
                             </div>
 
@@ -1235,7 +1235,7 @@ $product = DB::table('products')->where('category_id', $catId)->where('status', 
                                 <div class="bestsellers_fav"><i class="fas fa-heart"></i></div>
                                 <ul class="bestsellers_marks">
                                     <li class="bestsellers_mark bestsellers_discount">-25%</li>
-                                    <li class="bestsellers_mark bestsellers_new">new</li>
+                                    <li class="bestsellers_mark bestsellers_new">新品</li>
                                 </ul>
                             </div>
 
@@ -1253,7 +1253,7 @@ $product = DB::table('products')->where('category_id', $catId)->where('status', 
                                 <div class="bestsellers_fav"><i class="fas fa-heart"></i></div>
                                 <ul class="bestsellers_marks">
                                     <li class="bestsellers_mark bestsellers_discount">-25%</li>
-                                    <li class="bestsellers_mark bestsellers_new">new</li>
+                                    <li class="bestsellers_mark bestsellers_new">新品</li>
                                 </ul>
                             </div>
 
@@ -1271,7 +1271,7 @@ $product = DB::table('products')->where('category_id', $catId)->where('status', 
                                 <div class="bestsellers_fav active"><i class="fas fa-heart"></i></div>
                                 <ul class="bestsellers_marks">
                                     <li class="bestsellers_mark bestsellers_discount">-25%</li>
-                                    <li class="bestsellers_mark bestsellers_new">new</li>
+                                    <li class="bestsellers_mark bestsellers_new">新品</li>
                                 </ul>
                             </div>
 
@@ -1289,7 +1289,7 @@ $product = DB::table('products')->where('category_id', $catId)->where('status', 
                                 <div class="bestsellers_fav active"><i class="fas fa-heart"></i></div>
                                 <ul class="bestsellers_marks">
                                     <li class="bestsellers_mark bestsellers_discount">-25%</li>
-                                    <li class="bestsellers_mark bestsellers_new">new</li>
+                                    <li class="bestsellers_mark bestsellers_new">新品</li>
                                 </ul>
                             </div>
 
@@ -1369,9 +1369,9 @@ $product = DB::table('products')->where('category_id', $catId)->where('status', 
             <!-- Trends Content -->
             <div class="col-lg-3">
                 <div class="trends_container">
-                    <h2 class="trends_title">Buy One Get One</h2>
+                    <h2 class="trends_title">買一送一</h2>
                     <div class="trends_text">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing Donec et.</p>
+                        <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing Donec et.</p> -->
                     </div>
                     <div class="trends_slider_nav">
                         <div class="trends_prev trends_nav"><i class="fas fa-angle-left ml-auto"></i></div>
@@ -1412,11 +1412,11 @@ $product = DB::table('products')->where('category_id', $catId)->where('status', 
                                         <div class="product_price discount">${{ $row->discount_price }}<span>${{ $row->selling_price }}</span></div>
                                         @endif
 
-                                        <a href="" class="btn btn-danger btn-sm">Add to Cart</a>
+                                        <a href="" class="btn btn-danger btn-sm">添加至購物車</a>
                                     </div>
                                 </div>
                                 <ul class="trends_marks">
-                                    <li class="trends_mark trends_new">BuyGet</li>
+                                    <li class="trends_mark trends_new">購買</li>
                                 </ul>
                                 <button class="addwishlist" data-id="{{ $row->id }}">
                                     <div class="trends_fav"><i class="fas fa-heart"></i></div>
@@ -1491,18 +1491,18 @@ $product = DB::table('products')->where('category_id', $catId)->where('status', 
                 <div class="newsletter_container d-flex flex-lg-row flex-column align-items-lg-center align-items-center justify-content-lg-start justify-content-center">
                     <div class="newsletter_title_container">
                         <div class="newsletter_icon"><img src="{{ asset('frontend/images/send.png') }}" alt=""></div>
-                        <div class="newsletter_title">Sign up for Newsletter</div>
+                        <div class="newsletter_title">訂閱獲得新資訊</div>
                         <div class="newsletter_text">
-                            <p>...and receive %20 coupon for first shopping.</p>
+                            <p>...即可享受8折優惠.</p>
                         </div>
                     </div>
                     <div class="newsletter_content clearfix">
                         <form action="{{ route('store.newslater') }}" method="post" class="newsletter_form">
                             @csrf
                             <input type="email" class="newsletter_input" required="required" placeholder="Enter your email address" name="email">
-                            <button class="newsletter_button" type="submit">Subscribe</button>
+                            <button class="newsletter_button" type="submit">訂閱</button>
                         </form>
-                        <div class="newsletter_unsubscribe_link"><a href="#">unsubscribe</a></div>
+                        <div class="newsletter_unsubscribe_link"><a href="#">退訂</a></div>
                     </div>
                 </div>
             </div>
@@ -1515,7 +1515,7 @@ $product = DB::table('products')->where('category_id', $catId)->where('status', 
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLaravel">Product Quick View</h5>
+                <h5 class="modal-title" id="exampleModalLaravel">產品快速瀏覽</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -1533,11 +1533,11 @@ $product = DB::table('products')->where('category_id', $catId)->where('status', 
 
                     <div class="col-md-4">
                         <ul class="list-group">
-                            <li class="list-group-item">Product Code: <span id="pcode"><span></li>
-                            <li class="list-group-item">Category: <span id="pcat"><span></li>
-                            <li class="list-group-item">Subcategory: <span id="psub"><span></li>
-                            <li class="list-group-item">Brand: <span id="pbrand"><span></li>
-                            <li class="list-group-item">Stock: <span class="badge" style="background: green; color: white;">Available</span></li>
+                            <li class="list-group-item">產品代碼: <span id="pcode"><span></li>
+                            <li class="list-group-item">類別:<span id="pcat"><span></li>
+                            <li class="list-group-item">子類別: <span id="psub"><span></li>
+                            <li class="list-group-item">品牌:<span id="pbrand"><span></li>
+                            <li class="list-group-item">庫存: <span class="badge" style="background: green; color: white;">Available</span></li>
                         </ul>
                     </div>
 
@@ -1548,23 +1548,23 @@ $product = DB::table('products')->where('category_id', $catId)->where('status', 
                             <input type="hidden" name="product_id" id="product_id">
 
                             <div class="form-grop">
-                                <label for="exampleInputcolor">Color</label>
+                                <label for="exampleInputcolor">顏色</label>
                                 <select name="color" class="form-control" id="color">
                                 </select>
                             </div>
 
                             <div class="form-grop">
-                                <label for="exampleInputcolor">Size</label>
+                                <label for="exampleInputcolor">尺寸</label>
                                 <select name="size" class="form-control" id="size">
                                 </select>
                             </div>
 
                             <div class="form-grop">
-                                <label for="exampleInputcolor">Quantity</label>
+                                <label for="exampleInputcolor">數量</label>
                                 <input type="number" class="form-control" name="qty" value="1">
                             </div>
                             <br>
-                            <button type="submit" class="btn btn-primary">Add to Cart</button>
+                            <button type="submit" class="btn btn-primary">添加至購物車</button>
                         </form>
                     </div>
                 </div>

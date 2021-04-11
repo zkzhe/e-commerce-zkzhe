@@ -25,23 +25,23 @@
                     @csrf
                     <div class="modal-body pd-20">
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Brand Name</label>
+                            <label for="exampleInputEmail1">品牌名稱</label>
                             <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$brand->brand_name}}" name="brand_name">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Brand Logo</label>
+                            <label for="exampleInputEmail1">品牌 LOGO</label>
                             <input type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$brand->brand_logo}}" name="brand_logo">
                         </div>
 
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Old Brand Logo</label>
+                            <label for="exampleInputEmail1">舊品牌 LOGO</label>
                             <img src="{{ url('media/brand/'.$brand->brand_logo) }}" height="70px" width="90px">
                             <imput type="hidden" name="old_logo" value="{{ $brand->brand_logo }}">
 
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-info pd-x-20">Update</button>
+                        <button type="submit" class="btn btn-info pd-x-20">更新</button>
                     </div>
                 </form>
             </div><!-- table-wrapper -->

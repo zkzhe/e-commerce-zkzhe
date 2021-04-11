@@ -25,12 +25,12 @@
                     @csrf
                     <div class="modal-body pd-20">
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Category Name</label>
+                            <label for="exampleInputEmail1">類別名稱</label>
                             <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$category->category_name}}" name="category_name">
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-info pd-x-20">Update</button>
+                        <button type="submit" class="btn btn-info pd-x-20">更新</button>
                     </div>
                 </form>
             </div><!-- table-wrapper -->

@@ -5,11 +5,11 @@
 
 <div class="sl-pagebody">
     <div class="sl-page-title">
-        <h5>Product List</h5>
+        <h5>產品列表</h5>
     </div><!-- sl-page-title -->
 
     <div class="card pd-20 pd-sm-50">
-        <h6 class="card-body-title">Product List
+        <h6 class="card-body-title">產品列表
             <a href="{{ route('add.product') }}" class="btn btn-sm btn-warning" style="float: right;">Add New</a>
         </h6>
 
@@ -17,14 +17,14 @@
             <table id="datatable1" class="table display responsive nowrap">
                 <thead>
                     <tr>
-                        <th class="wd-15p">Product Code</th>
-                        <th class="wd-15p">Product Name</th>
-                        <th class="wd-15p">Image</th>
-                        <th class="wd-20p">Category</th>
-                        <th class="wd-15p">Brand</th>
-                        <th class="wd-15p">Quantity</th>
-                        <th class="wd-15p">Status</th>
-                        <th class="wd-20p">Action</th>
+                        <th class="wd-15p">產品代碼</th>
+                        <th class="wd-15p">產品名稱</th>
+                        <th class="wd-15p">圖片</th>
+                        <th class="wd-20p">類別</th>
+                        <th class="wd-15p">品牌</th>
+                        <th class="wd-15p">數量</th>
+                        <th class="wd-15p">狀態</th>
+                        <th class="wd-20p">行動</th>
                     </tr>
                 </thead>
                 <tbody>

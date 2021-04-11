@@ -25,11 +25,11 @@
                     @csrf
                     <div class="modal-body pd-20">
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Sub Category Name</label>
+                            <label for="exampleInputEmail1">子類別名稱</label>
                             <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$subcategory->subcategory_name}}" name="subcategory_name">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Category Name</label>
+                            <label for="exampleInputEmail1">類別名稱</label>
                             <select class="form-control" name="category_id">
                                 @foreach($category as $row)
                                 <option value="{{ $row->id }}" <?php if ($row->id === $subcategory->category_id) echo "selected" ?>> {{ $row->category_name }} </option>
@@ -38,7 +38,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-info pd-x-20">Update</button>
+                        <button type="submit" class="btn btn-info pd-x-20">更新</button>
                     </div>
                 </form>
             </div><!-- table-wrapper -->

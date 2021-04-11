@@ -14,19 +14,19 @@
                 <div class="row mg-b-25">
                     <div class="col-lg-6">
                         <div class="form-group">
-                            <label class="form-control-label">Post Title (English): <span class="tx-danger">*</span></label>
+                            <label class="form-control-label">標題 (English): <span class="tx-danger">*</span></label>
                             <input class="form-control" type="text" name="post_title_en" placeholder="Enter Post Title in English">
                         </div>
                     </div><!-- col-4 -->
                     <div class="col-lg-6">
                         <div class="form-group">
-                            <label class="form-control-label">Post Title (Taiwan): <span class="tx-danger">*</span></label>
+                            <label class="form-control-label">標題 (Taiwan): <span class="tx-danger">*</span></label>
                             <input class="form-control" type="text" name="post_title_tw" placeholder="Enter Post Title in Taiwan">
                         </div>
                     </div><!-- col-4 -->
                     <div class="col-lg-4">
                         <div class="form-group mg-b-10-force">
-                            <label class="form-control-label">Blog Category: <span class="tx-danger">*</span></label>
+                            <label class="form-control-label">部落格 類別: <span class="tx-danger">*</span></label>
                             <select class="form-control select2" data-placeholder="Choose Category" name="category_id">
                                 <option label="Choose Category"></option>
                                 @foreach($blogCategory as $row)
@@ -37,20 +37,20 @@
                     </div><!-- col-4 -->
                     <div class="col-lg-12">
                         <div class="form-group">
-                            <label class="form-control-label">Product Datails (English): <span class="tx-danger">*</span></label>
+                            <label class="form-control-label">產品詳情(English): <span class="tx-danger">*</span></label>
                             <textarea class="form-control" id="summernote" name="details_en"></textarea>
                         </div>
                     </div><!-- col-4 -->
                     <div class="col-lg-12">
                         <div class="form-group">
-                            <label class="form-control-label">Product Datails (Taiwan): <span class="tx-danger">*</span></label>
+                            <label class="form-control-label">產品詳情(Taiwan): <span class="tx-danger">*</span></label>
                             <textarea class="form-control" id="summernote1" name="details_tw"></textarea>
                         </div>
                     </div><!-- col-4 -->
 
                     <div class="col-lg-4">
                         <div class="form-group">
-                            <label class="form-control-label">Post Image: <span class="tx-danger">*</span></label>
+                            <label class="form-control-label">Post 圖片: <span class="tx-danger">*</span></label>
                             <label class="custom-file">
                                 <input type="file" id="file" class="custom-file-input" name="post_image" onchange="readURL1(this);" require="">
                                 <span class="custom-file-control"></span>
@@ -67,7 +67,7 @@
                 </div><!-- end row -->
                 <br><br>
                 <div class="form-layout-footer">
-                    <button class="btn btn-info mg-r-5" type="submit">Submit Form</button>
+                    <button class="btn btn-info mg-r-5" type="submit">提交表格</button>
                 </div><!-- form-layout-footer -->
             </div><!-- form-layout -->
 
