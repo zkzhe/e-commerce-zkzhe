@@ -82,7 +82,7 @@ $order = DB::table('orders')->where('user_id',Auth::id())->orderBy('id','DESC')-
 
             <div class="col-4">
                 <div class="card">
-                    <img src="{{ asset('public/frontend/images/kaziariyan.png') }}" class="card-img-top" style="height: 90px; width: 90px; margin-left: 34%;">
+                <img id="showImage" src="{{ (!(empty(Auth::user()->profile_photo_path)))? url('upload/user_images/'.Auth::user()->profile_photo_path):url('upload/no_image.jpg') }}" style="width: 100px; height:100px">
                     <div class="card-body">
                         <h5 class="card-title text-center">{{ Auth::user()->name }}</h5>
 
