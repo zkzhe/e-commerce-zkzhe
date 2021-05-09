@@ -88,8 +88,8 @@ $order = DB::table('orders')->where('user_id',Auth::id())->orderBy('id','DESC')-
 
                     </div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item"> <a href="">Change Password</a> </li>
-                        <li class="list-group-item">Edit Profile</li>
+                        <li class="list-group-item"> <a href="{{route('user.password.view')}}">Change Password</a> </li>
+                        <a href="{{route('profile.edit')}}" class="list-group-item">Edit Profile</a>
                         <li class="list-group-item"><a href="{{ route('success.orderlist') }}"> Return Order</a> </li>
                     </ul>
 
