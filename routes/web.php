@@ -70,7 +70,7 @@ Route::prefix('user')->group(function () {
     Route::get('profile/edit', [MainUserController::class, 'UserProfileEdit'])->name('profile.edit');
     Route::post('profile/store', [MainUserController::class, 'UserProfileStore'])->name('profile.store');
     Route::get('password/view', [MainUserController::class, 'UserPasswordView'])->name('user.password.view');
-    Route::post('password/update', [MainUserController::class, 'UserPasswordUpdate'])->name('password.update');
+    Route::post('password/update', [MainUserController::class, 'UserPasswordUpdate'])->name('user.password.update');
 });
 
 // Admin All Routes
@@ -210,7 +210,8 @@ Route::get('/allcategory/{id}', [PublicProductController::class, 'categoryView']
 
 
 
-//Order Tracking
+//Order
+Route::get('/order/view/{statusCode}', [FrontController::class, 'orderView'])->name('order.view');
 Route::post('/order/tracking/', [FrontController::class, 'orderTracking'])->name('order.tracking');
 
 

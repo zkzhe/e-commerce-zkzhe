@@ -4,7 +4,7 @@
 <div style="padding: 20px;">
     <div class="col-md-6">
         <h3>Change Password</h3>
-        <form method="post" action="{{ route('password.update') }}">
+        <form method="post" action="{{ route('user.password.update') }}">
             @csrf
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Current Password</label>

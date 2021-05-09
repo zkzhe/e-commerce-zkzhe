@@ -44,7 +44,7 @@ $order = DB::table('orders')->where('user_id',Auth::id())->orderBy('id','DESC')-
                             </td>
                             <td scope="col">{{ $row->status_code }} </td>
                             <td scope="col">
-                                <a href="" class="btn btn-sm btn-info"> 查看</a>
+                                <a href="{{url('order/view/'.$row->status_code)}}" class="btn btn-sm btn-info"> 查看</a>
                             </td>
                         </tr>
                         @endforeach
@@ -54,13 +54,13 @@ $order = DB::table('orders')->where('user_id',Auth::id())->orderBy('id','DESC')-
 
             <div class="col-2">
                 <div class="card">
-                    <img src="{{ asset('frontend/images/kaziariyan.png') }}" class="card-img-top" style="height: 90px; width: 90px; margin-left: 34%;">
+                <img id="showImage" src="{{ (!(empty(Auth::user()->profile_photo_path)))? url('upload/user_images/'.Auth::user()->profile_photo_path):url('upload/no_image.jpg') }}" style="width: 100px; height:100px">
                     <div class="card-body">
                         <h5 class="card-title text-center">{{ Auth::user()->name }}</h5>
                     </div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item"> <a href="">Change Password</a> </li>
-                        <li class="list-group-item">Edit Profile</li>
+                        <li class="list-group-item"> <a href="{{route('user.password.view')}}">Change Password</a> </li>
+                        <a href="{{route('profile.edit')}}" class="list-group-item">Edit Profile</a>
                         <li class="list-group-item"><a href="{{ route('success.orderlist') }}"> Return Order</a> </li>
                     </ul>
 

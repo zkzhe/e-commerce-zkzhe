@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="icon" href="{{ asset('userbackend/panel/assets/images/favicon.png') }}">
     <!--Page title-->
-    <title>Admin easy Learning</title>
+    <title>User dashboard</title>
     <!--bootstrap-->{
     <link rel="stylesheet" href="{{ asset('userbackend/panel/assets/css/bootstrap.min.css') }}">
     <!--font awesome-->
@@ -34,8 +34,8 @@
     <div class="wrapper">
 
         <!-- header area -->
-        <header class="header_area">
-            <!-- logo -->
+        <!-- <header class="header_area">
+            
             <div class="sidebar_logo">
                 <a href="index.html">
                     <img src="{{ asset('userbackend/panel/assets/images/logo.png') }}" alt="" class="img-fluid logo1">
@@ -52,7 +52,7 @@
                         <form action="#" class="modal-dialog modal-lg">
 
                             <div class="modal-content bg-transparent">
-                                <!-- Modal body -->
+                                
                                 <div class="modal-body">
                                     <input class="form-control bg-transparent text-white form-control-lg" type="text" placeholder="Search...">
                                     <button class="btn btn-lg submit-btn" type="submit">Search</button>
@@ -275,9 +275,10 @@
                     <a class="responsive_menu_toggle" href="#"><i class="fas fa-bars"></i></a>
                 </li>
             </ul>
-        </header><!-- / header area -->
+        </header> -->
+        <!-- / header area -->
         <!-- sidebar area -->
-        <aside class="sidebar-wrapper ">
+        <!-- <aside class="sidebar-wrapper ">
             <nav class="sidebar-nav">
                 <ul class="metismenu" id="menu1">
                     <li class="single-nav-wrapper">
@@ -394,8 +395,8 @@
                     </li>
                 </ul>
             </nav>
-        </aside><!-- /sidebar Area-->
-
+        </aside> -->
+        <!-- /sidebar Area -->
 
 
 
