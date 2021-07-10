@@ -32,7 +32,7 @@ return [
     'google' => [
         'client_id' => '335862326751-rkjpdtkng4f4rboeipi71nq1sdscd8se.apps.googleusercontent.com',
         'client_secret' => 'p_a0JHTv-nqu-t5LCmN2kK5_',
-        'redirect' => 'https://zkzhe.tw/callback/google',
+        'redirect' => 'https://ecommerce.zkzhe.tw/callback/google',
     ],
 
 ];

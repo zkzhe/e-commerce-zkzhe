@@ -117,6 +117,7 @@ $setting = DB::table('sitesetting')->first();
                                     <!-- <div><a href="{{ route('user.checkout') }}">登出</a></div> -->
                                     <div><a href="{{ route('register') }}">註冊</a></div>
                                     <div><a href="{{ route('login') }}">登入</a></div>
+                                    <div><a href="{{ url('/admin/login') }}">後台登入</a></div>
                                 </div>
                             </div>
                         </div>

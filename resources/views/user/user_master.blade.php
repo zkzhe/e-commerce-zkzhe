@@ -9,7 +9,7 @@
     <link rel="icon" href="{{ asset('userbackend/panel/assets/images/favicon.png') }}">
     <!--Page title-->
     <title>User dashboard</title>
-    <!--bootstrap-->{
+    <!--bootstrap-->
     <link rel="stylesheet" href="{{ asset('userbackend/panel/assets/css/bootstrap.min.css') }}">
     <!--font awesome-->
     <link rel="stylesheet" href="{{ asset('userbackend/panel/assets/css/all.min.css') }}">
@@ -35,7 +35,7 @@
 
         <!-- header area -->
         <!-- <header class="header_area">
-            
+
             <div class="sidebar_logo">
                 <a href="index.html">
                     <img src="{{ asset('userbackend/panel/assets/images/logo.png') }}" alt="" class="img-fluid logo1">
@@ -52,7 +52,7 @@
                         <form action="#" class="modal-dialog modal-lg">
 
                             <div class="modal-content bg-transparent">
-                                
+
                                 <div class="modal-body">
                                     <input class="form-control bg-transparent text-white form-control-lg" type="text" placeholder="Search...">
                                     <button class="btn btn-lg submit-btn" type="submit">Search</button>
